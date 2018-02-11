@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+
+<head>
+    <title>HRM User List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+
+<body th:with="page='users'">
+<div layout:fragment="content">
+    <a href="#" th:href="@{/admin/user/create}" class="btn btn-primary btn-lg active" role="button">Create New User</a>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Serial</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Roles</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user, userStat : ${userList}">
+                <td th:text="${userStat.count}">1</td>
+                <td th:text="${user.id}">1</td>
+                <td th:text="${user.name}">FRSummit</td>
+                <td th:text="${user.lastName}">FRSummit</td>
+                <td th:text="${user.email}">summit@fr.com</td>
+                <td th:text="${user.department}">summit@fr.com</td>
+                <td th:text="${user.myRole}">ADMIN</td>
+                <form action="#" th:action="@{/admin/list-user-edit}" method="get">
+                    <td>
+                        <input type="button" name="edit" value="Edit" class="btn btn-primary btn-lg active" />
+                        <input type="button" name="remove" value="Remove" class="btn btn-primary btn-lg active" />
+                    </td>
+                </form>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+    <head>
+        <title>HRM Attendance Update Request</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div layout:fragment="content" style="margin:0% -10% 0% 5%">
+                <h1 class="col-sm-9 well">Attendance Update Request Form</h1>
+                <div class="col-sm-9 well form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-5">
+                            <h4 style="display:inline-block;">Id : </h4>
+                            <h4 style="display:inline-block;">2014200000071</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-5">
+                            <h4 style="display:inline-block;">Name : </h4>
+                            <h4 style="display:inline-block;">Summit</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-5">
+                            <h4 style="display:inline-block;">Designation : </h4>
+                            <h4 style="display:inline-block;">Student</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-5">
+                            <h4 style="display:inline-block;">Department : </h4>
+                            <h4 style="display:inline-block;">CSE</h4>
+                        </div>
+                    </div>
+                </div>
+                <form>
+                    <div class="col-sm-9 well">
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <label style="margin-left:5px">First Name</label>
+                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top:10px">
+                            <div class="col-sm-9">
+                                <button type="submit" class="btn btn-primary btn-block">Register User</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

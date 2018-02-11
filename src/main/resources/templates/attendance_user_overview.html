@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+    <head>
+        <title>HRM Attendance Overview</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div layout:fragment="content">
+                <h1 class="well">Attendance Overview</h1>
+                <div class="container">
+                    <div class="row">
+                        <div>
+                            <div class="alert alert-info">
+                                Please Wait...</div>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Column heading 1</th>
+                                    <th>Column heading 2</th>
+                                    <th>Column heading 3</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="active">
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr class="warning">
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+
+    <head>
+        <title>HRM Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div layout:fragment="content">
+                <h1>Welcome Back Summit</h1>
+                <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+            </div>
+        </div>
+    </body>
+</html>

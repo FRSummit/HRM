@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+    <head>
+        <title>HRM Prsonal Information</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <div layout:fragment="content">
+                <h1 class="col-md-9 well" style="margin:0% 5% 2% 5%">Prsonal Information</h1>
+                <div class="row" style="margin:0% -5% 0% 5%">
+                <div class="col-md-9 well">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">  <h3 >Prsonal Information</h3></div>
+                        <div class="panel-body">
+                            <div class="box box-info">
+                                <div class="box-body">
+                                    <div class="col-sm-6">
+                                        <div  align="center"> <img alt="User Pic" src="https://scontent-sin6-1.cdninstagram.com/vp/ad628c69583d2c2c34af0f1f2fa4ee51/5B04DA54/t51.2885-19/s150x150/26354719_158812268100154_6122033786579320832_n.jpg" id="profile-image1" class="img-circle img-responsive"/>
+                                            <!--Upload Image Js And Css-->
+                                        </div>
+                                        <!-- /input-group -->
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h3 style="color:#00b1b1;">Fayazur Rahman Summit</h3>
+                                        <span><p>Student</p></span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div style="margin-top:5%">
+                                        <hr style="margin:5px 0 5px 0;"/>
+                                        <div class="col-sm-5 col-xs-6 tital">First Name:</div>
+                                        <div class="col-sm-7 col-xs-6 ">FAYAZUR</div>
+
+                                        <div class="col-sm-5 col-xs-6 tital">Middle Name:</div>
+                                        <div class="col-sm-7"> RAHMAN</div>
+
+                                        <div class="col-sm-5 col-xs-6 tital">Last Name:</div>
+                                        <div class="col-sm-7"> SUMMIT</div>
+
+                                        <div class="col-sm-5 col-xs-6 tital">Date Of Birth:</div>
+                                        <div class="col-sm-7">30 Jun 1998</div>
+
+                                        <div class="col-sm-5 col-xs-6 tital">Place Of Birth:</div>
+                                        <div class="col-sm-7">MYMENSINGH</div>
+
+                                        <div class="col-sm-5 col-xs-6 tital">Nationality:</div>
+                                        <div class="col-sm-7">BANGLADESHI</div>
+
+                                        <div class="col-sm-5 col-xs-6 tital">Relition:</div>
+                                        <div class="col-sm-7">ISLAM</div>
+
+                                    </div>
+                                </div>
+                                <!-- /.box -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                            $(function() {
+                                $('#profile-image1').on('click', function() {
+                                    $('#profile-image-upload').click();
+                                });
+                            });
+                </script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
