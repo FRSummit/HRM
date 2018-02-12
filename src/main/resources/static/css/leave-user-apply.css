@@ -11,7 +11,7 @@ body {
     float: left;
     width: 50%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    /*height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -32,7 +32,7 @@ body {
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  font-size: 20px;
+  padding: 8px;
+  font-size: 17px;
   text-align: center;
 }
