@@ -126,56 +126,60 @@
                                 </form>
                             </div>
                         </div>
+                        <!--HR-Records-->
                         <div class="col-lg-12 well">
                             <div class="row">
-                                <h3 style="margin-left:1%">HR Records</h3>
-                                <form>
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-6 form-group">
-                                                <label>First Name</label>
-                                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
-                                            </div>
-                                            <div class="col-sm-6 form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
-                                            </div>
+                                <h3 style="margin-left:1%">HR-Records</h3>
+                                <form style="margin-left:1.4%">
+                                    <div class="form-group">
+                                        <div>
+                                            <h3 style="display:inline-block;">Department :</h3>
+                                            <h3 style="display:inline-block;" th:text="${department}">CSE</h3>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
+                                        <div>
+                                            <h3 style="display:inline-block;">Department :</h3>
+                                            <h3 style="display:inline-block;" th:text="${department}">CSE</h3>
                                         </div>
                                     </div>
+                                    <div class="grid-container">
+                                    <div class="grid-item">S</div>
+                                    <div class="grid-item">2</div>
+                                    <div class="grid-item">3</div>
+                                    <div class="grid-item">4</div>
+                                    <div class="grid-item">5</div>
+                                    <div class="grid-item">6</div>
+                                    <div class="grid-item">7</div>
+                                    <div class="grid-item">8</div>
+                                    <div class="grid-item">9</div>
+                                    <div class="grid-item">7</div>
+                                    <div class="grid-item">8</div>
+                                    <div class="grid-item">9</div>
+                                </div>
                                 </form>
                             </div>
                         </div>
                         <!--2 Column grid-->
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <div class="row">
-                                <!--HR-Records-->
+                                <!--Recommandation-->
                                 <!--<div class="column" style="background-color:#aaa;">-->
                                 <div class="column well">
-                                    <h3>HR-Records</h3>
-                                    <p>Some text..</p>
-                                    <div class="row">
-                                        <div class="col-sm-6 form-group">
-                                            <label>First Name</label>
-                                            <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
-                                        </div>
-                                        <div class="col-sm-6 form-group">
-                                            <label>Last Name</label>
-                                            <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
-                                        </div>
-                                    </div>
+                                    <h3>Recommendation</h3>
                                     <div class="form-group">
-                                        <label>Phone Number</label>
-                                        <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
+                                        <div>
+                                            <h3 style="display:inline-block;">Department :</h3>
+                                            <h3 style="display:inline-block;" th:text="${department}">CSE</h3>
+                                        </div>
+                                        <div>
+                                            <h3 style="display:inline-block;">Department :</h3>
+                                            <h3 style="display:inline-block;" th:text="${department}">CSE</h3>
+                                        </div>
                                     </div>
                                 </div>
-                                <!--Recommendation-->
+                                <!--Leave Approval-->
                                 <!--<div class="column" style="background-color:#bbb;">-->
                                 <div class="column well">
-                                    <h3>Recommendation</h3>
+                                    <h3>Leave Approval</h3>
                                     <p>Some text..</p>
                                     <div class="row">
                                         <div class="col-sm-6 form-group">
@@ -187,58 +191,7 @@
                                             <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Phone Number</label>
-                                        <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!--Recommandation-->
-                        <div class="col-lg-12 well">
-                            <div class="row">
-                                <h3 style="margin-left:1%">Recommendation</h3>
-                                <form>
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-6 form-group">
-                                                <label>First Name</label>
-                                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
-                                            </div>
-                                            <div class="col-sm-6 form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 well">
-                            <div class="row">
-                                <h3 style="margin-left:1%">Leave Approval</h3>
-                                <form>
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-6 form-group">
-                                                <label>First Name</label>
-                                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
-                                            </div>
-                                            <div class="col-sm-6 form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                         <div class="col-lg-12 well">
