@@ -12,12 +12,12 @@
             <div layout:fragment="content">
                 <h1 class="well">Set Payment</h1>
                 <div class="col-lg-12">
-                    <form autocomplete="off" action="#" th:action="@{/admin/set-payment}" th:object="${payroll}" method="post" class="form-horizontal" role="form" style="margin:0% 0% 0% 0%">
+                    <form autocomplete="off" action="#" th:action="@{/admin/set-payment}" method="post" class="form-horizontal" role="form" style="margin:0% 0% 0% 0%">
                         <!--ID-->
                         <div class="row well">
                             <div class="col-sm-6 form-group">
                                 <label>Id</label>
-                                <input type="text" th:field="*{id}" placeholder="Id" class="form-control"/>
+                                <input type="text" class="form-control"/>
                             </div>
                         </div>
                         <div class="row well">
@@ -27,81 +27,81 @@
                                 <div class="row">
                                     <div class="col-sm-2 form-group">
                                         <label>Basic</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="Basic" class="form-control"/>
+                                        <input type="text" placeholder="Basic" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>House Rent</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="House Rent" class="form-control"/>
+                                        <input type="text" placeholder="House Rent" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Convence</label>
-                                        <input type="text" th:field="*{lastName}" placeholder="Convence" class="form-control"/>
+                                        <input type="text" placeholder="Convence" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Medical</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="Medical" class="form-control"/>
+                                        <input type="text" placeholder="Medical" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Advanced/Load</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="Advanced/Load" class="form-control"/>
+                                        <input type="text" placeholder="Advanced/Load" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Interest</label>
-                                        <input type="text" th:field="*{lastName}" placeholder="Interest" class="form-control"/>
+                                        <input type="text" placeholder="Interest" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--NAME-->
                                 <div class="row">
                                     <div class="col-sm-2 form-group">
                                         <label>Other All</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="Other All" class="form-control"/>
+                                        <input type="text" placeholder="Other All" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Educational</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="Educational" class="form-control"/>
+                                        <input type="text" placeholder="Educational" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Bonus</label>
-                                        <input type="text" th:field="*{lastName}" placeholder="Bonus" class="form-control"/>
+                                        <input type="text" placeholder="Bonus" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Incentive</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="Incentive" class="form-control"/>
+                                        <input type="text" placeholder="Incentive" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Leave Encasement</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="Leave Encasement" class="form-control"/>
+                                        <input type="text" placeholder="Leave Encasement" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Perquisite</label>
-                                        <input type="text" th:field="*{lastName}" placeholder="Perquisite" class="form-control"/>
+                                        <input type="text" placeholder="Perquisite" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--NAME-->
                                 <div class="row">
                                     <div class="col-sm-2 form-group">
                                         <label>Reimbursement</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="Reimbursement" class="form-control"/>
+                                        <input type="text" placeholder="Reimbursement" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Special</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="Special" class="form-control"/>
+                                        <input type="text" placeholder="Special" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Over Time</label>
-                                        <input type="text" th:field="*{lastName}" placeholder="Over Time" class="form-control"/>
+                                        <input type="text" placeholder="Over Time" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Arrears</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="Arrears" class="form-control"/>
+                                        <input type="text" placeholder="Arrears" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Child Fund</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="Child Fund" class="form-control"/>
+                                        <input type="text" placeholder="Child Fund" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Stipen</label>
-                                        <input type="text" th:field="*{lastName}" placeholder="Stipen" class="form-control"/>
+                                        <input type="text" placeholder="Stipen" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
@@ -113,38 +113,38 @@
                                 <div class="row">
                                     <div class="col-sm-2 form-group">
                                         <label>TDS</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="TDS" class="form-control"/>
+                                        <input type="text" placeholder="TDS" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Interest</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="Interest" class="form-control"/>
+                                        <input type="text" placeholder="Interest" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>PF</label>
-                                        <input type="text" th:field="*{lastName}" placeholder="PF" class="form-control"/>
+                                        <input type="text" placeholder="PF" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Professional Tex</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="Professional Tex" class="form-control"/>
+                                        <input type="text" placeholder="Professional Tex" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Advanced/Loan</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="Advanced/Loan" class="form-control"/>
+                                        <input type="text" placeholder="Advanced/Loan" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Other</label>
-                                        <input type="text" th:field="*{lastName}" placeholder="Other" class="form-control"/>
+                                        <input type="text" placeholder="Other" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--NAME-->
                                 <div class="row">
                                     <div class="col-sm-2 form-group">
                                         <label>Leave</label>
-                                        <input type="text" th:field="*{firstName}" placeholder="Leave" class="form-control"/>
+                                        <input type="text" placeholder="Leave" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Security Deposit</label>
-                                        <input type="text" th:field="*{middleName}" placeholder="Security Deposit" class="form-control"/>
+                                        <input type="text" placeholder="Security Deposit" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
