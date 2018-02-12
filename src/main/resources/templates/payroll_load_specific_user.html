@@ -12,110 +12,112 @@
         <div class="container">
             <div layout:fragment="content">
                 <h1 class="well">User Payment Selection</h1>
-                <div class="form-group">
-                    <div class="col-sm-3">
-                        <input type="text" placeholder="ID" class="form-group col-sm-3"/>
-                        <button type="submit" class="btn btn-primary btn-block" onclick="document.getElementById('id01').style.display='block'">Load Payroll</button>
+                <div class="container">
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <input type="text" placeholder="ID" class="form-group col-sm-3"/>
+                            <button type="submit" class="btn btn-primary btn-block" onclick="document.getElementById('id01').style.display='block'">Load Payroll</button>
+                        </div>
                     </div>
-                </div>
-                <div id="id01" class="modal">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                    <div class="modal-content">
-                        <div class="container">
-                            <div class="row col-sm-12">
-                                <div>
-                                    <table class="table well">
-                                        <h3>Total Earnings</h3>
-                                        <thead>
-                                        <tr>
-                                            <th>Year</th>
-                                            <th>Basic</th>
-                                            <th>House Rent</th>
-                                            <th>Convence</th>
-                                            <th>Medical</th>
-                                            <th>Advanced/Load</th>
-                                            <th>Interest</th>
-                                            <th>Other All</th>
-                                            <th>Educational</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="warning">
-                                            <td>2018</td>
-                                            <td>15000</td>
-                                            <td>2000</td>
-                                            <td>2000</td>
-                                            <td>2000</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>2000</td>
-                                            <td>1500</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                    <div id="id01" class="modal">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <div class="modal-content">
+                            <div class="container">
+                                <div class="row col-sm-12">
+                                    <div>
+                                        <table class="table well">
+                                            <h3>Total Earnings</h3>
+                                            <thead>
+                                            <tr>
+                                                <th>Year</th>
+                                                <th>Basic</th>
+                                                <th>House Rent</th>
+                                                <th>Convence</th>
+                                                <th>Medical</th>
+                                                <th>Advanced/Load</th>
+                                                <th>Interest</th>
+                                                <th>Other All</th>
+                                                <th>Educational</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="warning">
+                                                <td>2018</td>
+                                                <td>15000</td>
+                                                <td>2000</td>
+                                                <td>2000</td>
+                                                <td>2000</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>2000</td>
+                                                <td>1500</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table class="table well">
+                                            <thead>
+                                            <tr>
+                                                <th>Bonus</th>
+                                                <th>Incentive</th>
+                                                <th>Leave Encasement</th>
+                                                <th>Perquisite</th>
+                                                <th>Reimbursement</th>
+                                                <th>Special</th>
+                                                <th>Over Time</th>
+                                                <th>Arrears</th>
+                                                <th>Child Fund</th>
+                                                <th>Stipen</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="warning">
+                                                <td>1500</td>
+                                                <td>1200</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>500</td>
+                                                <td>0</td>
+                                                <td>1000</td>
+                                                <td>1000</td>
+                                                <td>1000</td>
+                                                <td>1000</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                                <div>
-                                    <table class="table well">
-                                        <thead>
-                                        <tr>
-                                            <th>Bonus</th>
-                                            <th>Incentive</th>
-                                            <th>Leave Encasement</th>
-                                            <th>Perquisite</th>
-                                            <th>Reimbursement</th>
-                                            <th>Special</th>
-                                            <th>Over Time</th>
-                                            <th>Arrears</th>
-                                            <th>Child Fund</th>
-                                            <th>Stipen</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="warning">
-                                            <td>1500</td>
-                                            <td>1200</td>
-                                            <td>0</td>
-                                            <td>0</td>
-                                            <td>500</td>
-                                            <td>0</td>
-                                            <td>1000</td>
-                                            <td>1000</td>
-                                            <td>1000</td>
-                                            <td>1000</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="row" style="margin-top:5%">
-                                <div>
-                                    <table class="table well">
-                                        <h3>Total Deductions</h3>
-                                        <thead>
-                                        <tr>
-                                            <th>TDS</th>
-                                            <th>Interest</th>
-                                            <th>PF</th>
-                                            <th>Professional Tex</th>
-                                            <th>Advanced/Load</th>
-                                            <th>Other</th>
-                                            <th>Leave</th>
-                                            <th>Security Deposit</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="warning">
-                                            <td>2000</td>
-                                            <td>2500</td>
-                                            <td>500</td>
-                                            <td>1500</td>
-                                            <td>1000</td>
-                                            <td>500</td>
-                                            <td>1000</td>
-                                            <td>1000</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="row" style="margin-top:5%">
+                                    <div>
+                                        <table class="table well">
+                                            <h3>Total Deductions</h3>
+                                            <thead>
+                                            <tr>
+                                                <th>TDS</th>
+                                                <th>Interest</th>
+                                                <th>PF</th>
+                                                <th>Professional Tex</th>
+                                                <th>Advanced/Load</th>
+                                                <th>Other</th>
+                                                <th>Leave</th>
+                                                <th>Security Deposit</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="warning">
+                                                <td>2000</td>
+                                                <td>2500</td>
+                                                <td>500</td>
+                                                <td>1500</td>
+                                                <td>1000</td>
+                                                <td>500</td>
+                                                <td>1000</td>
+                                                <td>1000</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
