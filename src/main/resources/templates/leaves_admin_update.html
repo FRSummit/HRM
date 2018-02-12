@@ -10,100 +10,32 @@
     <body>
         <div class="container">
             <div layout:fragment="content">
-                <h1></h1>
-                <form>
-                    <div class="container">
-                        <h1 class="well">Leave Update - Admin</h1>
-                        <div class="col-lg-12 well">
-                            <div class="row">
-                                <h3 style="margin-left:1%">Leave Request</h3>
-                                <form>
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-6 form-group">
-                                                <label>First Name</label>
-                                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
-                                            </div>
-                                            <div class="col-sm-6 form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Address</label>
-                                            <textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-4 form-group">
-                                                <label>City</label>
-                                                <input type="text" placeholder="Enter City Name Here.." class="form-control"/>
-                                            </div>
-                                            <div class="col-sm-4 form-group">
-                                                <label>State</label>
-                                                <input type="text" placeholder="Enter State Name Here.." class="form-control"/>
-                                            </div>
-                                            <div class="col-sm-4 form-group">
-                                                <label>Zip</label>
-                                                <input type="text" placeholder="Enter Zip Code Here.." class="form-control"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
-                                        </div>
-                                    </div>
-                                </form>
+                <h1 class="well">Update Leave</h1>
+                <div class="col-lg-12">
+                    <form autocomplete="off" action="#" th:action="@{/admin/update-leave}" method="post" class="form-horizontal" role="form">
+                        <!--ID-->
+                        <div class="row well">
+                            <div class="col-sm-6 form-group">
+                                <label>Leave Id</label>
+                                <input type="text" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-9">
+                                    <select name="rl" class="form-control">
+                                        <option>Granted</option>
+                                        <option>Rejected</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-12 well">
-                            <div class="row">
-                                <h3 style="margin-left:1%">Leave Approval</h3>
-                                <form>
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-6 form-group">
-                                                <label>First Name</label>
-                                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
-                                            </div>
-                                            <div class="col-sm-6 form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
-                                        </div>
-                                    </div>
-                                </form>
+                        <div class="form-group well">
+                            <div class="col-sm-3">
+                                <button type="submit" class="btn btn-primary btn-block">Set Payment</button>
                             </div>
                         </div>
-                        <div class="col-lg-12 well">
-                            <div class="row">
-                                <h3 style="margin-left:1%">Pay in Advanced &amp; Deductions</h3>
-                                <form>
-                                    <div class="col-sm-12">
-                                        <div class="row">
-                                            <div class="col-sm-6 form-group">
-                                                <label>First Name</label>
-                                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
-                                            </div>
-                                            <div class="col-sm-6 form-group">
-                                                <label>Last Name</label>
-                                                <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-lg btn-info" style="margin:0% 0% 2% 10%">Update</button>
-                </form>
+                        <span th:utext="${successMessage}"></span>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
