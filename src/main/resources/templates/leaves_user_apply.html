@@ -6,6 +6,7 @@
     <head>
         <title>HRM Leave Application</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/leave-user-apply.css" th:href="@{/css/leave-user-apply.css}" />
     </head>
     <body>
         <div class="container">
@@ -67,16 +68,22 @@
                                                 <input type="date" placeholder="19 DEC, 2018" class="form-control"/>
                                             </div>
                                         </div>
-                                        <!--Leave Reason and Description-->
+                                        <!--Leave Reason-->
                                         <div class="row">
                                             <div class="col-sm-4 form-group">
                                                 <label>Leave Reason</label>
                                                 <input type="text" placeholder="Leave Reason" class="form-control"/>
                                             </div>
-                                            <div class="col-sm-8 form-group">
-                                                <label>Leave Description</label>
-                                                <textarea placeholder="Leave Description" rows="3" class="form-control"></textarea>
+                                            <!--Total leave days-->
+                                            <div class="form-group col-sm-6">
+                                                <label>Total leave days</label>
+                                                <input type="text" placeholder="Total days of Leave" class="form-control"/>
                                             </div>
+                                        </div>
+                                        <!--Leave Description-->
+                                        <div class="form-group">
+                                            <label>Leave Description</label>
+                                            <textarea placeholder="Leave Description" rows="3" class="form-control"></textarea>
                                         </div>
                                         <!---->
                                         <!--<div class="row">
@@ -89,7 +96,7 @@
                                                 <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
                                             </div>
                                         </div>-->
-                                        <div class="form-group">
+                                        <!--<div class="form-group">
                                             <label>Leave Reason</label>
                                             <textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
                                         </div>
@@ -111,10 +118,10 @@
                                                 <input type="text" placeholder="Enter Zip Code Here.." class="form-control"/>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Phone Number</label>
-                                            <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
-                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label>Total leave days</label>
+                                            <input type="text" placeholder="Total days of Leave" class="form-control"/>
+                                        </div>-->
                                     </div>
                                 </form>
                             </div>
@@ -142,6 +149,52 @@
                                 </form>
                             </div>
                         </div>
+                        <!--2 Column grid-->
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <!--HR-Records-->
+                                <!--<div class="column" style="background-color:#aaa;">-->
+                                <div class="column well">
+                                    <h3>HR-Records</h3>
+                                    <p>Some text..</p>
+                                    <div class="row">
+                                        <div class="col-sm-6 form-group">
+                                            <label>First Name</label>
+                                            <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
+                                        </div>
+                                        <div class="col-sm-6 form-group">
+                                            <label>Last Name</label>
+                                            <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
+                                    </div>
+                                </div>
+                                <!--Recommendation-->
+                                <!--<div class="column" style="background-color:#bbb;">-->
+                                <div class="column well">
+                                    <h3>Recommendation</h3>
+                                    <p>Some text..</p>
+                                    <div class="row">
+                                        <div class="col-sm-6 form-group">
+                                            <label>First Name</label>
+                                            <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
+                                        </div>
+                                        <div class="col-sm-6 form-group">
+                                            <label>Last Name</label>
+                                            <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="text" placeholder="Enter Phone Number Here.." class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Recommandation-->
                         <div class="col-lg-12 well">
                             <div class="row">
                                 <h3 style="margin-left:1%">Recommendation</h3>
