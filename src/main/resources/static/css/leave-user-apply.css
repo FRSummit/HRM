@@ -24,7 +24,9 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  background-color: #2196F3;
+  /*background-color: #2196F3;*/
+  /*background-color: #e5e5e5;*/
+  background-color: #bbbbbb;
   padding: 10px;
 }
 .grid-item {
