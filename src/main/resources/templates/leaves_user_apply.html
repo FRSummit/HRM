@@ -38,6 +38,10 @@
                                         <div class="col-md-6">
                                             <h3 name="otp">Fayazur Rahman Summit</h3>
                                         </div>
+                                        <label class="col-md-4 control-label" style="margin-top:2.5%">Department: </label>
+                                        <div class="col-md-6">
+                                            <h3 name="otp">CSE</h3>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -46,8 +50,36 @@
                             <div class="row">
                                 <h3 style="margin-left:1%">Leave Request</h3>
                                 <form>
+                                    <!--Apply Date-->
+                                    <div class="form-group col-sm-4">
+                                        <label>Apply Date</label>
+                                        <input type="datetime-local" placeholder="Enter Phone Number Here.." class="form-control"/>
+                                    </div>
                                     <div class="col-sm-12">
+                                        <!--Apply From/To-->
                                         <div class="row">
+                                            <div class="col-sm-4 form-group">
+                                                <label>Apply From</label>
+                                                <input type="date" placeholder="12 FEB, 2018" class="form-control"/>
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label>Apply To</label>
+                                                <input type="date" placeholder="19 DEC, 2018" class="form-control"/>
+                                            </div>
+                                        </div>
+                                        <!--Leave Reason and Description-->
+                                        <div class="row">
+                                            <div class="col-sm-4 form-group">
+                                                <label>Leave Reason</label>
+                                                <input type="text" placeholder="Leave Reason" class="form-control"/>
+                                            </div>
+                                            <div class="col-sm-8 form-group">
+                                                <label>Leave Description</label>
+                                                <textarea placeholder="Leave Description" rows="3" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        <!--<div class="row">
                                             <div class="col-sm-6 form-group">
                                                 <label>First Name</label>
                                                 <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
@@ -56,9 +88,13 @@
                                                 <label>Last Name</label>
                                                 <input type="text" placeholder="Enter Last Name Here.." class="form-control"/>
                                             </div>
+                                        </div>-->
+                                        <div class="form-group">
+                                            <label>Leave Reason</label>
+                                            <textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label>Address</label>
+                                            <label>Leave Description</label>
                                             <textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
                                         </div>
                                         <div class="row">
