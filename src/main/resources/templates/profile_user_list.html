@@ -33,14 +33,14 @@
                                 <tbody>
                                     <tr class="success" th:each="user, userStat : ${userList}">
                                         <td th:text="${userStat.count}">1</td>
-                                        <td>2014200000071</td>
-                                        <td>Fayazur</td>
-                                        <td>Rahman</td>
-                                        <td>Summit</td>
-                                        <td>www.frsummit1@gmail.com</td>
-                                        <td>CSE</td>
-                                        <td>Student</td>
-                                        <td>ADMIN</td>
+                                        <td th:text="${user.id}">2014200000071</td>
+                                        <td th:text="${user.firstName}">Fayazur</td>
+                                        <td th:text="${user.middleName}">Rahman</td>
+                                        <td th:text="${user.lastName}">Summit</td>
+                                        <td th:text="${user.email}">www.frsummit1@gmail.com</td>
+                                        <td th:text="${user.department}">CSE</td>
+                                        <td th:text="${user.designation}">Student</td>
+                                        <td th:text="${user.myRole}">ADMIN</td>
                                     </tr>
                                 </tbody>
                             </table>

@@ -154,9 +154,9 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> findAllUsers(){
-//        //return entityManager.createQuery("SELECT u FROM User AS u", User.class).getResultList();
+        return entityManager.createQuery("SELECT u FROM User AS u", User.class).getResultList();
 //        return entityManager.createQuery(usersListQuery, User.class).getResultList();
-        return null;
+        //return null;
     }
 
     public List<User> findAllUsersId(){

@@ -17,8 +17,7 @@ public class UserList {
     //@RequestMapping("/admin/users-list")
     @RequestMapping("/admin/profile-user-list")
     public String getUserList(Model model) {
-        if(userService.findAllUsers() != null)
-            model.addAttribute(userService.findAllUsers());
+        model.addAttribute("userList",userService.findAllUsers());
         return "profile_user_list";
     }
 

@@ -105,7 +105,7 @@ public class User implements Serializable {
     private String designation;
 
     @Column(name = "department")
-    private String deaprtment;
+    private String department;
 
     @Column(name = "image_name")
     private String imageName;
@@ -256,12 +256,12 @@ public class User implements Serializable {
         this.designation = designation;
     }
 
-    public String getDeaprtment() {
-        return deaprtment;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setDeaprtment(String deaprtment) {
-        this.deaprtment = deaprtment;
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public String getImageName() {
