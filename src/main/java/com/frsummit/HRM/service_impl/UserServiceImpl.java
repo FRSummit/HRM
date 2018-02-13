@@ -67,9 +67,7 @@ public class UserServiceImpl implements UserService {
 //        i = userRepository.findById(id);
 //        e = i.getId().toString();
 //        //j = i.getId();
-//        return userRepository.findById(id);
-
-        return null;
+        return userRepository.findById(id);
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override

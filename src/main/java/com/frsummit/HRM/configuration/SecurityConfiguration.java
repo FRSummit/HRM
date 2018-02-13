@@ -23,19 +23,33 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-    @Value("${spring.queries.users-query}")
-    private String usersQuery;
+    @Value("${spring.queries.users-query-email}")
+    private String usersQueryEmail;
 
-    @Value("${spring.queries.roles-query}")
-    private String rolesQuery;
+    @Value("${spring.queries.users-query-id}")
+    private String usersQueryId;
+
+    @Value("${spring.queries.roles-query-email}")
+    private String rolesQueryEmail;
+
+    @Value("${spring.queries.roles-query-id}")
+    private String rolesQueryId;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)
             throws Exception {
         auth.
                 jdbcAuthentication()
-                .usersByUsernameQuery(usersQuery)
-                .authoritiesByUsernameQuery(rolesQuery)
+                .usersByUsernameQuery(usersQueryEmail)
+                .authoritiesByUsernameQuery(rolesQueryEmail)
+                .dataSource(dataSource)
+                .passwordEncoder(bCryptPasswordEncoder)
+                .and()
+                .inMemoryAuthentication().withUser("summit").password("s").authorities("ADMIN");
+        auth.
+                jdbcAuthentication()
+                .usersByUsernameQuery(usersQueryId)
+                .authoritiesByUsernameQuery(rolesQueryId)
                 .dataSource(dataSource)
                 .passwordEncoder(bCryptPasswordEncoder)
                 .and()

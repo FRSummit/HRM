@@ -42,8 +42,8 @@
                     <h3 class="form-signin-heading" th:text="Welcome"></h3>
                     <br/>
 
-                    <input type="text" id="email" name="email"  th:placeholder="Email" class="form-control" /> <br/>
-                    <input type="password"  th:placeholder="Password" id="password" name="password" class="form-control" /> <br />
+                    <input type="text" id="email" name="email"  th:placeholder="Email or Id" class="form-control" /> <br/>
+                    <input type="password" id="password" name="password"  th:placeholder="Password" class="form-control" /> <br />
 
                     <div align="center" th:if="${param.error}">
                         <p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
