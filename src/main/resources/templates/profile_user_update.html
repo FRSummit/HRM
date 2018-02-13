@@ -14,33 +14,33 @@
             <div layout:fragment="content">
                 <h1 class="well col-lg-12">User Update</h1>
                 <div class="col-lg-12 well">
-                    <form autocomplete="off" action="#" th:action="@{/user/profile-edit}" method="post" class="form-horizontal" role="form" style="margin:0% 2% 0% 2%">
+                    <form autocomplete="off" th:object="${user}" action="#" th:action="@{/admin/profile-update}" method="get" class="form-horizontal" role="form" style="margin:0% 2% 0% 2%">
                         <div class="row">
                             <div class="col-sm-12">
                                 <!--NAME-->
                                 <div class="row">
                                     <div class="col-sm-4 form-group">
                                         <label>First Name</label>
-                                        <input type="text" placeholder="First Name" class="form-control"/>
+                                        <input type="text" name="firstName" placeholder="First Name" class="form-control"/>
                                     </div>
                                     <div class="col-sm-4 form-group" style="margin-left:1%">
                                         <label>Middle Name</label>
-                                        <input type="text" placeholder="Middle Name" class="form-control"/>
+                                        <input type="text" name="middleName" placeholder="Middle Name" class="form-control"/>
                                     </div>
                                     <div class="col-sm-4 form-group" style="margin-left:1%">
                                         <label>Last Name</label>
-                                        <input type="text" placeholder="Last Name" class="form-control"/>
+                                        <input type="text" name="lastName" placeholder="Last Name" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--EMAIL & Phone-->
                                 <div class="row">
                                     <div class="form-group col-sm-8">
                                         <label>Email Address</label>
-                                        <input type="text" placeholder="email@frs.com" class="form-control"/>
+                                        <input type="text" name="email" placeholder="email@frs.com" class="form-control"/>
                                     </div>
                                     <div class="col-sm-4 form-group" style="margin-left:1%">
                                         <label>Phone Number</label>
-                                        <input type="text" placeholder="01XXX-XXXXXX" class="form-control"/>
+                                        <input type="text" name="phone" placeholder="01XXX-XXXXXX" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--Department & DESIGNATION & Role-->
@@ -55,11 +55,11 @@
                                     </div>
                                     <div class="col-sm-4 form-group" style="margin-left:1%">
                                         <label>Designation</label>
-                                        <input type="text" placeholder="Designation" class="form-control"/>
+                                        <input type="text" name="designation" placeholder="Designation" class="form-control"/>
                                     </div>
                                     <div class="col-sm-4 form-group" style="margin-left:1%">
                                         <label>Role</label>
-                                        <select name="rl" class="form-control">
+                                        <select name="userRole" class="form-control">
                                             <option>USER</option>
                                             <option>ADMIN</option>
                                             <option>CHAIRMAN</option>
@@ -74,7 +74,7 @@
                                 <div class="row">
                                     <div class="col-sm-4 form-group">
                                         <label>Date Of Birth</label>
-                                        <input type="date" class="form-control"/>
+                                        <input type="date" name="dob" class="form-control"/>
                                     </div>
                                     <div class="col-sm-4 form-group" style="margin-left:1%">
                                         <label>Gender</label>
@@ -102,50 +102,50 @@
                                 <div class="row">
                                     <div class="col-sm-5 form-group">
                                         <label>Father Name</label>
-                                        <input type="text" placeholder="Father Name" class="form-control"/>
+                                        <input type="text" name="fatherName" placeholder="Father Name" class="form-control"/>
                                     </div>
                                     <div class="col-sm-5 form-group" style="margin-left:1%">
                                         <label>Mother Name</label>
-                                        <input type="text" placeholder="Mother Name" class="form-control"/>
+                                        <input type="text" name="motherName" placeholder="Mother Name" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--NID & Passport-->
                                 <div class="row">
                                     <div class="col-sm-5 form-group">
                                         <label>NID</label>
-                                        <input type="text" placeholder="National Identity" class="form-control"/>
+                                        <input type="text" name="nid" placeholder="National Identity" class="form-control"/>
                                     </div>
                                     <div class="col-sm-5 form-group" style="margin-left:1%">
                                         <label>Passport No</label>
-                                        <input type="text" placeholder="Passport Number" class="form-control"/>
+                                        <input type="text" name="passportNo" placeholder="Passport Number" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--Present Address-->
-                                <h4 style="margin-left:-2%">Permanent Address</h4>
+                                <h4 style="margin-left:-2%">Present Address</h4>
                                 <div class="row">
                                     <div class="col-sm-2 form-group">
                                         <label>House No</label>
-                                        <input type="text" placeholder="House" class="form-control"/>
+                                        <input type="text" name="presentHouse" placeholder="House" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Street No</label>
-                                        <input type="text" placeholder="Street" class="form-control"/>
+                                        <input type="text" name="presentStreet" placeholder="Street" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Post Office</label>
-                                        <input type="text" placeholder="Post Office" class="form-control"/>
+                                        <input type="text" name="presentPostOffice" placeholder="Post Office" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>City</label>
-                                        <input type="text" placeholder="City" class="form-control"/>
+                                        <input type="text" name="presentCity" placeholder="City" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>District</label>
-                                        <input type="text" placeholder="District" class="form-control"/>
+                                        <input type="text" name="presentDistrict" placeholder="District" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Country</label>
-                                        <input type="text" placeholder="Country" class="form-control"/>
+                                        <input type="text" name="presentCountry" placeholder="Country" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--Permanent Address-->
@@ -153,27 +153,27 @@
                                 <div class="row">
                                     <div class="col-sm-2 form-group">
                                         <label>House No</label>
-                                        <input type="text" placeholder="House" class="form-control"/>
+                                        <input type="text" name="permanentHouse" placeholder="House" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Street No</label>
-                                        <input type="text" placeholder="Street" class="form-control"/>
+                                        <input type="text" name="permanentStreet" placeholder="Street" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Post Office</label>
-                                        <input type="text" placeholder="Post Office" class="form-control"/>
+                                        <input type="text" name="permanentPostOffice" placeholder="Post Office" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>City</label>
-                                        <input type="text" placeholder="City" class="form-control"/>
+                                        <input type="text" name="permanentCity" placeholder="City" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>District</label>
-                                        <input type="text" placeholder="District" class="form-control"/>
+                                        <input type="text" name="permanentDistrict" placeholder="District" class="form-control"/>
                                     </div>
                                     <div class="col-sm-2 form-group" style="margin-left:1%">
                                         <label>Country</label>
-                                        <input type="text" placeholder="Country" class="form-control"/>
+                                        <input type="text" name="permanentCountry" placeholder="Country" class="form-control"/>
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -152,6 +152,26 @@ public class User implements Serializable {
     public User() {
     }
 
+    public User(String firstName, String middleName, String lastName, String email, String phone, String dob, Address presentAddress, Address permanentAddress, String designation, String department, String bloodGroup, String sex, String fatherName, String motherName, String nid, String passportNumber, String myRole) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.dob = dob;
+        this.presentAddress = presentAddress;
+        this.permanentAddress = permanentAddress;
+        this.designation = designation;
+        this.department = department;
+        this.bloodGroup = bloodGroup;
+        this.sex = sex;
+        this.fatherName = fatherName;
+        this.motherName = motherName;
+        this.nid = nid;
+        this.passportNumber = passportNumber;
+        this.myRole = myRole;
+    }
+
     public String getId() {
         return id;
     }
