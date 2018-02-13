@@ -6,11 +6,174 @@
     <head>
         <title>HRM Profile Overview</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/background.css" th:href="@{/css/background.css}" />
     </head>
     <body>
         <div class="container">
-            <div layout:fragment="content">
-                <h1>Profile Edit</h1>
+            <div layout:fragment="content" style="margin:0% 10% 0% 10%">
+                <h1 class="well col-lg-12">Profile Edit</h1>
+                <div class="col-lg-12 well">
+                    <form autocomplete="off" action="#" th:action="@{/user/profile-edit}" method="post" class="form-horizontal" role="form" style="margin:0% 2% 0% 2%">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <!--NAME-->
+                                <div class="row">
+                                    <div class="col-sm-4 form-group">
+                                        <label>First Name</label>
+                                        <input type="text" placeholder="First Name" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-4 form-group" style="margin-left:1%">
+                                        <label>Middle Name</label>
+                                        <input type="text" placeholder="Middle Name" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-4 form-group" style="margin-left:1%">
+                                        <label>Last Name</label>
+                                        <input type="text" placeholder="Last Name" class="form-control"/>
+                                    </div>
+                                </div>
+                                <!--EMAIL-->
+                                <div class="form-group" style="margin-right:20%">
+                                    <label>Email Address</label>
+                                    <input type="text" placeholder="email@frs.com" class="form-control"/>
+                                </div>
+                                <!--Department & DESIGNATION-->
+                                <div class="row">
+                                    <div class="col-sm-5 form-group">
+                                        <label>Department</label>
+                                        <select name="department" class="form-control">
+                                            <option>CSE</option>
+                                            <option>EEE</option>
+                                            <option>TEXTILE</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-5 form-group" style="margin-left:1%">
+                                        <label>Designation</label>
+                                        <input type="text" placeholder="Designation" class="form-control"/>
+                                    </div>
+                                </div>
+                                <!--Dob & Sex-->
+                                <div class="row">
+                                    <div class="col-sm-5 form-group">
+                                        <label>Date Of Birth</label>
+                                        <input type="date" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-5 form-group" style="margin-left:1%">
+                                        <label>Gender</label>
+                                        <select name="sex" class="form-control">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--Phone & Blood-->
+                                <div class="row">
+                                    <div class="col-sm-5 form-group">
+                                        <label>Phone Number</label>
+                                        <input type="text" placeholder="01XXX-XXXXXX" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-5 form-group" style="margin-left:1%">
+                                        <label>Blood Group</label>
+                                        <select name="bloodGroup" class="form-control">
+                                            <option>A+</option>
+                                            <option>A-</option>
+                                            <option>B+</option>
+                                            <option>B-</option>
+                                            <option>AB+</option>
+                                            <option>AB-</option>
+                                            <option>O+</option>
+                                            <option>O-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--Father Name & Mother Name-->
+                                <div class="row">
+                                    <div class="col-sm-5 form-group">
+                                        <label>Father Name</label>
+                                        <input type="text" placeholder="Father Name" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-5 form-group" style="margin-left:1%">
+                                        <label>Mother Name</label>
+                                        <input type="text" placeholder="Mother Name" class="form-control"/>
+                                    </div>
+                                </div>
+                                <!--NID & Passport-->
+                                <div class="row">
+                                    <div class="col-sm-5 form-group">
+                                        <label>NID</label>
+                                        <input type="text" placeholder="National Identity" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-5 form-group" style="margin-left:1%">
+                                        <label>Passport No</label>
+                                        <input type="text" placeholder="Passport Number" class="form-control"/>
+                                    </div>
+                                </div>
+                                <!--Present Address-->
+                                <h4 style="margin-left:-2%">Permanent Address</h4>
+                                <div class="row">
+                                    <div class="col-sm-2 form-group">
+                                        <label>House No</label>
+                                        <input type="text" placeholder="House" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>Street No</label>
+                                        <input type="text" placeholder="Street" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>Post Office</label>
+                                        <input type="text" placeholder="Post Office" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>City</label>
+                                        <input type="text" placeholder="City" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>District</label>
+                                        <input type="text" placeholder="District" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>Country</label>
+                                        <input type="text" placeholder="Country" class="form-control"/>
+                                    </div>
+                                </div>
+                                <!--Permanent Address-->
+                                <h4 style="margin-left:-2%">Permanent Address</h4>
+                                <div class="row">
+                                    <div class="col-sm-2 form-group">
+                                        <label>House No</label>
+                                        <input type="text" placeholder="House" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>Street No</label>
+                                        <input type="text" placeholder="Street" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>Post Office</label>
+                                        <input type="text" placeholder="Post Office" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>City</label>
+                                        <input type="text" placeholder="City" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>District</label>
+                                        <input type="text" placeholder="District" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                        <label>Country</label>
+                                        <input type="text" placeholder="Country" class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-5">
+                                        <button type="submit" class="btn btn-primary btn-block">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <span th:utext="${successMessage}"></span>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </body>

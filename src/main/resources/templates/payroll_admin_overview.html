@@ -6,6 +6,7 @@
     <head>
         <title>HRM Payroll Overview - Admin</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/background.css" th:href="@{/css/background.css}" />
     </head>
     <body>
         <div class="container">
@@ -14,8 +15,6 @@
                 <div class="container">
                     <div class="row">
                         <div>
-                            <div class="alert alert-info">
-                                All payment history (Total Earnings)....</div>
                             <table class="table well">
                                 <h3>Total Earnings</h3>
                                 <thead>
@@ -31,15 +30,6 @@
                                     <th>Other All</th>
                                     <th>Educational</th>
                                     <th>Bonus</th>
-                                    <th>Incentive</th>
-                                    <th>Leave Encasement</th>
-                                    <th>Perquisite</th>
-                                    <th>Reimbursement</th>
-                                    <th>Special</th>
-                                    <th>Over Time</th>
-                                    <th>Arrears</th>
-                                    <th>Child Fund</th>
-                                    <th>Stipen</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -56,6 +46,29 @@
                                     <td>1500</td>
                                     <td>1500</td>
                                     <td>1200</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table well">
+                                <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Year</th>
+                                    <th>Incentive</th>
+                                    <th>Leave Encasement</th>
+                                    <th>Perquisite</th>
+                                    <th>Reimbursement</th>
+                                    <th>Special</th>
+                                    <th>Over Time</th>
+                                    <th>Arrears</th>
+                                    <th>Child Fund</th>
+                                    <th>Stipen</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="warning">
+                                    <td>2014200000071</td>
+                                    <td>2018</td>
                                     <td>0</td>
                                     <td>0</td>
                                     <td>500</td>
@@ -71,13 +84,12 @@
                     </div>
                     <div class="row" style="margin-top:5%">
                         <div>
-                            <div class="alert alert-info">
-                                All payment history (Total Deductions)....</div>
                             <table class="table well">
                                 <h3>Total Deductions</h3>
                                 <thead>
                                 <tr>
                                     <th>User Id</th>
+                                    <th>Year</th>
                                     <th>TDS</th>
                                     <th>Interest</th>
                                     <th>PF</th>
@@ -91,6 +103,7 @@
                                 <tbody>
                                 <tr class="warning">
                                     <td>2014200000071</td>
+                                    <td>2018</td>
                                     <td>2000</td>
                                     <td>2500</td>
                                     <td>500</td>
