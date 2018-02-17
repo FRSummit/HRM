@@ -37,6 +37,7 @@ public class ProfileEdit {
         if(user1 != null){
             System.out.println(user1.getEmail());
             System.out.println(user1.getPassword());
+            System.out.println(user1.getId());
         }else {
             System.out.println(user2.getId());
             System.out.println(user2.getId());
@@ -47,4 +48,5 @@ public class ProfileEdit {
         modelAndView.setViewName("home");
         return modelAndView;
     }
+
 }
