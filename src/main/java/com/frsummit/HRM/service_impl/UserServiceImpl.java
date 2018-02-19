@@ -1,7 +1,7 @@
 package com.frsummit.HRM.service_impl;
 
-import com.frsummit.HRM.jpa_repository.RoleRepository;
-import com.frsummit.HRM.jpa_repository.UserRepository;
+import com.frsummit.HRM.crud_repository.RoleRepository;
+import com.frsummit.HRM.crud_repository.UserRepository;
 import com.frsummit.HRM.model.Role;
 import com.frsummit.HRM.model.User;
 import com.frsummit.HRM.service.UserService;

@@ -62,7 +62,7 @@ public class Leaves implements Serializable {
     public Leaves() {
     }
 
-    public Leaves(String userId, Date leaveApplyFrom, Date leaveApplyTo, int totalDayOfLeave, String leaveDescription, String leaveReason, String leaveType, String leaveStatus, String applyWhom) {
+    public Leaves(String userId, Date leaveApplyFrom, Date leaveApplyTo, int totalDayOfLeave, String leaveDescription, String leaveReason, String leaveType, String leaveStatus, String applyWhom, String modifyToWhom, String leaveActionBy) {
         this.userId = userId;
         this.leaveApplyFrom = leaveApplyFrom;
         this.leaveApplyTo = leaveApplyTo;
@@ -72,6 +72,8 @@ public class Leaves implements Serializable {
         this.leaveType = leaveType;
         this.leaveStatus = leaveStatus;
         this.applyWhom = applyWhom;
+        this.modifyToWhom = modifyToWhom;
+        this.leaveActionBy = leaveActionBy;
     }
 
     public int getId() {

@@ -5,6 +5,8 @@ import com.frsummit.HRM.model.EmergencyContact;
 import com.frsummit.HRM.model.Leaves;
 import com.frsummit.HRM.model.Role;
 import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.EmergencyContactService;
+import com.frsummit.HRM.service.LeaveService;
 import com.frsummit.HRM.service.RoleService;
 import com.frsummit.HRM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +28,16 @@ import java.util.List;
 public class LeaveApply {
 
     @Autowired
+    private LeaveService leaveService;
+
+    @Autowired
     private UserService userService;
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private EmergencyContactService emergencyContactService;
 
     @RequestMapping(value = "/user/leave-user-apply", method = RequestMethod.GET)
     public String leaveApplicationForm(Model model){
@@ -82,10 +90,12 @@ public class LeaveApply {
         Role role = roleList.get(0);
         String applyToWhom = leaveConfiguration.mapForNextRole(role.getRole(), role.getRoleChain());
         System.out.println("Apply To : " + applyToWhom);
-        Leaves leaves = new Leaves(user.getId(), leaveApplyFrom, leaveApplyTo, totalDayOfLeave,
-                leaveDescription,leaveReason, leaveType, "Pending", applyToWhom);
-        EmergencyContact emergencyContact = new EmergencyContact(emergencyContactName, emergencyContactAddress, emergencyContactPhone);
-        System.out.println(leaves + " " + emergencyContact);
+        Leaves leaves = new Leaves(user.getId(), leaveApplyFrom, leaveApplyTo, totalDayOfLeave, leaveDescription,
+                leaveReason, leaveType, "Pending", applyToWhom,
+                "New Apply", "New Apply");
+        EmergencyContact emergencyContact = new EmergencyContact(user.getId() ,emergencyContactName, emergencyContactAddress, emergencyContactPhone);
+        leaveService.saveLeave(leaves);
+        emergencyContactService.saveEmergencyContact(emergencyContact);
 
         modelAndView.setViewName("leaves_user_history");
         return modelAndView;
