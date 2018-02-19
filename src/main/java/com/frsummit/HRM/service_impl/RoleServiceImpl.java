@@ -17,7 +17,7 @@ public class RoleServiceImpl implements RoleService {
     private EntityManager entityManager;
 
     @Override
-    public List<Role> findAllUsers(String role) {
+    public List<Role> findAllRole(String role) {
         return entityManager.createQuery("SELECT r FROM Role AS r WHERE r.role = '" + role + "'", Role.class).getResultList();
     }
 }

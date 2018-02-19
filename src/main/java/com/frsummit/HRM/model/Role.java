@@ -15,6 +15,9 @@ public class Role implements Serializable {
     @Column(name = "role")
     private String role;
 
+    @Column(name = "role_chain")
+    private String roleChain;
+
     public Role() {
     }
 
@@ -32,5 +35,13 @@ public class Role implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getRoleChain() {
+        return roleChain;
+    }
+
+    public void setRoleChain(String roleChain) {
+        this.roleChain = roleChain;
     }
 }

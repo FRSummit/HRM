@@ -12,8 +12,8 @@
     <body>
         <div class="container">
             <div layout:fragment="content">
-                <!--<form class="form-horizontal">-->
-                <form action="#" th:action="@{/user/apply-for-leave}" th:object="${leaves}" method="post">
+                <!--<form class="form-horizontal" th:object="${leaves}">-->
+                <form action="#" th:action="@{/user/apply-for-leave}" method="post">
                     <div class="container">
                         <h1 class="well">Leave Application Form</h1>
 
@@ -261,7 +261,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-lg btn-info" style="margin:0% 0% 2% 10%">Apply</button>
+                    <button type="submit" class="btn btn-lg btn-info" style="margin:0% 0% 2% 10%">Apply</button>
                 </form>
             </div>
         </div>
