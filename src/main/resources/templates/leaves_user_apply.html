@@ -12,7 +12,8 @@
     <body>
         <div class="container">
             <div layout:fragment="content">
-                <form>
+                <!--<form class="form-horizontal">-->
+                <form action="#" th:action="@{/user/apply-for-leave}" th:object="${leaves}" method="post">
                     <div class="container">
                         <h1 class="well">Leave Application Form</h1>
 
@@ -44,7 +45,7 @@
                                         </div>
                                         <label class="col-md-4 control-label" style="margin-top:1.5%">Department: </label>
                                         <div class="col-md-6">
-                                            <h3 name="userDepartment" th:text="${titleDepertment}">CSE</h3>
+                                            <h3 name="userDepartment" th:text="${titleDepartment}">CSE</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +91,12 @@
                                             </div>
                                         </div>
                                         <!--Total leave days-->
-                                        <div class="form-group col-sm-6">
+                                        <div class="form-group col-sm-4">
+                                            <label>Leave Reason</label>
+                                            <input type="text" placeholder="Leave Reason" class="form-control"/>
+                                        </div>
+                                        <!--Total leave days-->
+                                        <div class="form-group col-sm-4">
                                             <label>Total leave days</label>
                                             <input type="text" placeholder="Total days of Leave" class="form-control"/>
                                         </div>
