@@ -60,7 +60,7 @@
                                     <!--Apply Date-->
                                     <div class="form-group col-sm-4">
                                         <label>Apply Date</label>
-                                        <input type="datetime-local" placeholder="Enter Phone Number Here.." class="form-control"/>
+                                        <input nmae="applyDate" type="date" placeholder="Enter Phone Number Here.." class="form-control"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -68,11 +68,11 @@
                                     <div class="row">
                                         <div class="col-sm-4 form-group">
                                             <label>Apply From</label>
-                                            <input type="date" placeholder="12 FEB, 2018" class="form-control"/>
+                                            <input name="applyFrom" type="date" placeholder="12 FEB, 2018" class="form-control"/>
                                         </div>
                                         <div class="col-sm-4 form-group">
                                             <label>Apply To</label>
-                                            <input type="date" placeholder="19 DEC, 2018" class="form-control"/>
+                                            <input name="applyTo" type="date" placeholder="19 DEC, 2018" class="form-control"/>
                                         </div>
                                     </div>
                                     <!--Leave Reason-->
@@ -80,7 +80,7 @@
                                         <div class="col-sm-4 form-group">
                                             <label>Leave Type</label>
                                             <div class="form-group">
-                                                <select name="rl" class="form-control">
+                                                <select name="leaveType" class="form-control">
                                                     <option>Personal</option>
                                                     <option>Sick</option>
                                                     <option>Planned</option>
@@ -93,18 +93,18 @@
                                         <!--Total leave days-->
                                         <div class="form-group col-sm-4">
                                             <label>Leave Reason</label>
-                                            <input type="text" placeholder="Leave Reason" class="form-control"/>
+                                            <input name="leaveReason" type="text" placeholder="Leave Reason" class="form-control"/>
                                         </div>
                                         <!--Total leave days-->
                                         <div class="form-group col-sm-4">
                                             <label>Total leave days</label>
-                                            <input type="text" placeholder="Total days of Leave" class="form-control"/>
+                                            <input name="totalLeaveDays" type="text" placeholder="Total days of Leave" class="form-control"/>
                                         </div>
                                     </div>
                                     <!--Leave Description-->
                                     <div class="form-group">
                                         <label>Leave Description</label>
-                                        <textarea placeholder="Leave Description" rows="3" class="form-control"></textarea>
+                                        <textarea name="leaveDescription" placeholder="Leave Description" rows="3" class="form-control"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -211,17 +211,17 @@
                                         <div class="row">
                                             <div class="col-sm-6 form-group">
                                                 <label>Name</label>
-                                                <input type="text" placeholder="Name" class="form-control"/>
+                                                <input name="emergencyContactName" type="text" placeholder="Name" class="form-control"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label>Address</label>
-                                            <textarea placeholder="Address" rows="3" class="form-control"></textarea>
+                                            <textarea name="emergencyContactAddress" placeholder="Address" rows="3" class="form-control"></textarea>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6 form-group">
                                                 <label>Phone</label>
-                                                <input type="text" placeholder="Contact number" class="form-control"/>
+                                                <input name="emergencyContactPhone" type="text" placeholder="Contact number" class="form-control"/>
                                             </div>
                                         </div>
                                     </div>

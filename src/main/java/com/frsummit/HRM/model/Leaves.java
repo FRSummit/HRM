@@ -26,11 +26,9 @@ public class Leaves implements Serializable {
     private Date leaveApplyDate;
 
     @Column(name = "apply_from", nullable = false)
-    @UpdateTimestamp
     private Date leaveApplyFrom;
 
     @Column(name = "apply_to", nullable = false)
-    @UpdateTimestamp
     private Date leaveApplyTo;
 
     @Column(name = "total_leave_day")
@@ -41,6 +39,9 @@ public class Leaves implements Serializable {
 
     @Column(name = "type", nullable = false)
     private String leaveType;
+
+    @Column(name = "description")
+    private String leaveDescription;
 
     @Column(name = "status")
     private String leaveStatus;
@@ -61,18 +62,16 @@ public class Leaves implements Serializable {
     public Leaves() {
     }
 
-    public Leaves(String userId, Date leaveApplyDate, Date leaveApplyFrom, Date leaveApplyTo, int totalDayOfLeave, String leaveReason, String leaveType, String leaveStatus, String applyWhom, String modifyToWhom, String leaveActionBy) {
+    public Leaves(String userId, Date leaveApplyFrom, Date leaveApplyTo, int totalDayOfLeave, String leaveDescription, String leaveReason, String leaveType, String leaveStatus, String applyWhom) {
         this.userId = userId;
-        this.leaveApplyDate = leaveApplyDate;
         this.leaveApplyFrom = leaveApplyFrom;
         this.leaveApplyTo = leaveApplyTo;
         this.totalDayOfLeave = totalDayOfLeave;
+        this.leaveDescription = leaveDescription;
         this.leaveReason = leaveReason;
         this.leaveType = leaveType;
         this.leaveStatus = leaveStatus;
         this.applyWhom = applyWhom;
-        this.modifyToWhom = modifyToWhom;
-        this.leaveActionBy = leaveActionBy;
     }
 
     public int getId() {

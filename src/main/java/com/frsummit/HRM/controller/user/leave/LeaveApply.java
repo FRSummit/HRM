@@ -1,6 +1,7 @@
 package com.frsummit.HRM.controller.user.leave;
 
 import com.frsummit.HRM.configuration.LeaveConfiguration;
+import com.frsummit.HRM.model.EmergencyContact;
 import com.frsummit.HRM.model.Leaves;
 import com.frsummit.HRM.model.Role;
 import com.frsummit.HRM.model.User;
@@ -13,9 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+
+import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -53,7 +57,16 @@ public class LeaveApply {
     }
 
     @RequestMapping(value = "/user/apply-for-leave", method = RequestMethod.POST)
-    public ModelAndView applyForLeave(){
+    public ModelAndView applyForLeave(
+            @RequestParam(value = "applyFrom") Date leaveApplyFrom,
+            @RequestParam(value = "applyTo") Date leaveApplyTo,
+            @RequestParam(value = "leaveType") String leaveType,
+            @RequestParam(value = "leaveReason") String leaveReason,
+            @RequestParam(value = "totalLeaveDays") int totalDayOfLeave,
+            @RequestParam(value = "leaveDescription") String leaveDescription,
+            @RequestParam(value = "emergencyContactName") String emergencyContactName,
+            @RequestParam(value = "emergencyContactAddress") String emergencyContactAddress,
+            @RequestParam(value = "emergencyContactPhone") String emergencyContactPhone){
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user1 = userService.findUserByEmail(auth.getName());
@@ -69,7 +82,10 @@ public class LeaveApply {
         Role role = roleList.get(0);
         String applyToWhom = leaveConfiguration.mapForNextRole(role.getRole(), role.getRoleChain());
         System.out.println("Apply To : " + applyToWhom);
-        Leaves leaves1 = new Leaves();
+        Leaves leaves = new Leaves(user.getId(), leaveApplyFrom, leaveApplyTo, totalDayOfLeave,
+                leaveDescription,leaveReason, leaveType, "Pending", applyToWhom);
+        EmergencyContact emergencyContact = new EmergencyContact(emergencyContactName, emergencyContactAddress, emergencyContactPhone);
+        System.out.println(leaves + " " + emergencyContact);
 
         modelAndView.setViewName("leaves_user_history");
         return modelAndView;
