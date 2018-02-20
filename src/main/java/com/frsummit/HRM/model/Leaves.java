@@ -116,6 +116,14 @@ public class Leaves implements Serializable {
         this.leaveApplyTo = leaveApplyTo;
     }
 
+    public int getTotalDayOfLeave() {
+        return totalDayOfLeave;
+    }
+
+    public void setTotalDayOfLeave(int totalDayOfLeave) {
+        this.totalDayOfLeave = totalDayOfLeave;
+    }
+
     public String getLeaveReason() {
         return leaveReason;
     }
@@ -130,6 +138,14 @@ public class Leaves implements Serializable {
 
     public void setLeaveType(String leaveType) {
         this.leaveType = leaveType;
+    }
+
+    public String getLeaveDescription() {
+        return leaveDescription;
+    }
+
+    public void setLeaveDescription(String leaveDescription) {
+        this.leaveDescription = leaveDescription;
     }
 
     public String getLeaveStatus() {

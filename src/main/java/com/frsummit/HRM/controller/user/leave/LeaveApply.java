@@ -46,7 +46,6 @@ public class LeaveApply {
         User user1 = userService.findUserByEmail(auth.getName());
         User user2 = userService.findUserById(auth.getName());
         User user;
-
         if(user1 != null) user = user1;
         else user = user2;
 
@@ -80,7 +79,6 @@ public class LeaveApply {
         User user1 = userService.findUserByEmail(auth.getName());
         User user2 = userService.findUserById(auth.getName());
         User user;
-
         if(user1 != null) user = user1;
         else user = user2;
 
@@ -89,7 +87,7 @@ public class LeaveApply {
         List<Role> roleList = roleService.findAllRole(user.getMyRole());
         Role role = roleList.get(0);
         String applyToWhom = leaveConfiguration.mapForNextRole(role.getRole(), role.getRoleChain());
-        System.out.println("Apply To : " + applyToWhom);
+
         Leaves leaves = new Leaves(user.getId(), leaveApplyFrom, leaveApplyTo, totalDayOfLeave, leaveDescription,
                 leaveReason, leaveType, "Pending", applyToWhom,
                 "New Apply", "New Apply");
