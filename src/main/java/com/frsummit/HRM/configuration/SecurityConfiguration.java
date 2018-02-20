@@ -66,7 +66,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/attendInOutSign").permitAll()
                 .antMatchers("/attendance-sign").permitAll()
                 .antMatchers("/admin/registration").hasAnyAuthority("ADMIN", "CO-ORDINATOR", "CHAIRMAN", "DIN")//.hasAuthority("ADMIN")
-                .antMatchers("/admin/**").hasAnyAuthority("ADMIN", "CO-ORDINATOR", "CHAIRMAN", "DIN", "FACULTY")//.hasAuthority("ADMIN")
+                .antMatchers("/admin/**").hasAnyAuthority("ADMIN", "VC", "PRO-VC", "CO-ORDINATOR", "CHAIRMAN", "DIN", "FACULTY")//.hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable()

@@ -22,11 +22,17 @@ public class LeaveServiceImpl implements LeaveService {
     @Autowired
     private LeaveRepository leaveRepository;
 
+//    Load * from leaves
     @Value("${spring.queries.leaves-list}")
     private String leavesListQuery;
 
+//    For every User separately
     @Value("${spring.queries.my-leaves-list}")
     private String leavesMyListQuery;
+
+//    find by  applyToWhom
+    @Value("${spring.queries.all-leaves-by-role}")
+    private String findAllLeavesByRole;
 
 //    Admin Section
     @Override
@@ -39,7 +45,12 @@ public class LeaveServiceImpl implements LeaveService {
         return entityManager.createQuery(leavesListQuery, Leaves.class).getResultList();
     }
 
-//    User Section
+    @Override
+    public List<Leaves> findAllLeavesByRole(String userRole) {
+        return entityManager.createQuery(findAllLeavesByRole + userRole + "'", Leaves.class).getResultList();
+    }
+
+    //    User Section
     @Override
     public List<Leaves> findMyAllLeaves(String userId) {
         return entityManager.createQuery(leavesMyListQuery + userId + "'", Leaves.class).getResultList();
