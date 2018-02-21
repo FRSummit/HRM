@@ -16,14 +16,13 @@ public class Payroll implements Serializable {
     private int id;
 
     @Column(name = "user_id", nullable = false)
-    @NotEmpty(message = "*Set user id")
+//    @NotEmpty(message = "*Set user id")
     private String userId;
 
     ///////////////////////////////////////////////////
     ////////////// Total EARNINGS : 18 ////////////////
     ///////////////////////////////////////////////////
-    @Column(name = "basic", nullable = false)
-    @NotEmpty(message = "*Set user basic salary")
+    @Column(name = "basic")
     private double basic;
 
     //Extra features

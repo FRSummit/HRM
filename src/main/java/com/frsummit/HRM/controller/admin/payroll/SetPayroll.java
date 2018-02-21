@@ -15,20 +15,54 @@ import javax.validation.Valid;
 public class SetPayroll {
 
     @RequestMapping(value = "/admin/payroll-admin-set-payment", method = RequestMethod.GET)
-    public String setUserPayrollForm(){
-        return "payroll_admin_set_payment";
+    public ModelAndView setUserPayrollForm(){
+        ModelAndView modelAndView = new ModelAndView();
+        Payroll payroll = new Payroll();
+        modelAndView.addObject("payroll", payroll);
+        modelAndView.setViewName("payroll_admin_set_payment");
+        return modelAndView;
     }
 
     @RequestMapping(value = "/admin/set-payment", method = RequestMethod.POST)
-    public ModelAndView createNewUser(Model model, @Valid Payroll payroll) {
-
-        System.out.println(payroll);
-
-
+    public ModelAndView setPayroll(@Valid Payroll payroll,
+            @RequestParam(value = "userId") String userId
+            /*@RequestParam(value = "basic") String basic,
+            @RequestParam(value = "houseRent") String houseRent,
+            @RequestParam(value = "convince") String convince,
+            @RequestParam(value = "medical") String medical,
+            @RequestParam(value = "advancedOrLoan") String advancedOrLoan,
+            @RequestParam(value = "interest") String interest,
+            @RequestParam(value = "otherAll") String otherAll,
+            @RequestParam(value = "educational") String educational,
+            @RequestParam(value = "bonus") String bonus,
+            @RequestParam(value = "incentive") String incentive,
+            @RequestParam(value = "leaveEncasement") String leaveEncasement,
+            @RequestParam(value = "perquisite") String perquisite,
+            @RequestParam(value = "reimbursement") String reimbursement,
+            @RequestParam(value = "special") String special,
+            @RequestParam(value = "overtime") String overtime,
+            @RequestParam(value = "arrears") String arrears,
+            @RequestParam(value = "childFund") String childFund,
+            @RequestParam(value = "stipen") String stipen,
+            @RequestParam(value = "tds") String tds,
+            @RequestParam(value = "interestDED") String interestDED,
+            @RequestParam(value = "pfDED") String pfDED,
+            @RequestParam(value = "professionalTexDED") String professionalTexDED,
+            @RequestParam(value = "advancedOrLoanDED") String advancedOrLoanDED,
+            @RequestParam(value = "otherDED") String otherDED,
+            @RequestParam(value = "leaveDED") String leaveDED,
+            @RequestParam(value = "securityDepositDED") String securityDepositDED*/) {
 
         ModelAndView modelAndView = new ModelAndView();
-            //modelAndView.setViewName("home");
+
+        if(userId.equalsIgnoreCase(null) || userId.length() <2)
             modelAndView.setViewName("payroll_admin_set_payment");
+        else{
+            System.out.println(payroll);
+            System.out.println(userId);
+            System.out.println(userId.length());
+            modelAndView.setViewName("home");
+        }
         return modelAndView;
     }
 }
