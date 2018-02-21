@@ -1,6 +1,7 @@
 package com.frsummit.HRM.controller.admin.leave;
 
 import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.ComService;
 import com.frsummit.HRM.service.LeaveService;
 import com.frsummit.HRM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class RecentApplications {
     @Autowired
     private LeaveService leaveService;
 
+    @Autowired
+    private ComService comService;
+
     @RequestMapping(value = "/admin/leave-admin-recent", method = RequestMethod.GET)
     public String recentApplicationsLoad(Model model){
 
@@ -30,8 +34,8 @@ public class RecentApplications {
         if(user1 != null) user = user1;
         else user = user2;
 
-        System.out.println(user.getMyRole());
-        model.addAttribute("leavesList",leaveService.findAllLeavesByRole(user.getMyRole()));
+        //model.addAttribute("leavesList",leaveService.findAllLeavesByRole(user.getMyRole()));
+        model.addAttribute("leavesList",leaveService.findAllLeavesByRole(comService.getUserIdOrEmail().getMyRole()));
 
         return "leaves_admin_recent";
     }
