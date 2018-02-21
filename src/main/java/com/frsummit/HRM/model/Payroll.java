@@ -30,16 +30,16 @@ public class Payroll implements Serializable {
     @Column(name = "stipen")
     private double stipen;
 
-    @Column(name = "house", nullable = false)
+    @Column(name = "house")
     private double houseRent;
 
-    @Column(name = "conveyance", nullable = false)
+    @Column(name = "conveyance")
     private double conveyance;
 
-    @Column(name = "medical", nullable = false)
+    @Column(name = "medical")
     private double medical;
 
-    @Column(name = "adv_loan", nullable = false)
+    @Column(name = "adv_loan")
     private double advanceOrLoan;
 
     //Extra features
@@ -122,10 +122,6 @@ public class Payroll implements Serializable {
     //Extra features
     @Column(name = "security_deposite_ded")
     private double securityDepositeDED;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "payroll_user", joinColumns = @JoinColumn(name = "pay_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> user;
 
     public int getId() {
         return id;
