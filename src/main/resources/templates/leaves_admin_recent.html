@@ -18,34 +18,34 @@
                             <table class="table well">
                                 <h2>Recent Application</h2>
                                 <thead>
-                                <tr>
-                                    <th>Serial</th>
-                                    <th>Leave Id</th>
-                                    <th>User Id</th>
-                                    <th>Apply To</th>
-                                    <th>Apply Date</th>
-                                    <th>From</th>
-                                    <th>To</th>
-                                    <th>Type</th>
-                                    <th>Reason</th>
-                                    <th>Total Day</th>
-                                    <th>Status</th>
-                                </tr>
+                                    <tr>
+                                        <th>Serial</th>
+                                        <th>Leave Id</th>
+                                        <th>User Id</th>
+                                        <th>Apply To</th>
+                                        <th>Apply Date</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Type</th>
+                                        <th>Reason</th>
+                                        <th>Total Day</th>
+                                        <th>Status</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="leaves, leavesStat : ${leavesList}" class="success">
-                                    <td th:text="${leavesStat.count}"></td>
-                                    <td th:text="${leaves.id}">1002461</td>
-                                    <td th:text="${leaves.userId}">1002461</td>
-                                    <td th:text="${leaves.applyWhom}">CO-ORDINATOR</td>
-                                    <td th:text="${leaves.leaveApplyDate}">12 Feb, 2018</td>
-                                    <td th:text="${leaves.leaveApplyFrom}">13 Feb, 2018</td>
-                                    <td th:text="${leaves.leaveApplyTo}">14 Feb, 2018</td>
-                                    <td th:text="${leaves.leaveType}">Personal</td>
-                                    <td th:text="${leaves.leaveReason}">Reason</td>
-                                    <td th:text="${leaves.totalDayOfLeave}">Reason</td>
-                                    <td th:text="${leaves.leaveStatus}">Granted</td>
-                                </tr>
+                                    <tr th:each="leaves, leavesStat : ${leavesList}" class="success">
+                                        <td th:text="${leavesStat.count}"></td>
+                                        <td th:text="${leaves.id}">1002461</td>
+                                        <td th:text="${leaves.userId}">1002461</td>
+                                        <td th:text="${leaves.applyWhom}">CO-ORDINATOR</td>
+                                        <td th:text="${leaves.leaveApplyDate}">12 Feb, 2018</td>
+                                        <td th:text="${leaves.leaveApplyFrom}">13 Feb, 2018</td>
+                                        <td th:text="${leaves.leaveApplyTo}">14 Feb, 2018</td>
+                                        <td th:text="${leaves.leaveType}">Personal</td>
+                                        <td th:text="${leaves.leaveReason}">Reason</td>
+                                        <td th:text="${leaves.totalDayOfLeave}">Reason</td>
+                                        <td th:text="${leaves.leaveStatus}">Granted</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

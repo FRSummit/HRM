@@ -22,24 +22,35 @@ public class LeaveServiceImpl implements LeaveService {
     @Autowired
     private LeaveRepository leaveRepository;
 
-//    Load * from leaves
-    @Value("${spring.queries.leaves-list}")
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// Application Properties //////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+    @Value("${spring.queries.leaves-list}") //Load * from leaves
     private String leavesListQuery;
 
-//    For every User separately
-    @Value("${spring.queries.my-leaves-list}")
+    @Value("${spring.queries.my-leaves-list}")  //For every User separately
     private String leavesMyListQuery;
 
-//    find by  applyToWhom
-    @Value("${spring.queries.all-leaves-by-role}")
-    private String findAllLeavesByRole;
+    @Value("${spring.queries.all-leaves-by-role}")  // find by  applyToWhom
+    private String leavesByRole;
 
-//    Admin Section
+    @Value("${spring.query.leave-status-pending}")  // find by  status = Pending
+    private String leaveStatusPending;
+
+    @Value("${spring.query.leave-modify-to-whom}")  // find by  modifyToWhom
+    private String leaveModifyToWhom;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// Services Start //////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void saveLeave(Leaves leaves) {
         leaveRepository.save(leaves);
     }
 
+//////////////////////////////////////
+/////    Admin Section    ////////////
+//////////////////////////////////////
     @Override
     public List<Leaves> findAllLeaves() {
         return entityManager.createQuery(leavesListQuery, Leaves.class).getResultList();
@@ -47,10 +58,17 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Override
     public List<Leaves> findAllLeavesByRole(String userRole) {
-        return entityManager.createQuery(findAllLeavesByRole + userRole + "'", Leaves.class).getResultList();
+        return entityManager.createQuery(leavesByRole + userRole + "'" + leaveStatusPending + leaveModifyToWhom + userRole + "'", Leaves.class).getResultList();
     }
 
-    //    User Section
+    @Override
+    public List<Leaves> findAllRecentLeavesByRole(String userRole) {
+        return null;
+    }
+
+////////////////////////////////////
+////    User Section    ////////////
+////////////////////////////////////
     @Override
     public List<Leaves> findMyAllLeaves(String userId) {
         return entityManager.createQuery(leavesMyListQuery + userId + "'", Leaves.class).getResultList();

@@ -15,17 +15,17 @@
                 <div class="col-lg-12">
                     <form autocomplete="off" action="#" th:action="@{/admin/set-payment}" method="post" class="form-horizontal" role="form" style="margin:0% 0% 0% 0%">
                         <!--ID-->
-                        <div class="row well">
+                        <div class="row" style="margin:0% 0% -1% 0%">
                             <div class="col-sm-6 form-group">
-                                <label>Id</label>
-                                <input type="text" class="form-control"/>
+                                <h3>User Id</h3>
+                                <input name="userId" type="text" class="form-control"/>
                             </div>
                         </div>
-                        <div class="row well">
-                            <h3>Total Earnings</h3>
-                            <div class="col-sm-12">
-                                <!--NAME-->
-                                <div class="row">
+                        <div class="row ">
+                            <h2>Total Earnings</h2>
+                            <div class="col-sm-12 well">
+                                <!--Total Earning-->
+                                <div class="row" style="margin-left:1%">
                                     <div class="col-sm-2 form-group">
                                         <label>Basic</label>
                                         <input type="text" placeholder="Basic" class="form-control"/>
@@ -51,8 +51,8 @@
                                         <input type="text" placeholder="Interest" class="form-control"/>
                                     </div>
                                 </div>
-                                <!--NAME-->
-                                <div class="row">
+                                <!--Total Earning-->
+                                <div class="row" style="margin-left:1%">
                                     <div class="col-sm-2 form-group">
                                         <label>Other All</label>
                                         <input type="text" placeholder="Other All" class="form-control"/>
@@ -78,8 +78,8 @@
                                         <input type="text" placeholder="Perquisite" class="form-control"/>
                                     </div>
                                 </div>
-                                <!--NAME-->
-                                <div class="row">
+                                <!--Total Earning-->
+                                <div class="row" style="margin-left:1%">
                                     <div class="col-sm-2 form-group">
                                         <label>Reimbursement</label>
                                         <input type="text" placeholder="Reimbursement" class="form-control"/>
@@ -107,11 +107,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row well">
-                            <h3>Total Deductions</h3>
-                            <div class="col-sm-12">
-                                <!--NAME-->
-                                <div class="row">
+                        <div class="row">
+                            <h2>Total Deductions</h2>
+                            <div class="col-sm-12 well">
+                                <!--Total Deductions-->
+                                <div class="row" style="margin-left:1%">
                                     <div class="col-sm-2 form-group">
                                         <label>TDS</label>
                                         <input type="text" placeholder="TDS" class="form-control"/>
@@ -137,8 +137,8 @@
                                         <input type="text" placeholder="Other" class="form-control"/>
                                     </div>
                                 </div>
-                                <!--NAME-->
-                                <div class="row">
+                                <!--Total Deductions-->
+                                <div class="row" style="margin-left:1%">
                                     <div class="col-sm-2 form-group">
                                         <label>Leave</label>
                                         <input type="text" placeholder="Leave" class="form-control"/>
@@ -150,7 +150,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group well">
+                        <div class="form-group">
                             <div class="col-sm-3">
                                 <button type="submit" class="btn btn-primary btn-block">Set Payment</button>
                             </div>

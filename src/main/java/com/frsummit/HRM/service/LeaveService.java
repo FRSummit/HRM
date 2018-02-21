@@ -8,10 +8,15 @@ public interface LeaveService {
 
     public void saveLeave(Leaves leaves);
 
-    //    Admin
+//////////////////////////////////////
+/////    Admin Section    ////////////
+//////////////////////////////////////
     public List<Leaves> findAllLeaves();
     public List<Leaves> findAllLeavesByRole(String userRole);
+    public List<Leaves> findAllRecentLeavesByRole(String userRole);
 
-//    User
+//////////////////////////////////////
+/////    User Section    ////////////
+//////////////////////////////////////
     public List<Leaves> findMyAllLeaves(String userId);
 }
