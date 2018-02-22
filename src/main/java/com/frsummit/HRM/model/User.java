@@ -135,7 +135,7 @@ public class User implements Serializable {
     private String incomeTexNo;
 
     @Column(name = "password")
-    @Length(min = 5, message = "*Your password must have at least 5 characters")
+    //@Length(min = 5, message = "*Your password must have at least 5 characters")
     @NotEmpty(message = "*Please provide password")
     private String password;
 

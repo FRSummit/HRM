@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+        <title>HRM Common Page</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/common-layout.css" th:href="@{/css/common-layout.css}" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type="text/css">
+	.bs-example{
+    	margin: 20px;
+    }
+    hr{
+        margin: 60px 0;
+    }
+</style>
+    </head>
+
+    <body>
+        <!--Header-->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<button class="w3-button w3-white w3-xlarge" onclick="w3_open()" id="openNav">&#9776;</button>-->
+                    <a class="navbar-brand w3-button w3-xlarge" onclick="w3_open()" id="openNav" href="#">&#9776;</a>
+                    <a class="navbar-brand" href="#">Human Resource Management</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" th:href="@{/home}">Home</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#" th:href="@{/logout}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+        <div style="margin-top:50px">
+            <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
+                <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Contents &times;</button>
+                <a href="#" th:href="@{/home}" class="w3-bar-item w3-button">Dashbord</a>
+
+                <div class="w3-dropdown-hover">
+                    <a class="w3-button" onclick="myPayrollDropFunc()">Payroll<i style="margin-left:5%" class="fa fa-caret-down fa-1x"></i></a>
+                    <div id="payrollDrop" class="w3-dropdown-content w3-bar-block w3-light-gray w3-card">
+                        <!--Payroll : General User Part-->
+                        <div>
+                            <ul class="nav nav-sidebar">
+                                <li th:classappend="${page == 'payroll_my_payment' ? 'active' : ''}">
+                                    <a href="#" th:href="@{/user/payroll-my-payment}">My Payment</a>
+                                </li>
+                            </ul>
+                            <ul class="nav nav-sidebar">
+                                <li th:classappend="${page == 'payroll_history' ? 'active' : ''}">
+                                    <a href="#" th:href="@{/user/payroll-history}">History</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Inbox</a>
+                                </li>
+                                <li>
+                                    <a href="#">Drafts</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sent Items</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">Trash</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- Page Content Overlay -->
+            <!--<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>-->
+            <!-- Page Content -->
+            <div id="main">
+                <!--<button class="w3-button w3-white w3-xlarge" onclick="w3_open()" id="openNav">&#9776;</button>-->
+                <div layout:fragment="content" class="w3-container">
+                    <p>Page content goes here</p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+                    function w3_open() {
+                        document.getElementById("main").style.marginLeft = "13%";
+                          document.getElementById("mySidebar").style.width = "13%";
+                          document.getElementById("mySidebar").style.display = "block";
+                          document.getElementById("openNav").style.display = 'none';
+                    }
+                    function w3_close() {
+                        document.getElementById("main").style.marginLeft = "0%";
+                        document.getElementById("mySidebar").style.display = "none";
+                        document.getElementById("openNav").style.display = "inline-block";
+                    }
+                </script>
+        <script>
+                    function myAccFunc() {
+                        var x = document.getElementById("demoAcc");
+                        if (x.className.indexOf("w3-show") == -1) {
+                            x.className += " w3-show";
+                            x.previousElementSibling.className += " w3-green";
+                        } else {
+                            x.className = x.className.replace(" w3-show", "");
+                            x.previousElementSibling.className =
+                            x.previousElementSibling.className.replace(" w3-green", "");
+                        }
+                    }
+                    function myProfileDropFunc() {
+                        var x = document.getElementById("profileDrop");
+                        if (x.className.indexOf("w3-show") == -1) {
+                            x.className += " w3-show";
+                            x.previousElementSibling.className += " w3-green";
+                        } else {
+                            x.className = x.className.replace(" w3-show", "");
+                            x.previousElementSibling.className =
+                            x.previousElementSibling.className.replace(" w3-green", "");
+                        }
+                    }
+                    function myAttendanceDropFunc() {
+                        var x = document.getElementById("attendanceDrop");
+                        if (x.className.indexOf("w3-show") == -1) {
+                            x.className += " w3-show";
+                            x.previousElementSibling.className += " w3-green";
+                        } else {
+                            x.className = x.className.replace(" w3-show", "");
+                            x.previousElementSibling.className =
+                            x.previousElementSibling.className.replace(" w3-green", "");
+                        }
+                    }
+                    function myLeaveDropFunc() {
+                        var x = document.getElementById("leaveDrop");
+                        if (x.className.indexOf("w3-show") == -1) {
+                            x.className += " w3-show";
+                            x.previousElementSibling.className += " w3-green";
+                        } else {
+                            x.className = x.className.replace(" w3-show", "");
+                            x.previousElementSibling.className =
+                            x.previousElementSibling.className.replace(" w3-green", "");
+                        }
+                    }
+                    function myPayrollDropFunc() {
+                        var x = document.getElementById("payrollDrop");
+                        if (x.className.indexOf("w3-show") == -1) {
+                            x.className += " w3-show";
+                            x.previousElementSibling.className += " w3-green";
+                        } else {
+                            x.className = x.className.replace(" w3-show", "");
+                            x.previousElementSibling.className =
+                            x.previousElementSibling.className.replace(" w3-green", "");
+                        }
+                    }
+                    </script>
+    </body>
+</html>

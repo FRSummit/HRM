@@ -41,15 +41,25 @@ public class UserRegistration {
         }
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("profile_user_registration");
-        } else {
+        }
+        if(user.getEmail().equalsIgnoreCase(null)){
+            modelAndView.addObject("emailError", "Email should be null or contain @ in between two character");
+            modelAndView.setViewName("profile_user_registration");
+        }
+        if(user.getPassword().length()<5){
+            modelAndView.addObject("passwordError", "Password must have at least 5 characters");
+            modelAndView.setViewName("profile_user_registration");
+        }
+        else {
             if(rl == "") rl = "USER";
             String userRole = rl.toUpperCase();
             userService.saveUser(user, userRole);
+            System.out.println(user.getPassword());
             modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
             modelAndView.setViewName("profile_user_list");
         }
-        //model.addAttribute(userService.findAllUsers());
+        model.addAttribute(userService.findAllUsers());
         return modelAndView;
     }
 

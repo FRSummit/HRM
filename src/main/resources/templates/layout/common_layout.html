@@ -11,6 +11,10 @@
         <link rel="stylesheet" type="text/css" media="all" href="../static/css/common-layout.css" th:href="@{/css/common-layout.css}" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
     <body>
@@ -42,191 +46,145 @@
         <div style="margin-top:50px">
             <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none" id="mySidebar">
                 <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Contents &times;</button>
-                <a href="#" th:href="@{/home}" class="w3-bar-item w3-button">Dashbord</a>
-                <div class="w3-dropdown-hover">
-                    <a class="w3-button" onclick="myProfileDropFunc()">Profile<i style="margin-left:5%" class="fa fa-caret-down fa-1x"></i></a>
-                    <div id="profileDrop" class="w3-dropdown-content w3-bar-block w3-light-gray w3-card">
-                        <!--profile : General User Part-->
-                        <div>
-                            <!--<a href="#" class="w3-bar-item w3-button">ProfileOverview</a>-->
-                            <ul class="nav nav-sidebar">
+<!-- ========== Dashboard ========================================================================= -->
+                <a href="#" th:href="@{/home}" class="w3-bar-item w3-button">Dashboard</a>
+<!-- ===========Profile=========================================================================== -->
+                <div class="">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle w3-button" style="margin-left:-50%">Profile <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+<!-- =========================== Profile : User =================================================== -->
                                 <li th:classappend="${page == 'profile_overview' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-overview}">Overview</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'profile_edit' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-edit}">Edit Profile</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'profile_personal_info' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-personal-info}">Personal Info</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'profile_contact_info' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-contact-info}">Contact Info</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'profile_job_info' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-job-info}">Job Info</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'profile_external_link' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-external-link}">External Link</a>
                                 </li>
-                            </ul>
-                        </div>
-                        <!--profile : Admin Part-->
-                        <div>
-                            <ul class="nav nav-sidebar">
+                                <li class="divider"></li>
+<!-- =========================== Profile : Admin =========================================================== -->
                                 <li th:classappend="${page == 'profile_user_list' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-list}">User List</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'profile_user_update' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-update}">Update</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'profile_user_registration' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-registration}">Create New User</a>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="w3-dropdown-hover">
-                    <a class="w3-button" onclick="myAttendanceDropFunc()">Attendance<i style="margin-left:5%" class="fa fa-caret-down fa-1x"></i></a>
-                    <div id="attendanceDrop" class="w3-dropdown-content w3-bar-block w3-light-gray w3-card">
-                        <!--Attendance : General User Part-->
-                        <div>
-                            <ul class="nav nav-sidebar">
+<!-- ========== Attendance ============================================================================== -->
+                <div class="">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle w3-button" style="margin-left:-34%">Attendance <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+<!-- ========================== Attendance : User======================================================== -->
                                 <li th:classappend="${page == 'attendance_user_punch' ? 'active' : ''}">
-                                    <a href="#" th:href="@{/user/attendance-user-punch}">Punch</a>
+                                    <a href="#" th:href="@{/user/attendance-user-punch}">Attend Sign</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'attendance_user_overview' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/attendance-user-overview}">Overview</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'attendance_user_update_request' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/attendance-user-overview-update-request}">Update Request</a>
                                 </li>
-                            </ul>
-                        </div>
-                        <!--Attendance : Admin Part-->
-                        <div>
-                            <ul class="nav nav-sidebar">
+                                <li class="divider"></li>
+<!-- =========================== Attendance : Admin ======================================================== -->
                                 <li th:classappend="${page == 'attendance_admin_overview' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-overview}">User Overview</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'attendance_admin_update' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-update}">Update</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'attendance_admin_take_action' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-take-action}">Take Action</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'attendance_admin_remark' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-remark}">Remark</a>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="w3-dropdown-hover">
-                    <a class="w3-button" onclick="myLeaveDropFunc()">Leaves<i style="margin-left:5%" class="fa fa-caret-down fa-1x"></i></a>
-                    <div id="leaveDrop" class="w3-dropdown-content w3-bar-block w3-light-gray w3-card">
-                        <!--Leaves : General User Part-->
-                        <div>
-                            <ul class="nav nav-sidebar">
+
+<!-- =========== Leaves ================================================================================= -->
+                <div class="">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle w3-button" style="margin-left:-50%">Leaves <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+<!-- =========================== Leaves : User =========================================================== -->
                                 <li th:classappend="${page == 'leaves_user_history' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/leave-user-history}">Leave History</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'leaves_user_apply' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/leave-user-apply}">Apply</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'leaves_user_cancellation' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/leave-user-cancellation}">Cancel Leave</a>
                                 </li>
-                            </ul>
-                        </div>
-                        <!--Leaves : Admin Part-->
-                        <div>
-                            <ul class="nav nav-sidebar">
+                                <li class="divider"></li>
+<!-- ========================== Leaves : Admin ============================================================= -->
                                 <li th:classappend="${page == 'leaves_admin_recent' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/leave-admin-recent}">Recent Application</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'leaves_admin_overview' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/leaves-admin-overview}">Overview</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'leaves_admin_history' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/leaves-admin-history}">History</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'leaves_admin_update' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/leave-admin-update}">Update</a>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="w3-dropdown-hover">
-                    <a class="w3-button" onclick="myPayrollDropFunc()">Payroll<i style="margin-left:5%" class="fa fa-caret-down fa-1x"></i></a>
-                    <div id="payrollDrop" class="w3-dropdown-content w3-bar-block w3-light-gray w3-card">
-                        <!--Payroll : General User Part-->
-                        <div>
-                            <ul class="nav nav-sidebar">
+<!-- =========== Payroll ============================================================================= -->
+                <div class="">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle w3-button" style="margin-left:-50%">Payroll <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+
+<!-- =========================== Payroll : User ======================================================= -->
                                 <li th:classappend="${page == 'payroll_my_payment' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/payroll-my-payment}">My Payment</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'payroll_history' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/payroll-history}">History</a>
                                 </li>
-                            </ul>
-                        </div>
-                        <!--Payroll : Admin Part-->
-                        <div>
-                            <ul class="nav nav-sidebar">
+                                <li class="divider"></li>
+<!-- ========================== Payroll : Admin ======================================================= -->
                                 <li th:classappend="${page == 'payroll_admin_overview' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/payroll-admin-overview}">Overview</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'payroll_admin_set_payment' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/payroll-admin-set-payment}">Set Payment</a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-sidebar">
                                 <li th:classappend="${page == 'payroll_load_specific_user' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/payroll-load-specific-user}">Load Specific Payroll</a>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <!-- Page Content Overlay -->
@@ -253,62 +211,6 @@
                 document.getElementById("openNav").style.display = "inline-block";
             }
         </script>
-        <script>
-            function myAccFunc() {
-                var x = document.getElementById("demoAcc");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                    x.previousElementSibling.className += " w3-green";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                    x.previousElementSibling.className =
-                    x.previousElementSibling.className.replace(" w3-green", "");
-                }
-            }
-            function myProfileDropFunc() {
-                var x = document.getElementById("profileDrop");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                    x.previousElementSibling.className += " w3-green";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                    x.previousElementSibling.className =
-                    x.previousElementSibling.className.replace(" w3-green", "");
-                }
-            }
-            function myAttendanceDropFunc() {
-                var x = document.getElementById("attendanceDrop");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                    x.previousElementSibling.className += " w3-green";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                    x.previousElementSibling.className =
-                    x.previousElementSibling.className.replace(" w3-green", "");
-                }
-            }
-            function myLeaveDropFunc() {
-                var x = document.getElementById("leaveDrop");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                    x.previousElementSibling.className += " w3-green";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                    x.previousElementSibling.className =
-                    x.previousElementSibling.className.replace(" w3-green", "");
-                }
-            }
-            function myPayrollDropFunc() {
-                var x = document.getElementById("payrollDrop");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                    x.previousElementSibling.className += " w3-green";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                    x.previousElementSibling.className =
-                    x.previousElementSibling.className.replace(" w3-green", "");
-                }
-            }
-            </script>
+
     </body>
 </html>
