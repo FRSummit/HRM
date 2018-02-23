@@ -75,13 +75,13 @@
                                 </li>
                                 <li class="divider"></li>
 <!-- =========================== Profile : Admin =========================================================== -->
-                                <li th:classappend="${page == 'profile_user_list' ? 'active' : ''}">
+                                <li sec:authorize="hasRole('ADMIN')" th:classappend="${page == 'profile_user_list' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-list}">User List</a>
                                 </li>
-                                <li th:classappend="${page == 'profile_user_update' ? 'active' : ''}">
+                                <li sec:authorize="hasRole('ROLE_ADMIN')" th:classappend="${page == 'profile_user_update' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-update}">Update</a>
                                 </li>
-                                <li th:classappend="${page == 'profile_user_registration' ? 'active' : ''}">
+                                <li sec:authorize="isAuthenticated()" th:classappend="${page == 'profile_user_registration' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-registration}">Create New User</a>
                                 </li>
                             </ul>
