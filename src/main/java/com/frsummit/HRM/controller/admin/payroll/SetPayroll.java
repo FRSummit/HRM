@@ -1,6 +1,8 @@
 package com.frsummit.HRM.controller.admin.payroll;
 
 import com.frsummit.HRM.model.Payroll;
+import com.frsummit.HRM.service.PayrollService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +15,9 @@ import javax.validation.Valid;
 
 @Controller
 public class SetPayroll {
+
+    @Autowired
+    private PayrollService payrollService;
 
     @RequestMapping(value = "/admin/payroll-admin-set-payment", method = RequestMethod.GET)
     public ModelAndView setUserPayrollForm(){
@@ -55,14 +60,15 @@ public class SetPayroll {
 
         ModelAndView modelAndView = new ModelAndView();
 
-        if(userId.equalsIgnoreCase(null) || userId.length() <2)
-            modelAndView.setViewName("payroll_admin_set_payment");
-        else{
+        if(!userId.equalsIgnoreCase(null)){
             System.out.println(payroll);
             System.out.println(userId);
             System.out.println(userId.length());
+            payrollService.savePayroll(payroll);
             modelAndView.setViewName("home");
         }
+        else
+            modelAndView.setViewName("payroll_admin_set_payment");
         return modelAndView;
     }
 }

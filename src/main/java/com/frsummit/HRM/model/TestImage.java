@@ -17,6 +17,7 @@ public class TestImage implements Serializable {
     private String fileName;
 
     @Column(name = "data")
+    @Lob
     private byte[] data;
 
     public long getId() {
