@@ -19,8 +19,9 @@
                                 <h2>Total Earnings</h2>
                                 <thead>
                                 <tr>
+                                    <th>Serial</th>
                                     <th>User Id</th>
-                                    <th>Year</th>
+                                    <!--<th>Year</th>-->
                                     <th>Basic</th>
                                     <th>House Rent</th>
                                     <th>Convence</th>
@@ -33,27 +34,28 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="warning">
-                                    <td>2014200000071</td>
-                                    <td>2018</td>
-                                    <td>15000</td>
-                                    <td>2000</td>
-                                    <td>2000</td>
-                                    <td>2000</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>2000</td>
-                                    <td>1500</td>
-                                    <td>1500</td>
-                                    <td>1200</td>
-                                </tr>
+                                    <tr th:each="payroll, payrollStat : ${allUsersPayrollHistory}" class="warning">
+                                        <td th:text="${payrollStat.count}">1</td>
+                                        <td th:text="${payrollStat.count}">1</td>
+                                        <!--<td th:text="${payroll.}">2018</td>-->
+                                        <td th:text="${payroll.basic}">15000</td>
+                                        <td th:text="${payroll.houseRent}">2000</td>
+                                        <td th:text="${payroll.conveyance}">2000</td>
+                                        <td th:text="${payroll.medical}">2000</td>
+                                        <td th:text="${payroll.advanceOrLoan}">0</td>
+                                        <td th:text="${payroll.interest}">0</td>
+                                        <td th:text="${payroll.otherAll}">2000</td>
+                                        <td th:text="${payroll.educationalAll}">1500</td>
+                                        <td th:text="${payroll.bonus}">1500</td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <table class="table well">
                                 <thead>
                                 <tr>
+                                    <th>Serial</th>
                                     <th>User Id</th>
-                                    <th>Year</th>
+                                    <!--<th>Year</th>-->
                                     <th>Incentive</th>
                                     <th>Leave Encasement</th>
                                     <th>Perquisite</th>
@@ -66,18 +68,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="warning">
-                                    <td>2014200000071</td>
-                                    <td>2018</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                    <td>500</td>
-                                    <td>0</td>
-                                    <td>1000</td>
-                                    <td>1000</td>
-                                    <td>1000</td>
-                                    <td>1000</td>
-                                </tr>
+                                    <tr th:each="payroll, payrollStat : ${allUsersPayrollHistory}" class="warning">
+                                        <td th:text="${payrollStat.count}">1</td>
+                                        <td th:text="${payrollStat.count}">1</td>
+                                        <!--<td th:text="${payroll.}">2018</td>-->
+                                        <td th:text="${payroll.incentiveOrCommission}">1200</td>
+                                        <td th:text="${payroll.leaveEncashment}">0</td>
+                                        <td th:text="${payroll.perquisite}">0</td>
+                                        <td th:text="${payroll.reimbursement}">500</td>
+                                        <td th:text="${payroll.special}">0</td>
+                                        <td th:text="${payroll.overtime}">1000</td>
+                                        <td th:text="${payroll.arrears}">1000</td>
+                                        <td th:text="${payroll.childFund}">1000</td>
+                                        <td th:text="${payroll.stipen}">1000</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -88,8 +92,9 @@
                                 <h2>Total Deductions</h2>
                                 <thead>
                                 <tr>
+                                    <th>Serial</th>
                                     <th>User Id</th>
-                                    <th>Year</th>
+                                    <!--<th>Year</th>-->
                                     <th>TDS</th>
                                     <th>Interest</th>
                                     <th>PF</th>
@@ -101,18 +106,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="warning">
-                                    <td>2014200000071</td>
-                                    <td>2018</td>
-                                    <td>2000</td>
-                                    <td>2500</td>
-                                    <td>500</td>
-                                    <td>1500</td>
-                                    <td>1000</td>
-                                    <td>500</td>
-                                    <td>1000</td>
-                                    <td>1000</td>
-                                </tr>
+                                    <tr th:each="payroll, payrollStat : ${allUsersPayrollHistory}" class="warning">
+                                        <td th:text="${payrollStat.count}">1</td>
+                                        <td th:text="${payrollStat.count}">2018</td>
+                                        <td th:text="${payroll.tds}">2000</td>
+                                        <td th:text="${payroll.interestDED}">2500</td>
+                                        <td th:text="${payroll.pf}">500</td>
+                                        <td th:text="${payroll.professionalTaxDED}">1500</td>
+                                        <td th:text="${payroll.advanceOrLoanDED}">1000</td>
+                                        <td th:text="${payroll.otherDED}">500</td>
+                                        <td th:text="${payroll.leaveDED}">1000</td>
+                                        <td th:text="${payroll.securityDepositeDED}">1000</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

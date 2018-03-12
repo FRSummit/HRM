@@ -26,6 +26,12 @@ public class PayrollServiceImpl implements PayrollService {
 /////////////////////////////// Application Properties //////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
+    @Value("${spring.queries.all-user-payroll}") //all user payroll
+    private String allUsersPayroll;
+
+    @Value("${spring.queries.specific-user-payroll}") //specific user payroll
+    private String specificUserPayroll;
+
     @Value("${spring.queries.user-current-payroll}") //user current payroll by userId
     private String userCurrentPayroll;
 
@@ -44,10 +50,18 @@ public class PayrollServiceImpl implements PayrollService {
 //////////////////////////////////////
 /////    Admin Section    ////////////
 //////////////////////////////////////
+    @Override
+    public List<Payroll> findAllUsersPayroll() {
+        return entityManager.createQuery(allUsersPayroll, Payroll.class).getResultList();
+    }
+
+    @Override
+    public List<Payroll> findSpecificUserPayroll(String userId) {
+        return entityManager.createQuery(specificUserPayroll + userId + "'", Payroll.class).getResultList();
+    }
 
 
-
-////////////////////////////////////
+    ////////////////////////////////////
 ////    User Section    ////////////
 ////////////////////////////////////
     @Override

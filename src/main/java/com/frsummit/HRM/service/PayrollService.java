@@ -12,6 +12,9 @@ public interface PayrollService {
 /////    Admin Section    ////////////
 //////////////////////////////////////
 
+    public List<Payroll> findAllUsersPayroll();
+    public List<Payroll> findSpecificUserPayroll(String userId);
+
 //////////////////////////////////////
 /////    User Section    ////////////
 //////////////////////////////////////

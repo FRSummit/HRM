@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+    <head>
+        <script type="text/javascript">
+            window.onload = function() {
+
+            var dps = [[]];
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2", // "light1", "dark1", "dark2"
+                animationEnabled: true,
+                title: {
+                    text: "Average Sea Temperature - Amsterdam"
+                },
+                axisX: {
+                    valueFormatString: "MMM"
+                },
+                axisY: {
+                    title: "Temperature (in °C)",
+                    suffix: " °C"
+                },
+                data: [{
+                    type: "line",
+                    xValueType: "dateTime",
+                    xValueFormatString: "MMM",
+                    yValueFormatString: "#,##0 °C",
+                    dataPoints: dps[0]
+                }]
+            });
+
+            var xValue;
+            var yValue;
+
+            <c:forEach items="${dataPointsList}" var="dataPoints" varStatus="loop">
+                <c:forEach items="${dataPoints}" var="dataPoint">
+                    xValue = parseInt("${dataPoint.x}");
+                    yValue = parseFloat("${dataPoint.y}");
+                    dps[parseInt("${loop.index}")].push({
+                        x : xValue,
+                        y : yValue
+                    });
+                </c:forEach>
+            </c:forEach>
+
+            chart.render();
+
+            }
+        </script>
+    </head>
+    <body>
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </body>
+</html>
