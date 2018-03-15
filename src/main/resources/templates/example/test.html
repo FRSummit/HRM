@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Rows that contain checked checkbox</title>
+</head>
+<body>
+
+<table class="_tm">
+    <thead>...</thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox" name="sel" id="chk"/></td>
+        <td>text 1</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="sel" id="chk"/></td>
+        <td>text 2</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="sel" id="chk"/></td>
+        <td>text 3</td>
+    </tr>
+    </tbody>
+    <tfoot>...</tfoot>
+</table>
+
+<script type="text/javascript" src="/js/jquery-1.10.2.js"></script>
+
+<script type="text/javascript">
+    jQuery( document ).ready( function ( $ )
+    {
+        var selectedRows = $( 'table._tm' ).find( 'tbody' ) // select table body and
+            .find( 'tr' ) // select all rows that has
+            .has( 'input[type=checkbox]:checked' ) // checked checkbox element
+        console.log( 'selectedRows:', selectedRows );
+    } );
+</script>
+
+</body>
+</html>

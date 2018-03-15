@@ -22,8 +22,15 @@ public class UserList {
     }
 
     @RequestMapping(value = "/admin/list-user-edit", method = RequestMethod.GET)
-    public String getUserListEditAction(@RequestParam String edit, @RequestParam String remove) {
-        System.out.println("Edit / Delete Clicked" + edit + " " + remove);
+    public String getUserListEditAction(@RequestParam(value = "checkBox") String checkBox) {
+        System.out.println(checkBox.toString());
+
+        return "profile_user_list";
+    }
+
+    @RequestMapping(value = "/check-box", method = RequestMethod.GET)
+    public String getUserFromCheckMark(@RequestParam(value = "check") String checkBox) {
+        System.out.println(checkBox);
 
         return "profile_user_list";
     }

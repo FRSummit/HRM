@@ -15,8 +15,8 @@
                 <div class="container">
                     <a href="#" th:href="@{/admin/user/create}" class="btn btn-primary btn-lg active" role="button" style="margin-bottom:10px">Create New User</a>
                     <div class="row">
-                        <div>
-                            <table class="table well">
+                        <form th:action="@{/admin/registration}" method="get">
+                            <table class="table well" id="myTable">
                                 <thead>
                                     <tr>
                                         <th>Serial</th>
@@ -31,7 +31,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="success" th:each="user, userStat : ${userList}">
+                                    <tr class="success" th:each="user, userStat : ${userList}" onclick="javascript:showRow(this);">
                                         <td th:text="${userStat.count}">1</td>
                                         <td th:text="${user.id}">2014200000071</td>
                                         <td th:text="${user.firstName}">Fayazur</td>
@@ -41,7 +41,8 @@
                                         <td th:text="${user.department}">CSE</td>
                                         <td th:text="${user.designation}">Student</td>
                                         <td th:text="${user.myRole}">ADMIN</td>
-                                        <!--<td><input name="" type="checkbox" /></td>-->
+                                        <!--<td><input name="check" type="checkbox" th:value="${user.id}"/></td>-->
+                                        <td><input th:href="@{/check-box}" name="check" type="button" th:value="${user.id}"/></td>
                                         <!--<td>-->
                                             <!--<form action="#" th:action="@{/admin/user-edit-list}"  method="get">-->
                                                 <!--<input th:value="user.id" name="buttonId" type="text" class=""/>-->
@@ -51,10 +52,38 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                            <!--<a href="#" th:href="@{/check-box}" class="btn btn-primary btn-lg active" role="button" style="margin-bottom:10px">CheckBox</a>-->
+                        </form>
+                        First Name:<input type="text" name="fname" id="fname"/><br/><br/>
+                        Last Name:<input type="text" name="lname" id="lname"/><br/><br/>
+                        Age:<input type="text" name="age" id="age"/><br/><br/>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script th:inline="javascript" language="javascript" type="text/javascript">
+            function showRow(row){
+            var x=row.cells;
+            document.getElementById("fname").value = x[0].innerHTML;
+            document.getElementById("lname").value = x[1].innerHTML;
+            document.getElementById("age").value = x[2].innerHTML;
+            }
+        </script>
+
+    <!--<script th:inline="javascript">
+    <![CDATA[
+            var table = document.getElementById('myTable');
+
+            for(var i = 1; i < table.rows.length; i++){
+                table.rows[i].onclick = function(){
+                    //rIndex = this.rowIndex;
+                    document.getElementById("fname").value = this.cells[0].innerHTML;
+                    document.getElementById("lname").value = this.cells[1].innerHTML;
+                    document.getElementById("age").value = this.cells[2].innerHTML;
+                };
+            }
+    ]]>
+    </script>-->
     </body>
 </html>

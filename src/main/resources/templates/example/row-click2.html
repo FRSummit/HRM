@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script language="javascript" type="text/javascript">
+        function showRow(row)
+        {
+        var x=row.cells;
+        document.getElementById("firstname").value = x[0].innerHTML;
+        document.getElementById("lastname").value = x[1].innerHTML;
+        document.getElementById("age").value = x[2].innerHTML;
+        document.getElementById("total").value = x[3].innerHTML;
+        document.getElementById("discount").value = x[4].innerHTML;
+        document.getElementById("diff").value = x[5].innerHTML;
+        }
+    </script>
+
+</head>
+<body>
+    <table id="myTable" cellspacing="1">
+        <thead>
+        <tr>
+            <th>first name</th>
+            <th>last name</th>
+            <th>age</th>
+            <th>total</th>
+            <th>discount</th>
+            <th>diff</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr onclick="javascript:showRow(this);">
+            <td>peter</td>
+            <td>parker</td>
+            <td>28</td>
+            <td>9.99</td>
+            <td>20.3%</td>
+            <td>+3</td>
+        </tr>
+        <tr onclick="javascript:showRow(this);">
+            <td>john</td>
+            <td>hood</td>
+            <td>33</td>
+            <td>19.99</td>
+            <td>25.1%</td>
+            <td>-7</td>
+        </tr>
+        <tr onclick="javascript:showRow(this);">
+            <td>clark</td>
+            <td>kent</td>
+            <td>18</td>
+            <td>15.89</td>
+            <td>44.2%</td>
+            <td>-15</td>
+        </tr>
+        <tr onclick="javascript:showRow(this);">
+            <td>bruce</td>
+            <td>almighty</td>
+            <td>45</td>
+            <td>153.19</td>
+            <td>44%</td>
+            <td>+19</td>
+        </tr>
+        <tr onclick="javascript:showRow(this);">
+            <td>bruce</td>
+            <td>evans</td>
+            <td>56</td>
+            <td>153.19</td>
+            <td>23%</td>
+            <td>+9</td>
+        </tr>
+        </tbody>
+    </table>
+
+    Firstname is:<input type="text" id="firstname" />
+    <br>
+    Lastname is:<input type="text" id="lastname" />
+    <br>
+    Age is:<input type="text" id="age" />
+    <br>
+    Total is:<input type="text" id="total" />
+    <br>
+    Discount is:<input type="text" id="discount" />
+    <br>
+    Diff is:<input type="text" id="diff" />
+
+
+</body>
+</html>
