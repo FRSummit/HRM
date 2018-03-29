@@ -9,6 +9,13 @@
     </head>
     <body>
         <div layout:fragment="content">
+
+            <div>
+                <!--<img src="${pageContext.request.contextPath}/Image/<%= h.getHomeID() %>">-->
+                <img name="image" src="image/avatar" height="75px" width="75px" align="left" />
+            </div>
+
+
             <div align="center">
                 <h1>Spring MVC - Hibernate File Upload to Database Demo</h1>
                 <form th:action="@{/upload-image}" method="post" enctype="multipart/form-data">
