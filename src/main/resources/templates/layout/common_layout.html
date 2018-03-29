@@ -73,15 +73,15 @@
                                 <li th:classappend="${page == 'profile_external_link' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-external-link}">External Link</a>
                                 </li>
-                                <li class="divider"></li>
+                                <li th:unless="${myRole} == 'USER'" class="divider"></li>
 <!-- =========================== Profile : Admin =========================================================== -->
-                                <li sec:authorize="hasRole('ADMIN')" th:classappend="${page == 'profile_user_list' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" sec:authorize="hasRole('ADMIN')" th:classappend="${page == 'profile_user_list' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-list}">User List</a>
                                 </li>
-                                <li sec:authorize="hasRole('ROLE_ADMIN')" th:classappend="${page == 'profile_user_update' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" sec:authorize="hasRole('ROLE_ADMIN')" th:classappend="${page == 'profile_user_update' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-update}">Update</a>
                                 </li>
-                                <li sec:authorize="isAuthenticated()" th:classappend="${page == 'profile_user_registration' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" sec:authorize="isAuthenticated()" th:classappend="${page == 'profile_user_registration' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/profile-user-registration}">Create New User</a>
                                 </li>
                             </ul>
@@ -104,18 +104,18 @@
                                 <li th:classappend="${page == 'attendance_user_update_request' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/attendance-user-overview-update-request}">Update Request</a>
                                 </li>
-                                <li class="divider"></li>
+                                <li th:unless="${myRole} == 'USER'" class="divider"></li>
 <!-- =========================== Attendance : Admin ======================================================== -->
-                                <li th:classappend="${page == 'attendance_admin_overview' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_overview' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-overview}">User Overview</a>
                                 </li>
-                                <li th:classappend="${page == 'attendance_admin_update' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_update' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-update}">Update</a>
                                 </li>
-                                <li th:classappend="${page == 'attendance_admin_take_action' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_take_action' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-take-action}">Take Action</a>
                                 </li>
-                                <li th:classappend="${page == 'attendance_admin_remark' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_remark' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-remark}">Remark</a>
                                 </li>
                             </ul>
@@ -139,18 +139,18 @@
                                 <li th:classappend="${page == 'leaves_user_cancellation' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/leave-user-cancellation}">Cancel Leave</a>
                                 </li>
-                                <li class="divider"></li>
+                                <li th:unless="${myRole} == 'USER'" class="divider"></li>
 <!-- ========================== Leaves : Admin ============================================================= -->
-                                <li th:classappend="${page == 'leaves_admin_recent' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'leaves_admin_recent' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/leave-admin-recent}">Recent Application</a>
                                 </li>
-                                <li th:classappend="${page == 'leaves_admin_overview' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'leaves_admin_overview' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/leaves-admin-overview}">Overview</a>
                                 </li>
-                                <li th:classappend="${page == 'leaves_admin_history' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'leaves_admin_history' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/leaves-admin-history}">History</a>
                                 </li>
-                                <li th:classappend="${page == 'leaves_admin_update' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'leaves_admin_update' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/leave-admin-update}">Update</a>
                                 </li>
                             </ul>
@@ -171,15 +171,15 @@
                                 <li th:classappend="${page == 'payroll_history' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/payroll-history}">History</a>
                                 </li>
-                                <li class="divider"></li>
+                                <li th:unless="${myRole} == 'USER'" class="divider"></li>
 <!-- ========================== Payroll : Admin ======================================================= -->
-                                <li th:classappend="${page == 'payroll_admin_overview' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'payroll_admin_overview' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/payroll-admin-overview}">Overview</a>
                                 </li>
-                                <li th:classappend="${page == 'payroll_admin_set_payment' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'payroll_admin_set_payment' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/payroll-admin-set-payment}">Set Payment</a>
                                 </li>
-                                <li th:classappend="${page == 'payroll_load_specific_user' ? 'active' : ''}">
+                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'payroll_load_specific_user' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/payroll-load-specific-user}">Load Specific Payroll</a>
                                 </li>
                             </ul>
