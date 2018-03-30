@@ -42,8 +42,7 @@ public class TestImageController {
         response.setContentType("image/jpeg");
         response.setContentLength(thumb.length);
 
-        response.setHeader("Content-Disposition", "inline; filename=\"" + name
-                + "\"");
+        response.setHeader("Content-Disposition", "inline; filename=\"" + name + "\"");
 
         BufferedInputStream input = null;
         BufferedOutputStream output = null;

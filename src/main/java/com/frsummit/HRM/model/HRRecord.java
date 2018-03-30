@@ -85,12 +85,55 @@ public class HRRecord {
     @JoinTable(name = "hr_record_user", joinColumns = @JoinColumn(name = "hr_record_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> hrRecordUser;
 
+    public HRRecord() {
+    }
+
+    public HRRecord(String userId, int totalLeave, int totalLeaveTaken, int leaveBalance,
+                    int totalLeavePersonal, int totalLeaveSick, int totalLeavePlanned, int totalLeaveVacation, int totalLeaveMaternity, int totalLeaveOther,
+                    int totalLeaveTakenPersonal, int totalLeaveTakenSick, int totalLeaveTakenPlanned, int totalLeaveTakenVacation, int totalLeaveTakenMaternity, int totalLeaveTakenOther,
+                    int leaveBalancePersonal, int leaveBalanceSick, int leaveBalancePlanned, int leaveBalanceVacation, int leaveBalanceMaternity, int leaveBalanceOther) {
+
+        this.userId = userId;
+        this.totalLeave = totalLeave;
+        this.totalLeaveTaken = totalLeaveTaken;
+        this.leaveBalance = leaveBalance;
+
+        this.totalLeavePersonal = totalLeavePersonal;
+        this.totalLeaveSick = totalLeaveSick;
+        this.totalLeavePlanned = totalLeavePlanned;
+        this.totalLeaveVacation = totalLeaveVacation;
+        this.totalLeaveMaternity = totalLeaveMaternity;
+        this.totalLeaveOther = totalLeaveOther;
+
+        this.totalLeaveTakenPersonal = totalLeaveTakenPersonal;
+        this.totalLeaveTakenSick = totalLeaveTakenSick;
+        this.totalLeaveTakenPlanned = totalLeaveTakenPlanned;
+        this.totalLeaveTakenVacation = totalLeaveTakenVacation;
+        this.totalLeaveTakenMaternity = totalLeaveTakenMaternity;
+        this.totalLeaveTakenOther = totalLeaveTakenOther;
+
+        this.leaveBalancePersonal = leaveBalancePersonal;
+        this.leaveBalanceSick = leaveBalanceSick;
+        this.leaveBalancePlanned = leaveBalancePlanned;
+        this.leaveBalanceVacation = leaveBalanceVacation;
+        this.leaveBalanceMaternity = leaveBalanceMaternity;
+        this.leaveBalanceOther = leaveBalanceOther;
+    }
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public int getTotalLeave() {

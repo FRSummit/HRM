@@ -1,6 +1,8 @@
 package com.frsummit.HRM.controller.admin.profile;
 
+import com.frsummit.HRM.model.HRRecord;
 import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.HRRecordService;
 import com.frsummit.HRM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,9 @@ public class UserRegistration {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private HRRecordService hrRecordService;
 
     //@RequestMapping(value="/admin/registration", method = RequestMethod.GET)
     @RequestMapping(value="/admin/profile-user-registration", method = RequestMethod.GET)
@@ -54,6 +59,11 @@ public class UserRegistration {
             if(rl == "") rl = "USER";
             String userRole = rl.toUpperCase();
             userService.saveUser(user, userRole);
+            HRRecord hrRecord = new HRRecord(user.getId(),30,0,30,
+                    5,5,5,5,5, 5,
+                    0,0,0,0, 0,0,
+                    5,5,5, 5,5,5);
+            hrRecordService.saveHRRecord(hrRecord);
             System.out.println(user.getPassword());
             modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
