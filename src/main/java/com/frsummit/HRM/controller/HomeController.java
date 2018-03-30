@@ -27,17 +27,19 @@ public class HomeController {
     @RequestMapping(value="/home", method = RequestMethod.GET)
     public String home(Model model){
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.findUserByEmail(auth.getName());
-        System.out.println(user.getMyRole());
-        model.addAttribute("myRole", user.getMyRole());
-/*
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        User user = userService.findUserByEmail(auth.getName());
+//        System.out.println(user.getMyRole());
+
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user1 = userService.findUserByEmail(auth.getName());
-        User user2 = userService.findUserByEmail(auth.getName());
+        User user2 = userService.findUserById(auth.getName());
         User user;
         if(user1 != null) user = user1;
         else user = user2;
+
+        model.addAttribute("myRole", user.getMyRole());
+
         List<Role> roleList = roleService.findAllRole(user.getMyRole());
         Role role = roleList.get(0);
         System.out.println(role.getId());
@@ -45,7 +47,7 @@ public class HomeController {
         System.out.println(role.getRoleChain());
 
         LeaveConfiguration leaveConfiguration = new LeaveConfiguration();
-        leaveConfiguration.mapForRole(role.getRole(), role.getRoleChain());*/
+        leaveConfiguration.mapForRole(role.getRole(), role.getRoleChain());
 
         return "home";
     }

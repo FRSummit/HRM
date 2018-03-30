@@ -55,6 +55,9 @@ public class Leaves implements Serializable {
     @Column(name = "action_by", nullable = false)
     private String leaveActionBy;
 
+    @Column(name = "cancellation_status")
+    private String cancellationLeaveStatus;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "leave_user", joinColumns = @JoinColumn(name = "leave_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> userLeaves;
@@ -62,7 +65,9 @@ public class Leaves implements Serializable {
     public Leaves() {
     }
 
-    public Leaves(String userId, Date leaveApplyFrom, Date leaveApplyTo, int totalDayOfLeave, String leaveDescription, String leaveReason, String leaveType, String leaveStatus, String applyWhom, String modifyToWhom, String leaveActionBy) {
+    public Leaves(String userId, Date leaveApplyFrom, Date leaveApplyTo, int totalDayOfLeave, String leaveDescription,
+                  String leaveReason, String leaveType, String leaveStatus, String applyWhom, String modifyToWhom,
+                  String leaveActionBy, String cancellationLeaveStatus) {
         this.userId = userId;
         this.leaveApplyFrom = leaveApplyFrom;
         this.leaveApplyTo = leaveApplyTo;
@@ -74,6 +79,11 @@ public class Leaves implements Serializable {
         this.applyWhom = applyWhom;
         this.modifyToWhom = modifyToWhom;
         this.leaveActionBy = leaveActionBy;
+        this.cancellationLeaveStatus = cancellationLeaveStatus;
+    }
+
+    public Leaves(String cancellationLeaveStatus) {
+        this.cancellationLeaveStatus = cancellationLeaveStatus;
     }
 
     public int getId() {
@@ -178,6 +188,14 @@ public class Leaves implements Serializable {
 
     public void setLeaveActionBy(String leaveActionBy) {
         this.leaveActionBy = leaveActionBy;
+    }
+
+    public String getCancellationLeaveStatus() {
+        return cancellationLeaveStatus;
+    }
+
+    public void setCancellationLeaveStatus(String cancellationLeaveStatus) {
+        this.cancellationLeaveStatus = cancellationLeaveStatus;
     }
 
     public Set<User> getUserLeaves() {

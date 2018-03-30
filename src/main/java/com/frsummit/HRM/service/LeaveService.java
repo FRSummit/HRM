@@ -19,4 +19,5 @@ public interface LeaveService {
 /////    User Section    ////////////
 //////////////////////////////////////
     public List<Leaves> findMyAllLeaves(String userId);
+    public void cancelLeave(Leaves leaves, int id);
 }

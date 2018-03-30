@@ -45,8 +45,6 @@ public class LeaveApply {
         User user;
         if(user1 != null) user = user1;
         else user = user2;
-        List<HRRecord> hrList = hrRecordService.getAllRecord(user.getId());
-        HRRecord hrRecord = hrList.get(0);
 
 //        Employee Details
         model.addAttribute("titleId", user.getId());
@@ -59,34 +57,38 @@ public class LeaveApply {
         model.addAttribute("titleFullName", firstName + " " + middleName + " " + lastName);
         model.addAttribute("titleDepartment", user.getDepartment());
 
+        List<HRRecord> hrList = hrRecordService.getAllRecord(user.getId());
+        if(hrList.size() > 0){
+            HRRecord hrRecord = hrList.get(0);
 //        HrRecords Info
-        model.addAttribute("totalLeaves", hrRecord.getTotalLeave());
-        model.addAttribute("balance", hrRecord.getLeaveBalance());
-        model.addAttribute("taken", hrRecord.getTotalLeaveTaken());
+            model.addAttribute("totalLeaves", hrRecord.getTotalLeave());
+            model.addAttribute("balance", hrRecord.getLeaveBalance());
+            model.addAttribute("taken", hrRecord.getTotalLeaveTaken());
 
-        model.addAttribute("personal_total", hrRecord.getTotalLeavePersonal());
-        model.addAttribute("personal_taken", hrRecord.getTotalLeaveTakenPersonal());
-        model.addAttribute("personal_balance", hrRecord.getLeaveBalancePersonal());
+            model.addAttribute("personal_total", hrRecord.getTotalLeavePersonal());
+            model.addAttribute("personal_taken", hrRecord.getTotalLeaveTakenPersonal());
+            model.addAttribute("personal_balance", hrRecord.getLeaveBalancePersonal());
 
-        model.addAttribute("sick_total", hrRecord.getTotalLeaveSick());
-        model.addAttribute("sick_taken", hrRecord.getTotalLeaveTakenSick());
-        model.addAttribute("sick_balance", hrRecord.getLeaveBalanceSick());
+            model.addAttribute("sick_total", hrRecord.getTotalLeaveSick());
+            model.addAttribute("sick_taken", hrRecord.getTotalLeaveTakenSick());
+            model.addAttribute("sick_balance", hrRecord.getLeaveBalanceSick());
 
-        model.addAttribute("planned_total", hrRecord.getTotalLeavePlanned());
-        model.addAttribute("planned_taken", hrRecord.getTotalLeaveTakenPlanned());
-        model.addAttribute("planned_balance", hrRecord.getLeaveBalancePlanned());
+            model.addAttribute("planned_total", hrRecord.getTotalLeavePlanned());
+            model.addAttribute("planned_taken", hrRecord.getTotalLeaveTakenPlanned());
+            model.addAttribute("planned_balance", hrRecord.getLeaveBalancePlanned());
 
-        model.addAttribute("vacation_total", hrRecord.getTotalLeaveVacation());
-        model.addAttribute("vacation_taken", hrRecord.getTotalLeaveTakenVacation());
-        model.addAttribute("vacation_balance", hrRecord.getLeaveBalanceVacation());
+            model.addAttribute("vacation_total", hrRecord.getTotalLeaveVacation());
+            model.addAttribute("vacation_taken", hrRecord.getTotalLeaveTakenVacation());
+            model.addAttribute("vacation_balance", hrRecord.getLeaveBalanceVacation());
 
-        model.addAttribute("maternity_total", hrRecord.getTotalLeaveMaternity());
-        model.addAttribute("maternity_taken", hrRecord.getTotalLeaveTakenMaternity());
-        model.addAttribute("maternity_balance", hrRecord.getLeaveBalanceMaternity());
+            model.addAttribute("maternity_total", hrRecord.getTotalLeaveMaternity());
+            model.addAttribute("maternity_taken", hrRecord.getTotalLeaveTakenMaternity());
+            model.addAttribute("maternity_balance", hrRecord.getLeaveBalanceMaternity());
 
-        model.addAttribute("other_total", hrRecord.getTotalLeaveOther());
-        model.addAttribute("other_taken", hrRecord.getTotalLeaveTakenOther());
-        model.addAttribute("other_balance", hrRecord.getLeaveBalanceOther());
+            model.addAttribute("other_total", hrRecord.getTotalLeaveOther());
+            model.addAttribute("other_taken", hrRecord.getTotalLeaveTakenOther());
+            model.addAttribute("other_balance", hrRecord.getLeaveBalanceOther());
+        }
 
         return "leaves_user_apply";
     }
@@ -118,7 +120,7 @@ public class LeaveApply {
 
         Leaves leaves = new Leaves(user.getId(), leaveApplyFrom, leaveApplyTo, totalDayOfLeave, leaveDescription,
                 leaveReason, leaveType, "Pending", applyToWhom,
-                "New Apply", "New Apply");
+                "New Apply", "New Apply", null);
         EmergencyContact emergencyContact = new EmergencyContact(user.getId() ,emergencyContactName, emergencyContactAddress, emergencyContactPhone);
         leaveService.saveLeave(leaves);
         emergencyContactService.saveEmergencyContact(emergencyContact);

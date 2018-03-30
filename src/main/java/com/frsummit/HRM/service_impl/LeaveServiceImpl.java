@@ -5,11 +5,13 @@ import com.frsummit.HRM.model.Leaves;
 import com.frsummit.HRM.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Service("leaveService")
@@ -72,5 +74,16 @@ public class LeaveServiceImpl implements LeaveService {
     @Override
     public List<Leaves> findMyAllLeaves(String userId) {
         return entityManager.createQuery(leavesMyListQuery + userId + "'", Leaves.class).getResultList();
+    }
+
+    @Override
+    @Modifying
+    public void cancelLeave(Leaves leaves, int id) {
+
+//        TypedQuery<User> query = entityManager.createQuery("UPDATE User u SET u.name = :name WHERE u.email='" + eml.getEmail() +"'", User.class);
+        Query query = entityManager.createQuery("UPDATE Leaves l SET l.cancellationLeaveStatus= 'True' WHERE l.id='" + id +"'");
+        //query.setParameter("email", email);
+        query.executeUpdate();
+        System.out.println("Cancel Call");
     }
 }
