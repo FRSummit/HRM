@@ -6,12 +6,14 @@ import com.frsummit.HRM.model.Attendance;
 import com.frsummit.HRM.model.User;
 import com.frsummit.HRM.service.AttendanceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.sql.Date;
 import java.util.Calendar;
@@ -36,8 +38,24 @@ public class AttendanceServiceImpl implements AttendanceService {
     }
 
     @Override
-    public void updateAttendance(Attendance attendance) {
+    @Modifying
+    public void remarkAttendance(String userId) {
+        Query query = entityManager.createQuery("UPDATE Attendance a SET a.attendanceRemark = 'REMARK' WHERE a.userId='" + userId +"'");
+        query.executeUpdate();
+    }
 
+    @Override
+    @Modifying
+    public void removeFromRemarkList(String userId) {
+        Query query = entityManager.createQuery("UPDATE Attendance a SET a.attendanceRemark = 'FALSE' WHERE a.userId='" + userId +"'");
+        query.executeUpdate();
+    }
+
+    @Override
+    @Modifying
+    public void updateAttendance(Attendance attendance, String userId) {
+        Query query = entityManager.createQuery("UPDATE Attendance a SET a.attendanceRemark = '" + attendance + "' WHERE a.userId='" + userId +"'");
+        query.executeUpdate();
     }
 
     @Override
@@ -49,6 +67,11 @@ public class AttendanceServiceImpl implements AttendanceService {
     @Override
     public List<Attendance> UsersSignList() {
         return entityManager.createQuery("SELECT a FROM Attendance AS a", Attendance.class).getResultList();
+    }
+
+    @Override
+    public List<Attendance> remarkAttendanceList() {
+        return entityManager.createQuery("SELECT a FROM Attendance AS a WHERE a.attendanceRemark = 'REMARK'", Attendance.class).getResultList();
     }
 
     public  Attendance findLastPunch(){

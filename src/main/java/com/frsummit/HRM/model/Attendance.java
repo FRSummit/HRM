@@ -74,6 +74,9 @@ public class Attendance implements Serializable {
     @Column(name = "link4")
     private String attendanceLink4;
 
+    @Column(name = "remark")
+    private String attendanceRemark;
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "attendance_user", joinColumns = @JoinColumn(name = "attend_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> user;
@@ -213,6 +216,13 @@ public class Attendance implements Serializable {
         this.attendanceLink4 = attendanceLink4;
     }
 
+    public String getAttendanceRemark() {
+        return attendanceRemark;
+    }
+
+    public void setAttendanceRemark(String attendanceRemark) {
+        this.attendanceRemark = attendanceRemark;
+    }
     /*
     *
     * Time Difference

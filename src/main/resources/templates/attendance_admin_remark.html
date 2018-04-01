@@ -11,22 +11,49 @@
     <body>
         <div class="container">
             <div layout:fragment="content">
-                <h1 class="col-sm-9 well">Attendance Remark - Admin</h1>
-                <form>
-                    <div class="col-sm-9 well">
-                        <div class="row">
-                            <div class="col-sm-6 form-group">
-                                <label style="margin-left:5px">First Name</label>
-                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group" style="margin-top:10px">
-                            <div class="col-sm-9">
-                                <button type="submit" class="btn btn-primary">Update</button>
-                            </div>
-                        </div>
+                <h1 class="well">Remark Attendance List</h1>
+                <div class="container">
+                    <div class="row well">
+                        <table class="table well">
+                            <thead>
+                            <tr>
+                                <th>Serial</th>
+                                <th>Attend Id</th>
+                                <th>User Id</th>
+                                <th>Sign</th>
+                                <th>In</th>
+                                <th>Out</th>
+                                <th>Late</th>
+                                <!--<th>Worked</th>-->
+                                <!--<th>Shift</th>-->
+                                <!--<th>Performance</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="attendance, attendanceStat : ${attendanceList}" class="success">
+                                <td th:text="${attendanceStat.count}">101010</td>
+                                <td th:text="${attendance.attendId}">121</td>
+                                <td th:text="${attendance.userId}">12:32pm</td>
+                                <td th:text="${attendance.signTime}">12:32pm</td>
+                                <td th:text="${attendance.inTime}">12:40pm</td>
+                                <td th:text="${attendance.outTime}">1.28hr</td>
+                                <td th:text="${attendance.lateBy}">00:08hr</td>
+                                <!--<td th:text="${attendance.}">Day</td>-->
+                                <!--<td th:text="${attendance.}">1.7%</td>-->
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </form>
+                    <div class="row well col-sm-4">
+                        <form th:action="@{/admin/attendance-remove-from-remark-list}" method="get">
+                            <h4>Remove Id</h4>
+                            <input name="userId" type="text" placeholder="Enter Id Here.." class="form-control"/>
+                            <div class="col-sm-5">
+                                <button type="submit" class="btn btn-primary btn-block" style="margin-top:10px">Remove</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

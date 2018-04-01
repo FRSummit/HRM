@@ -14,7 +14,7 @@
                 <h1 class="well">Attendance Admin Overview</h1>
                 <div class="container">
                     <div class="row well">
-                        <h3 class="well">My Attendance Today</h3>
+                        <h3 class="well">Users Attendance</h3>
                         <table class="table well">
                             <thead>
                             <tr>
@@ -44,6 +44,15 @@
                             </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="row well col-sm-4">
+                        <form th:action="@{/admin/attendance-add-remark-list}" method="get">
+                            <h4>Remark Id</h4>
+                            <input name="remark" type="text" placeholder="Enter Id Here.." class="form-control"/>
+                            <div class="col-sm-5">
+                                <button type="submit" class="btn btn-primary btn-block" style="margin-top:10px">Add</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
