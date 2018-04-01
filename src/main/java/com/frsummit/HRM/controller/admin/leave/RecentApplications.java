@@ -27,12 +27,12 @@ public class RecentApplications {
     @RequestMapping(value = "/admin/leave-admin-recent", method = RequestMethod.GET)
     public String recentApplicationsLoad(Model model){
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user1 = userService.findUserByEmail(auth.getName());
         User user2 = userService.findUserById(auth.getName());
         User user;
         if(user1 != null) user = user1;
-        else user = user2;
+        else user = user2;*/
 
         //model.addAttribute("leavesList",leaveService.findAllLeavesByRole(user.getMyRole()));
         model.addAttribute("leavesList",leaveService.findAllLeavesByRole(comService.getUserIdOrEmail().getMyRole()));
