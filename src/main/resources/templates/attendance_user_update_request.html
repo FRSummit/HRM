@@ -16,39 +16,47 @@
                     <div class="form-group">
                         <div class="col-sm-5">
                             <h4 style="display:inline-block;">Id : </h4>
-                            <h4 style="display:inline-block;">2014200000071</h4>
+                            <h4 th:text="${userId}" style="display:inline-block;">2014200000071</h4>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-5">
                             <h4 style="display:inline-block;">Name : </h4>
-                            <h4 style="display:inline-block;">Summit</h4>
+                            <h4 th:text="${fullName}" style="display:inline-block;">Summit</h4>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-5">
                             <h4 style="display:inline-block;">Designation : </h4>
-                            <h4 style="display:inline-block;">Student</h4>
+                            <h4 th:text="${designation}" style="display:inline-block;">Student</h4>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-5">
                             <h4 style="display:inline-block;">Department : </h4>
-                            <h4 style="display:inline-block;">CSE</h4>
+                            <h4 th:text="${department}" style="display:inline-block;">CSE</h4>
                         </div>
                     </div>
                 </div>
-                <form>
+                <form th:action="@{/user/attendance-request}" method="get">
                     <div class="col-sm-9 well">
                         <div class="row">
-                            <div class="col-sm-6 form-group">
-                                <label style="margin-left:5px">First Name</label>
-                                <input type="text" placeholder="Enter First Name Here.." class="form-control"/>
+                            <div class="col-sm-8 form-group">
+                                <label style="margin-left:5px">User Id</label>
+                                <input name="userId" type="text" placeholder="Enter First Name Here.." class="form-control"/>
+                            </div>
+                            <div class="col-sm-5 form-group">
+                                <label style="margin-left:5px">Sign In</label>
+                                <input name="signIn" type="text" placeholder="Enter First Name Here.." class="form-control"/>
+                            </div>
+                            <div class="col-sm-5 form-group">
+                                <label style="margin-left:5px">Sign out</label>
+                                <input name="signOut" type="text" placeholder="Enter First Name Here.." class="form-control"/>
                             </div>
                         </div>
                         <div class="form-group" style="margin-top:10px">
-                            <div class="col-sm-9">
-                                <button type="submit" class="btn btn-primary btn-block">Register User</button>
+                            <div class="col-sm-5">
+                                <button type="submit" class="btn btn-primary btn-block">Request</button>
                             </div>
                         </div>
                     </div>

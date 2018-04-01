@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Set;
 
@@ -26,12 +27,10 @@ public class Attendance implements Serializable {
     private Date signTime;
 
     @Column(name = "in_time")
-    @UpdateTimestamp
-    private Date inTime;
+    private Calendar inTime;
 
     @Column(name = "out_time")
-    @UpdateTimestamp
-    private Date outTime;
+    private Calendar outTime;
 
     @Column(name = "late_by")
     private Date lateBy;
@@ -79,6 +78,13 @@ public class Attendance implements Serializable {
     @JoinTable(name = "attendance_user", joinColumns = @JoinColumn(name = "attend_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> user;
 
+    public Attendance() {
+    }
+
+    public Attendance(String userId) {
+        this.userId = userId;
+    }
+
     public int getAttendId() {
         return attendId;
     }
@@ -103,19 +109,19 @@ public class Attendance implements Serializable {
         this.signTime = signTime;
     }
 
-    public Date getInTime() {
+    public Calendar getInTime() {
         return inTime;
     }
 
-    public void setInTime(Date inTime) {
+    public void setInTime(Calendar inTime) {
         this.inTime = inTime;
     }
 
-    public Date getOutTime() {
+    public Calendar getOutTime() {
         return outTime;
     }
 
-    public void setOutTime(Date outTime) {
+    public void setOutTime(Calendar outTime) {
         this.outTime = outTime;
     }
 

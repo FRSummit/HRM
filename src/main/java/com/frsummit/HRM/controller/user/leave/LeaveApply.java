@@ -1,6 +1,7 @@
 package com.frsummit.HRM.controller.user.leave;
 
 import com.frsummit.HRM.configuration.LeaveConfiguration;
+import com.frsummit.HRM.configuration.MyAuthorization;
 import com.frsummit.HRM.model.*;
 import com.frsummit.HRM.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,28 +37,38 @@ public class LeaveApply {
     @Autowired
     private EmergencyContactService emergencyContactService;
 
+    @Autowired
+    private MyAuthorization myAuthorization;
+
     @RequestMapping(value = "/user/leave-user-apply", method = RequestMethod.GET)
     public String leaveApplicationForm(Model model){
+        model.addAttribute("myRole", myAuthorization.userFromEmailOrId().getMyRole());
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user1 = userService.findUserByEmail(auth.getName());
         User user2 = userService.findUserById(auth.getName());
         User user;
         if(user1 != null) user = user1;
-        else user = user2;
+        else user = user2;*/
 
 //        Employee Details
-        model.addAttribute("titleId", user.getId());
-        String firstName = user.getFirstName();
-        String middleName = user.getMiddleName();
-        String lastName = user.getLastName();
+        //model.addAttribute("titleId", user.getId());
+        model.addAttribute("titleId", myAuthorization.userFromEmailOrId().getId());
+        //String firstName = user.getFirstName();
+        String firstName = myAuthorization.userFromEmailOrId().getFirstName();
+        //String middleName = user.getMiddleName();
+        String middleName = myAuthorization.userFromEmailOrId().getMiddleName();
+        //String lastName = user.getLastName();
+        String lastName = myAuthorization.userFromEmailOrId().getLastName();
         firstName = firstName != null ? firstName : "";
         middleName = middleName != null ? middleName : "";
         lastName = lastName != null ? lastName : "";
         model.addAttribute("titleFullName", firstName + " " + middleName + " " + lastName);
-        model.addAttribute("titleDepartment", user.getDepartment());
+        //model.addAttribute("titleDepartment", user.getDepartment());
+        model.addAttribute("titleDepartment", myAuthorization.userFromEmailOrId().getDepartment());
 
-        List<HRRecord> hrList = hrRecordService.getAllRecord(user.getId());
+        //List<HRRecord> hrList = hrRecordService.getAllRecord(user.getId());
+        List<HRRecord> hrList = hrRecordService.getAllRecord(myAuthorization.userFromEmailOrId().getId());
         if(hrList.size() > 0){
             HRRecord hrRecord = hrList.get(0);
 //        HrRecords Info
@@ -95,6 +106,7 @@ public class LeaveApply {
 
     @RequestMapping(value = "/user/apply-for-leave", method = RequestMethod.POST)
     public ModelAndView applyForLeave(
+            Model model,
             @RequestParam(value = "applyFrom") Date leaveApplyFrom,
             @RequestParam(value = "applyTo") Date leaveApplyTo,
             @RequestParam(value = "leaveType") String leaveType,
@@ -105,27 +117,32 @@ public class LeaveApply {
             @RequestParam(value = "emergencyContactAddress") String emergencyContactAddress,
             @RequestParam(value = "emergencyContactPhone") String emergencyContactPhone){
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user1 = userService.findUserByEmail(auth.getName());
         User user2 = userService.findUserById(auth.getName());
         User user;
         if(user1 != null) user = user1;
-        else user = user2;
+        else user = user2;*/
 
         ModelAndView modelAndView = new ModelAndView();
         LeaveConfiguration leaveConfiguration = new LeaveConfiguration();
-        List<Role> roleList = roleService.findAllRole(user.getMyRole());
+        //List<Role> roleList = roleService.findAllRole(user.getMyRole());
+        List<Role> roleList = roleService.findAllRole(myAuthorization.userFromEmailOrId().getMyRole());
         Role role = roleList.get(0);
         String applyToWhom = leaveConfiguration.mapForNextRole(role.getRole(), role.getRoleChain());
 
-        Leaves leaves = new Leaves(user.getId(), leaveApplyFrom, leaveApplyTo, totalDayOfLeave, leaveDescription,
+        Leaves leaves = new Leaves(myAuthorization.userFromEmailOrId().getId(), leaveApplyFrom, leaveApplyTo, totalDayOfLeave, leaveDescription,
                 leaveReason, leaveType, "Pending", applyToWhom,
                 "New Apply", "New Apply", null);
-        EmergencyContact emergencyContact = new EmergencyContact(user.getId() ,emergencyContactName, emergencyContactAddress, emergencyContactPhone);
+
+        EmergencyContact emergencyContact = new EmergencyContact(myAuthorization.userFromEmailOrId().getId(),
+                emergencyContactName, emergencyContactAddress, emergencyContactPhone);
+
         leaveService.saveLeave(leaves);
         emergencyContactService.saveEmergencyContact(emergencyContact);
 
         modelAndView.setViewName("leaves_user_history");
+        model.addAttribute("myRole", myAuthorization.userFromEmailOrId().getMyRole());
         return modelAndView;
     }
 }

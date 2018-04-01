@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface UserService {
 
+//    first Administration id
+    public void createAdmin();
+
 //    Find
 
     public User findUserByName(String email);

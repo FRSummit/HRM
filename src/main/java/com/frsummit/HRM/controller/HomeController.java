@@ -1,6 +1,7 @@
 package com.frsummit.HRM.controller;
 
 import com.frsummit.HRM.configuration.LeaveConfiguration;
+import com.frsummit.HRM.configuration.MyAuthorization;
 import com.frsummit.HRM.model.Role;
 import com.frsummit.HRM.model.User;
 import com.frsummit.HRM.service.RoleService;
@@ -24,6 +25,9 @@ public class HomeController {
     @Autowired
     private RoleService roleService;
 
+    @Autowired
+    private MyAuthorization myAuthorization;
+
     @RequestMapping(value="/home", method = RequestMethod.GET)
     public String home(Model model){
 
@@ -31,16 +35,18 @@ public class HomeController {
 //        User user = userService.findUserByEmail(auth.getName());
 //        System.out.println(user.getMyRole());
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user1 = userService.findUserByEmail(auth.getName());
         User user2 = userService.findUserById(auth.getName());
         User user;
         if(user1 != null) user = user1;
-        else user = user2;
+        else user = user2;*/
 
-        model.addAttribute("myRole", user.getMyRole());
+//        Authentication/Access list for User and admin in common_layout
+        model.addAttribute("myRole", myAuthorization.userFromEmailOrId().getMyRole());
 
-        List<Role> roleList = roleService.findAllRole(user.getMyRole());
+        List<Role> roleList = roleService.findAllRole(myAuthorization.userFromEmailOrId().getMyRole());
+        //List<Role> roleList = roleService.findAllRole(user.getMyRole());
         Role role = roleList.get(0);
         System.out.println(role.getId());
         System.out.println(role.getRole());

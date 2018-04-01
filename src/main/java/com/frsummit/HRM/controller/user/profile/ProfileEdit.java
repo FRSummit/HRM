@@ -1,5 +1,6 @@
 package com.frsummit.HRM.controller.user.profile;
 
+import com.frsummit.HRM.configuration.MyAuthorization;
 import com.frsummit.HRM.model.User;
 import com.frsummit.HRM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,27 +22,18 @@ public class ProfileEdit {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private MyAuthorization myAuthorization;
+
     @RequestMapping(value="/user/profile-edit", method = RequestMethod.GET)
-    public String profileEdit(){
+    public String profileEdit(Model model){
+        model.addAttribute("myRole", myAuthorization.userFromEmailOrId().getMyRole());
         return "profile_edit";
     }
 
     @RequestMapping(value = "/user/profile-update", method = RequestMethod.GET)
     public ModelAndView editUser(){
         ModelAndView modelAndView = new ModelAndView();
-
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user1 = userService.findUserByEmail(auth.getName());
-        User user2 = userService.findUserById(auth.getName());
-
-        if(user1 != null){
-            System.out.println(user1.getEmail());
-            System.out.println(user1.getPassword());
-            System.out.println(user1.getId());
-        }else {
-            System.out.println(user2.getId());
-            System.out.println(user2.getId());
-        }
 
         //userService.update(user);
 

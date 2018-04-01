@@ -11,7 +11,8 @@
     <body>
         <div class="container">
             <div layout:fragment="content">
-                <form action="#" th:action="@{/user/apply-for-leave-cancel}" method="post">
+                <!--<form action="#" th:action="@{/user/leave-cancellation}" method="get" role="form">-->
+                <form autocomplete="off" action="#" th:action="@{/user/leave-cancellation}" method="get" role="form">
                     <div class="container">
                         <h1 class="well">Leave Cancellation Letter</h1>
                         <div class="col-lg-12 well">

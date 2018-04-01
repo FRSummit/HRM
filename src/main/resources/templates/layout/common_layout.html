@@ -67,9 +67,9 @@
                                 <li th:classappend="${page == 'profile_contact_info' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-contact-info}">Contact Info</a>
                                 </li>
-                                <li th:classappend="${page == 'profile_job_info' ? 'active' : ''}">
-                                    <a href="#" th:href="@{/user/profile-job-info}">Job Info</a>
-                                </li>
+                                <!--<li th:classappend="${page == 'profile_job_info' ? 'active' : ''}">-->
+                                    <!--<a href="#" th:href="@{/user/profile-job-info}">Job Info</a>-->
+                                <!--</li>-->
                                 <li th:classappend="${page == 'profile_external_link' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-external-link}">External Link</a>
                                 </li>
@@ -112,11 +112,11 @@
                                 <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_update' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-update}">Update</a>
                                 </li>
-                                <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_take_action' ? 'active' : ''}">
-                                    <a href="#" th:href="@{/admin/attendance-admin-take-action}">Take Action</a>
-                                </li>
+                                <!--<li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_take_action' ? 'active' : ''}">-->
+                                    <!--<a href="#" th:href="@{/admin/attendance-admin-take-action}">Take Action</a>-->
+                                <!--</li>-->
                                 <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_remark' ? 'active' : ''}">
-                                    <a href="#" th:href="@{/admin/attendance-admin-remark}">Remark</a>
+                                    <a href="#" th:href="@{/admin/attendance-admin-remark}">Remark List</a>
                                 </li>
                             </ul>
                         </li>

@@ -134,6 +134,22 @@ public class UserServiceImpl implements UserService {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
+    public void createAdmin() {
+        List<User> userList = findAllUsers();
+        System.out.println(userList.size());
+        if(userList.size() == 0){
+            User user = new User();
+            user.setId("0000000000");
+            user.setFirstName("Admin");
+            user.setMiddleName("Admin");
+            user.setLastName("Admin");
+            user.setEmail("admin@hrm");
+            user.setPassword("admin");
+            saveUser(user, "ADMIN");
+        }
+    }
+
+    @Override
     public User findUserByName(String name) {
 //        nm =  userRepository.findByName(name);
 //        return userRepository.findByName(name);

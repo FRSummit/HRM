@@ -34,7 +34,7 @@ public class TestImageController {
     public String testImageForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
         // get the thumb from the user entity
-        List<TestImage> list = testImgService.findImg();
+/*        List<TestImage> list = testImgService.findImg();
         TestImage ti = list.get(0);
         byte[] thumb = ti.getData();
 
@@ -70,7 +70,7 @@ public class TestImageController {
                 } catch (IOException ignore) {
                 }
         }
-
+*/
         return "zz_test_image";
     }
 

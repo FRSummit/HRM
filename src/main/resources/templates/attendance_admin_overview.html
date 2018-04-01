@@ -18,28 +18,29 @@
                         <table class="table well">
                             <thead>
                             <tr>
-                                <th>User Id</th>
+                                <th>Serial</th>
                                 <th>Attend Id</th>
+                                <th>User Id</th>
                                 <th>Sign</th>
                                 <th>In</th>
                                 <th>Out</th>
                                 <th>Late</th>
-                                <th>Worked</th>
-                                <th>Shift</th>
-                                <th>Performance</th>
+                                <!--<th>Worked</th>-->
+                                <!--<th>Shift</th>-->
+                                <!--<th>Performance</th>-->
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="success">
-                                <td>2014200000071</td>
-                                <td>101010</td>
-                                <td>12:32pm</td>
-                                <td>12:32pm</td>
-                                <td>12:40pm</td>
-                                <td>1.28hr</td>
-                                <td>00:08hr</td>
-                                <td>Day</td>
-                                <td>1.7%</td>
+                            <tr th:each="attendance, attendanceStat : ${attendanceList}" class="success">
+                                <td th:text="${attendanceStat.count}">101010</td>
+                                <td th:text="${attendance.attendId}">121</td>
+                                <td th:text="${attendance.userId}">12:32pm</td>
+                                <td th:text="${attendance.signTime}">12:32pm</td>
+                                <td th:text="${attendance.inTime}">12:40pm</td>
+                                <td th:text="${attendance.outTime}">1.28hr</td>
+                                <td th:text="${attendance.lateBy}">00:08hr</td>
+                                <!--<td th:text="${attendance.}">Day</td>-->
+                                <!--<td th:text="${attendance.}">1.7%</td>-->
                             </tr>
                             </tbody>
                         </table>

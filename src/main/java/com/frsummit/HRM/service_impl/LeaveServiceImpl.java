@@ -50,7 +50,14 @@ public class LeaveServiceImpl implements LeaveService {
         leaveRepository.save(leaves);
     }
 
-//////////////////////////////////////
+    @Override
+    @Modifying
+    public void updateLeave(String leaveId, String leaveStatus) {
+        Query query = entityManager.createQuery("UPDATE Leaves l SET l.leaveStatus = '" + leaveStatus + "' WHERE l.id='" + leaveId +"'");
+        query.executeUpdate();
+    }
+
+    //////////////////////////////////////
 /////    Admin Section    ////////////
 //////////////////////////////////////
     @Override
@@ -78,12 +85,13 @@ public class LeaveServiceImpl implements LeaveService {
 
     @Override
     @Modifying
-    public void cancelLeave(Leaves leaves, int id) {
+    public void cancelLeave(int id) {
+        System.out.println("3");
 
 //        TypedQuery<User> query = entityManager.createQuery("UPDATE User u SET u.name = :name WHERE u.email='" + eml.getEmail() +"'", User.class);
         Query query = entityManager.createQuery("UPDATE Leaves l SET l.cancellationLeaveStatus= 'True' WHERE l.id='" + id +"'");
         //query.setParameter("email", email);
         query.executeUpdate();
-        System.out.println("Cancel Call");
+        System.out.println("4");
     }
 }

@@ -7,6 +7,7 @@ import java.util.List;
 public interface LeaveService {
 
     public void saveLeave(Leaves leaves);
+    public void updateLeave(String leaveId, String leaveStatus);
 
 //////////////////////////////////////
 /////    Admin Section    ////////////
@@ -19,5 +20,5 @@ public interface LeaveService {
 /////    User Section    ////////////
 //////////////////////////////////////
     public List<Leaves> findMyAllLeaves(String userId);
-    public void cancelLeave(Leaves leaves, int id);
+    public void cancelLeave(int id);
 }
