@@ -143,6 +143,7 @@ public class LeaveApply {
 
         modelAndView.setViewName("leaves_user_history");
         model.addAttribute("myRole", myAuthorization.userFromEmailOrId().getMyRole());
+        model.addAttribute("leavesList",leaveService.findMyAllLeaves(myAuthorization.userFromEmailOrId().getId()));
         return modelAndView;
     }
 }
