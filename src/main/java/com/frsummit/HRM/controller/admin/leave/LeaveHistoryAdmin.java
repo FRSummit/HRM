@@ -1,6 +1,6 @@
 package com.frsummit.HRM.controller.admin.leave;
 
-import com.frsummit.HRM.service.ComService;
+import com.frsummit.HRM.configuration.MyAuthorization;
 import com.frsummit.HRM.service.LeaveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,12 +15,12 @@ public class LeaveHistoryAdmin {
     private LeaveService leaveService;
 
     @Autowired
-    private ComService comService;
+    private MyAuthorization myAuthorization;
 
     @RequestMapping(value = "/admin/leaves-admin-history", method = RequestMethod.GET)
     public String leaveHistoryAdminLoad(Model model){
 
-        model.addAttribute(leaveService.findAllLeavesByRole(comService.getUserIdOrEmail().getMyRole()));
+        model.addAttribute(leaveService.findAllLeavesByRole(myAuthorization.userFromEmailOrId().getMyRole()));
 
         return "leaves_admin_history";
     }

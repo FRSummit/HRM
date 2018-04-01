@@ -1,12 +1,9 @@
 package com.frsummit.HRM.controller.admin.leave;
 
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.ComService;
+import com.frsummit.HRM.configuration.MyAuthorization;
 import com.frsummit.HRM.service.LeaveService;
 import com.frsummit.HRM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +19,7 @@ public class RecentApplications {
     private LeaveService leaveService;
 
     @Autowired
-    private ComService comService;
+    private MyAuthorization myAuthorization;
 
     @RequestMapping(value = "/admin/leave-admin-recent", method = RequestMethod.GET)
     public String recentApplicationsLoad(Model model){
@@ -35,7 +32,8 @@ public class RecentApplications {
         else user = user2;*/
 
         //model.addAttribute("leavesList",leaveService.findAllLeavesByRole(user.getMyRole()));
-        model.addAttribute("leavesList",leaveService.findAllLeavesByRole(comService.getUserIdOrEmail().getMyRole()));
+        //model.addAttribute("leavesList",leaveService.findAllLeavesByRole(comService.getUserIdOrEmail().getMyRole()));
+        model.addAttribute("leavesList",leaveService.findAllLeavesByRole(myAuthorization.userFromEmailOrId().getMyRole()));
 
         return "leaves_admin_recent";
     }

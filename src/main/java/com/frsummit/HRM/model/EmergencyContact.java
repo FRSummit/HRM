@@ -13,8 +13,8 @@ public class EmergencyContact {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "user_id")
-    private String userId;
+    @Column(name = "leave_id")
+    private int leaveId;
 
     @Column(name = "name")
     private String name;
@@ -32,19 +32,19 @@ public class EmergencyContact {
     public EmergencyContact() {
     }
 
-    public EmergencyContact(String userId, String name, String address, String phone) {
-        this.userId = userId;
+    public EmergencyContact(int leaveId, String name, String address, String phone) {
+        this.leaveId = leaveId;
         this.name = name;
         Address = address;
         this.phone = phone;
     }
 
-    public String getUserId() {
-        return userId;
+    public int getUserId() {
+        return leaveId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserId(int userId) {
+        this.leaveId = leaveId;
     }
 
     public String getName() {

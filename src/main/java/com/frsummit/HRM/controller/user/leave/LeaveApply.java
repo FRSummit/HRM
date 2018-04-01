@@ -135,7 +135,7 @@ public class LeaveApply {
                 leaveReason, leaveType, "Pending", applyToWhom,
                 "New Apply", "New Apply", null);
 
-        EmergencyContact emergencyContact = new EmergencyContact(myAuthorization.userFromEmailOrId().getId(),
+        EmergencyContact emergencyContact = new EmergencyContact(leaves.getId(),
                 emergencyContactName, emergencyContactAddress, emergencyContactPhone);
 
         leaveService.saveLeave(leaves);
