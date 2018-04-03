@@ -11,8 +11,14 @@
         <div layout:fragment="content">
 
             <div>
-                <!--<img src="${pageContext.request.contextPath}/Image/<%= h.getHomeID() %>">-->
-                <img name="image" src="image/avatar" height="75px" width="75px" align="left" />
+                <!--<img src="${pageContext.request.contextPath}/Image/<%= h.getHomeID() %>" height="75px" width="75px"/>-->
+                <!--<img th:text="${img}" name="image" src="image/avatar" height="75px" width="75px" align="left" />-->
+                <img th:src="@{/image/${image_id}}" height="75px" width="75px" align="left" />
+                <img th:src="@{myimage}" height="75px" width="75px" align="left" />
+                <img th:src="@{../image/paper.jpg}" height="75px" width="75px" align="left" />
+                <img th:src="@{/resources/image/paper.jpg}" height="75px" width="75px" align="left" />
+                <img src="https://www.w3schools.com/images/picture.jpg" height="75px" width="75px" align="left" />
+                <!--<img src="${pageContext.request.contextPath}/resources/images/paper.jpg" height="75px" width="75px" align="left" />-->
             </div>
 
 

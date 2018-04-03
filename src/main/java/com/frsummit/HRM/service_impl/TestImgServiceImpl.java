@@ -20,6 +20,6 @@ public class TestImgServiceImpl implements TestImgService {
 
     @Override
     public List<TestImage> findImg() {
-        return entityManager.createQuery("SELECT i FROM TestImage AS i WHERE i.id= 1", TestImage.class).getResultList();
+        return entityManager.createQuery("SELECT i FROM TestImage AS i WHERE i.id= 3", TestImage.class).getResultList();
     }
 }
