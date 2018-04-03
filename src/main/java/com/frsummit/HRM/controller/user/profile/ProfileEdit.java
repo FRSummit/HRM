@@ -32,6 +32,7 @@ public class ProfileEdit {
     @RequestMapping(value="/user/profile-edit", method = RequestMethod.GET)
     public String profileEdit(Model model){
         model.addAttribute("myRole", myAuthorization.userFromEmailOrId().getMyRole());
+        model.addAttribute("myId", myAuthorization.userFromEmailOrId().getId());
         return "profile_edit";
     }
 
@@ -63,14 +64,27 @@ public class ProfileEdit {
             @RequestParam(value = "permanent_city") String p_city,
             @RequestParam(value = "permanent_district") String p_dis,
             @RequestParam(value = "permanent_country") String p_cntry){
+//            @Valid User user, BindingResult bindingResult){
         ModelAndView modelAndView = new ModelAndView();
 
         //userService.update(user);
 
-        User user = new User();
-        profileSettings.getOriginalName(fn, mn, ln, email, dept, desg, dob, sex, phone, bg, father, mother, nid, passport,
-                pr_h, pr_st, pr_po, pr_city, pr_dis, pr_cntry, p_h, p_st, p_po, p_city, p_dis, p_cntry);
+//        User user = new User();
+//        profileSettings.getOriginalName(fn, mn, ln, email, dept, desg, dob, sex, phone, bg, father, mother, nid, passport,
+//                pr_h, pr_st, pr_po, pr_city, pr_dis, pr_cntry, p_h, p_st, p_po, p_city, p_dis, p_cntry);
+        profileSettings.getOriginalName(fn, mn, ln, email, dept, desg, dob, sex, phone, bg, father, mother, nid, passport);
 
+//        userService.updateUser(fn, mn, ln, email, dept, desg, dob, sex, phone, bg, father, mother, nid, passport);
+//                pr_h, pr_st, pr_po, pr_city, pr_dis, pr_cntry, p_h, p_st, p_po, p_city, p_dis, p_cntry);
+
+
+//        System.out.println(fn + " " +  mn + " " + ln + " " + email + " " + dept + " " +
+//                desg + " " + dob + " " + sex + " " + phone + " " + bg + " " + father + " " + mother + " " + nid + " " + passport);
+
+//        if(email.equalsIgnoreCase("")){
+//            email = myAuthorization.userFromEmailOrId().getEmail();
+//        }
+//        System.out.println(email);
 
         modelAndView.setViewName("home");
         return modelAndView;

@@ -102,16 +102,49 @@ public class UserServiceImpl implements UserService {
     @Override
     @Modifying
 //    @Query
-    public void updateName(String name, String lastName) {
+    public void updateUser(String fn, String mn, String ln, String email, String dept, String desg, String dob, String sex,
+                           String phone, String bg, String father, String mother, String nid, String passport){
+//                           String pr_h, String pr_st, String pr_po, String pr_city, String pr_dis, String pr_cntry,
+//                           String p_h, String p_st, String p_po, String p_city, String p_dis, String p_cntry) {
+
+        Query query = entityManager.createQuery("UPDATE User u SET " +
+                "u.firstName = '" + fn +
+                "', u.middleName = '" + mn +
+                "', u.lastName = '" + ln +
+                "', u.email = '" + email +
+                "', u.department = '" + dept +
+                "', u.designation = '" + desg +
+                "', u.dob = '" + dob +
+                "', u.sex = '" + sex +
+                "', u.phone = '" + phone +
+                "', u.bloodGroup = '" + bg +
+                "', u.fatherName = '" + father +
+                "', u.motherName = '" + mother +
+                "', u.nid = '" + nid +
+                "', u.passportNumber = '" + passport +
+                /*"u.presentAddress.house = '" + pr_h +
+                "u.presentAddress.street = '" + pr_st +
+                "u.presentAddress.postOffice = '" + pr_po +
+                "u.presentAddress.city = '" + pr_city +
+                "u.presentAddress.district = '" + pr_dis +
+                "u.presentAddress.country = '" + pr_cntry +
+                "u.permanentAddress.house = '" + p_h +
+                "u.permanentAddress.street = '" + p_st +
+                "u.permanentAddress.postOffice = '" + p_po +
+                "u.permanentAddress.city = '" + p_city +
+                "u.permanentAddress.district = '" + p_dis +
+                "u.permanentAddress.country = '" + p_cntry +*/ "' WHERE u.id='" + myId() +"'");
+        //query.setParameter("email", email);
+        query.executeUpdate();
 //        if(email == myId())
 //            userRepository.updateName(email, name);
 //        else
 //            System.out.println("Fail");
 
 //        TypedQuery<User> query = entityManager.createQuery("UPDATE User u SET u.name = :name WHERE u.email='" + eml.getEmail() +"'", User.class);
-        Query query = entityManager.createQuery("UPDATE User u SET u.name = '" + name + "' , u.lastName = '" + lastName + "' WHERE u.id='" + myId() +"'");
+        /*Query query = entityManager.createQuery("UPDATE User u SET u.name = '" + name + "' , u.lastName = '" + lastName + "' WHERE u.id='" + myId() +"'");
         //query.setParameter("email", email);
-        query.executeUpdate();
+        query.executeUpdate();*/
 //
 //        User u = new User(email, name);
 //        u.setId(u.getId());
@@ -177,7 +210,7 @@ public class UserServiceImpl implements UserService {
         return entityManager.createQuery("SELECT u FROM User AS u WHERE u.id= '" + myId() + "'", User.class).getResultList();
     }
 
-    @Override
+    /*@Override
     public void update(User user) {
 
 //        String sql = "UPDATE User SET ID=:id, NAME=:name, LASTNAME=:lastName WHERE email=:email";
@@ -195,7 +228,7 @@ public class UserServiceImpl implements UserService {
         //System.out.println(user);
 
 
-    }
+    }*/
 
 
     private SqlParameterSource getSqlParameterByModel(User user) {
