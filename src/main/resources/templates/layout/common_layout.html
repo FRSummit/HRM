@@ -55,9 +55,9 @@
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle w3-button" style="margin-left:-50%">Profile <b class="caret"></b></a>
                             <ul class="dropdown-menu">
 <!-- =========================== Profile : User =================================================== -->
-                                <li th:classappend="${page == 'profile_overview' ? 'active' : ''}">
-                                    <a href="#" th:href="@{/user/profile-overview}">Overview</a>
-                                </li>
+                                <!--<li th:classappend="${page == 'profile_overview' ? 'active' : ''}">-->
+                                    <!--<a href="#" th:href="@{/user/profile-overview}">Overview</a>-->
+                                <!--</li>-->
                                 <li th:classappend="${page == 'profile_edit' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/profile-edit}">Edit Profile</a>
                                 </li>
@@ -70,9 +70,9 @@
                                 <!--<li th:classappend="${page == 'profile_job_info' ? 'active' : ''}">-->
                                     <!--<a href="#" th:href="@{/user/profile-job-info}">Job Info</a>-->
                                 <!--</li>-->
-                                <li th:classappend="${page == 'profile_external_link' ? 'active' : ''}">
-                                    <a href="#" th:href="@{/user/profile-external-link}">External Link</a>
-                                </li>
+                                <!--<li th:classappend="${page == 'profile_external_link' ? 'active' : ''}">-->
+                                    <!--<a href="#" th:href="@{/user/profile-external-link}">External Link</a>-->
+                                <!--</li>-->
                                 <li th:unless="${myRole} == 'USER'" class="divider"></li>
 <!-- =========================== Profile : Admin =========================================================== -->
                                 <li th:unless="${myRole} == 'USER'" sec:authorize="hasRole('ADMIN')" th:classappend="${page == 'profile_user_list' ? 'active' : ''}">

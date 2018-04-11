@@ -26,32 +26,32 @@
                                         <!-- /input-group -->
                                     </div>
                                     <div class="col-sm-6">
-                                        <h3 style="color:#00b1b1;">Fayazur Rahman Summit</h3>
-                                        <span><p>Student</p></span>
+                                        <h3 style="color:#00b1b1;" th:text="${fullName}">Fayazur Rahman Summit</h3>
+                                        <span><p th:text="${designation}">Student</p></span>
                                     </div>
                                     <div class="clearfix"></div>
                                     <div style="margin-top:5%">
                                         <hr style="margin:5px 0 5px 0;"/>
                                         <div class="col-sm-5 col-xs-6 tital">First Name:</div>
-                                        <div class="col-sm-7 col-xs-6 ">FAYAZUR</div>
+                                        <div class="col-sm-7 col-xs-6" th:text="${firstName}">FAYAZUR</div>
 
                                         <div class="col-sm-5 col-xs-6 tital">Middle Name:</div>
-                                        <div class="col-sm-7"> RAHMAN</div>
+                                        <div class="col-sm-7"  th:text="${middleName}"> RAHMAN</div>
 
                                         <div class="col-sm-5 col-xs-6 tital">Last Name:</div>
-                                        <div class="col-sm-7"> SUMMIT</div>
+                                        <div class="col-sm-7" th:text="${lastName}"> SUMMIT</div>
 
                                         <div class="col-sm-5 col-xs-6 tital">Date Of Birth:</div>
-                                        <div class="col-sm-7">30 Jun 1998</div>
+                                        <div class="col-sm-7" th:text="${dob}">30 Jun 1998</div>
 
-                                        <div class="col-sm-5 col-xs-6 tital">Place Of Birth:</div>
-                                        <div class="col-sm-7">MYMENSINGH</div>
+                                        <div class="col-sm-5 col-xs-6 tital">Department:</div>
+                                        <div class="col-sm-7" th:text="${department}"></div>
 
-                                        <div class="col-sm-5 col-xs-6 tital">Nationality:</div>
-                                        <div class="col-sm-7">BANGLADESHI</div>
+                                        <!--<div class="col-sm-5 col-xs-6 tital">Nationality:</div>-->
+                                        <!--<div class="col-sm-7">BANGLADESHI</div>-->
 
-                                        <div class="col-sm-5 col-xs-6 tital">Relition:</div>
-                                        <div class="col-sm-7">ISLAM</div>
+                                        <!--<div class="col-sm-5 col-xs-6 tital">Relition:</div>-->
+                                        <!--<div class="col-sm-7">ISLAM</div>-->
 
                                     </div>
                                 </div>
