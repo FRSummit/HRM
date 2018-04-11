@@ -22,8 +22,9 @@ public class AttRemark {
     }
 
     @RequestMapping(value = "/admin/attendance-remove-from-remark-list", method = RequestMethod.GET)
-    public String removeFromRemark(@RequestParam(value = "userId") String userId){
-        attendanceService.removeFromRemarkList(userId);
+    public String removeFromRemark(@RequestParam(value = "attendId") String attendId, Model model){
+        attendanceService.removeFromRemarkList(attendId);
+        model.addAttribute("attendanceList", attendanceService.remarkAttendanceList());
         return "attendance_admin_remark";
     }
 }

@@ -25,8 +25,8 @@ public class AttOverviewAdmin {
     @RequestMapping(value = "/admin/attendance-add-remark-list", method = RequestMethod.GET)
     public String addAttendanceRemarkList(
             Model model,
-            @RequestParam(value = "remark") String userId){
-        attendanceService.remarkAttendance(userId);
+            @RequestParam(value = "remark") String attendId){
+        attendanceService.remarkAttendance(attendId);
         model.addAttribute("attendanceList", attendanceService.remarkAttendanceList());
         return "attendance_admin_remark";
     }

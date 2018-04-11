@@ -23,7 +23,7 @@ public class LoadSpecificUserPayroll {
 
     @RequestMapping(value = "/admin/load-specific-payroll", method = RequestMethod.GET)
     public String loadSpecificUserPayroll(@RequestParam(value = "userId") String userId, Model model){
-        model.addAttribute("allUsersPayrollHistory", payrollService.findSpecificUserPayroll(userId));
-        return "payroll_load_specific_user";
+        model.addAttribute("userPayrollHistory", payrollService.findSpecificUserPayroll(userId));
+        return "payroll_load_specific_list";
     }
 }

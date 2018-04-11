@@ -7,8 +7,8 @@ import java.util.List;
 public interface AttendanceService {
 
     public void saveAttendance(Attendance attendance);
-    public void remarkAttendance(String userId);
-    public void removeFromRemarkList(String userId);
+    public void remarkAttendance(String attendId);
+    public void removeFromRemarkList(String attendId);
     public void updateAttendance(Attendance attendance, String userId);
     public List<Attendance> myAllSignList();
     public List<Attendance> UsersSignList();

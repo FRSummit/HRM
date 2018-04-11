@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+<head>
+    <title>HRM User Payroll History</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../static/css/background.css" th:href="@{/css/background.css}" />
+</head>
+<body>
+<div class="container">
+    <div layout:fragment="content">
+        <h1 class="well">Specific User</h1>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <table class="table well">
+                        <h2>Total Earnings</h2>
+                        <thead>
+                        <tr>
+                            <th>Serial</th>
+                            <!--<th>Year</th>-->
+                            <th>Basic</th>
+                            <th>House Rent</th>
+                            <th>Convence</th>
+                            <th>Medical</th>
+                            <th>Advanced/Load</th>
+                            <th>Interest</th>
+                            <th>Other All</th>
+                            <th>Educational</th>
+                            <th>Bonus</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="payroll, payrollStat : ${userPayrollHistory}" class="success">
+                            <td th:text="${payrollStat.count}">1</td>
+                            <!--<td th:text="${payroll.}">2018</td>-->
+                            <td th:text="${payroll.basic}">15000</td>
+                            <td th:text="${payroll.houseRent}">2000</td>
+                            <td th:text="${payroll.conveyance}">2000</td>
+                            <td th:text="${payroll.medical}">2000</td>
+                            <td th:text="${payroll.advanceOrLoan}">0</td>
+                            <td th:text="${payroll.interest}">0</td>
+                            <td th:text="${payroll.otherAll}">2000</td>
+                            <td th:text="${payroll.educationalAll}">1500</td>
+                            <td th:text="${payroll.bonus}">1500</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table well">
+                        <thead>
+                        <tr>
+                            <th>Serial</th>
+                            <!--<th>Year</th>-->
+                            <th>Incentive</th>
+                            <th>Leave Encasement</th>
+                            <th>Perquisite</th>
+                            <th>Reimbursement</th>
+                            <th>Special</th>
+                            <th>Over Time</th>
+                            <th>Arrears</th>
+                            <th>Child Fund</th>
+                            <th>Stipen</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="payroll, payrollStat : ${userPayrollHistory}" class="success">
+                            <td th:text="${payrollStat.count}">1</td>
+                            <!--<td th:text="${payroll.}">2018</td>-->
+                            <td th:text="${payroll.incentiveOrCommission}">1200</td>
+                            <td th:text="${payroll.leaveEncashment}">0</td>
+                            <td th:text="${payroll.perquisite}">0</td>
+                            <td th:text="${payroll.reimbursement}">500</td>
+                            <td th:text="${payroll.special}">0</td>
+                            <td th:text="${payroll.overtime}">1000</td>
+                            <td th:text="${payroll.arrears}">1000</td>
+                            <td th:text="${payroll.childFund}">1000</td>
+                            <td th:text="${payroll.stipen}">1000</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row" style="margin-top:5%">
+                <div>
+                    <table class="table well">
+                        <h2>Total Deductions</h2>
+                        <thead>
+                        <tr>
+                            <th>Serial</th>
+                            <!--<th>Year</th>-->
+                            <th>TDS</th>
+                            <th>Interest</th>
+                            <th>PF</th>
+                            <th>Professional Tex</th>
+                            <th>Advanced/Loan</th>
+                            <th>Other</th>
+                            <th>Leave</th>
+                            <th>Security Deposit</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="payroll, payrollStat : ${userPayrollHistory}" class="success">
+                            <td th:text="${payrollStat.count}">1</td>
+                            <!--<td th:text="${payroll.}">2018</td>-->
+                            <td th:text="${payroll.tds}">2000</td>
+                            <td th:text="${payroll.interestDED}">2500</td>
+                            <td th:text="${payroll.pf}">500</td>
+                            <td th:text="${payroll.professionalTaxDED}">1500</td>
+                            <td th:text="${payroll.advanceOrLoanDED}">1000</td>
+                            <td th:text="${payroll.otherDED}">500</td>
+                            <td th:text="${payroll.leaveDED}">1000</td>
+                            <td th:text="${payroll.securityDepositeDED}">1000</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

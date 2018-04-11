@@ -39,15 +39,15 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     @Modifying
-    public void remarkAttendance(String userId) {
-        Query query = entityManager.createQuery("UPDATE Attendance a SET a.attendanceRemark = 'REMARK' WHERE a.userId='" + userId +"'");
+    public void remarkAttendance(String attendId) {
+        Query query = entityManager.createQuery("UPDATE Attendance a SET a.attendanceRemark = 'REMARK' WHERE a.attendId='" + attendId +"'");
         query.executeUpdate();
     }
 
     @Override
     @Modifying
-    public void removeFromRemarkList(String userId) {
-        Query query = entityManager.createQuery("UPDATE Attendance a SET a.attendanceRemark = 'FALSE' WHERE a.userId='" + userId +"'");
+    public void removeFromRemarkList(String attendId) {
+        Query query = entityManager.createQuery("UPDATE Attendance a SET a.attendanceRemark = 'FALSE' WHERE a.attendId='" + attendId +"'");
         query.executeUpdate();
     }
 
