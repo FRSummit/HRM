@@ -27,4 +27,10 @@ public class MyAuthorization {
     public Model getRoleForCommonLayout(Model model){
         return model.addAttribute("model", userFromEmailOrId().getMyRole());
     }
+
+    public String userFullName(){
+        String fullName = userFromEmailOrId().getFirstName() + " "
+                + userFromEmailOrId().getMiddleName() + " " + userFromEmailOrId().getLastName();
+        return fullName;
+    }
 }

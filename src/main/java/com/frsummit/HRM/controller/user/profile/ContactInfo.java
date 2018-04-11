@@ -16,6 +16,13 @@ public class ContactInfo {
     @RequestMapping(value = "/user/profile-contact-info", method = RequestMethod.GET)
     public String contactInfo(Model model){
         model.addAttribute("myRole", myAuthorization.userFromEmailOrId().getMyRole());
+        model.addAttribute("fullName", myAuthorization.userFullName());
+        model.addAttribute("designation", myAuthorization.userFromEmailOrId().getDesignation());
+        model.addAttribute("firstName", myAuthorization.userFromEmailOrId().getFirstName());
+        model.addAttribute("middleName", myAuthorization.userFromEmailOrId().getMiddleName());
+        model.addAttribute("lastName", myAuthorization.userFromEmailOrId().getLastName());
+        model.addAttribute("phone", myAuthorization.userFromEmailOrId().getPhone());
+        //model.addAttribute("district", myAuthorization.userFromEmailOrId().getPresentAddress().getDistrict());
         return "profile_contact_info";
     }
 }
