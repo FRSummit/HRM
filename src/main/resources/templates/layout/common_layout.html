@@ -136,9 +136,9 @@
                                 <li th:classappend="${page == 'leaves_user_apply' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/leave-user-apply}">Apply</a>
                                 </li>
-                                <li th:classappend="${page == 'leaves_user_cancellation' ? 'active' : ''}">
-                                    <a href="#" th:href="@{/user/leave-user-cancellation}">Cancel Leave</a>
-                                </li>
+                                <!--<li th:classappend="${page == 'leaves_user_cancellation' ? 'active' : ''}">-->
+                                    <!--<a href="#" th:href="@{/user/leave-user-cancellation}">Cancel Leave</a>-->
+                                <!--</li>-->
                                 <li th:unless="${myRole} == 'USER'" class="divider"></li>
 <!-- ========================== Leaves : Admin ============================================================= -->
                                 <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'leaves_admin_recent' ? 'active' : ''}">
@@ -165,9 +165,9 @@
                             <ul class="dropdown-menu">
 
 <!-- =========================== Payroll : User ======================================================= -->
-                                <li th:classappend="${page == 'payroll_my_payment' ? 'active' : ''}">
-                                    <a href="#" th:href="@{/user/payroll-my-payment}">My Payment</a>
-                                </li>
+                                <!--<li th:classappend="${page == 'payroll_my_payment' ? 'active' : ''}">-->
+                                    <!--<a href="#" th:href="@{/user/payroll-my-payment}">My Payment</a>-->
+                                <!--</li>-->
                                 <li th:classappend="${page == 'payroll_history' ? 'active' : ''}">
                                     <a href="#" th:href="@{/user/payroll-history}">History</a>
                                 </li>
