@@ -74,6 +74,11 @@ public class AttendanceServiceImpl implements AttendanceService {
         return entityManager.createQuery("SELECT a FROM Attendance AS a WHERE a.attendanceRemark = 'REMARK'", Attendance.class).getResultList();
     }
 
+    @Override
+    public List<Attendance> attendanceStatus(String userId) {
+        return entityManager.createQuery("SELECT a FROM Attendance AS a WHERE a.userId = '" + userId + "'", Attendance.class).getResultList();
+    }
+
     public  Attendance findLastPunch(){
         List<Attendance> attendancesList = findAllUserPunches();
         Attendance attendanceInOut = attendancesList.get(attendancesList.size()-1);

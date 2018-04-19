@@ -13,4 +13,5 @@ public interface AttendanceService {
     public List<Attendance> myAllSignList();
     public List<Attendance> UsersSignList();
     public List<Attendance> remarkAttendanceList();
+    public List<Attendance> attendanceStatus(String userId);
 }

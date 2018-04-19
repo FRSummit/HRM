@@ -36,7 +36,7 @@
                                 <tbody>
                                     <tr th:each="payroll, payrollStat : ${allUsersPayrollHistory}" class="warning">
                                         <td th:text="${payrollStat.count}">1</td>
-                                        <td th:text="${payrollStat.count}">1</td>
+                                        <td th:text="${payroll.userId}">1</td>
                                         <!--<td th:text="${payroll.}">2018</td>-->
                                         <td th:text="${payroll.basic}">15000</td>
                                         <td th:text="${payroll.houseRent}">2000</td>
@@ -70,7 +70,7 @@
                                 <tbody>
                                     <tr th:each="payroll, payrollStat : ${allUsersPayrollHistory}" class="warning">
                                         <td th:text="${payrollStat.count}">1</td>
-                                        <td th:text="${payrollStat.count}">1</td>
+                                        <td th:text="${payroll.userId}">1</td>
                                         <!--<td th:text="${payroll.}">2018</td>-->
                                         <td th:text="${payroll.incentiveOrCommission}">1200</td>
                                         <td th:text="${payroll.leaveEncashment}">0</td>
@@ -108,7 +108,7 @@
                                 <tbody>
                                     <tr th:each="payroll, payrollStat : ${allUsersPayrollHistory}" class="warning">
                                         <td th:text="${payrollStat.count}">1</td>
-                                        <td th:text="${payrollStat.count}">2018</td>
+                                        <td th:text="${payroll.userId}">2018</td>
                                         <td th:text="${payroll.tds}">2000</td>
                                         <td th:text="${payroll.interestDED}">2500</td>
                                         <td th:text="${payroll.pf}">500</td>

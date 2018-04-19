@@ -32,6 +32,9 @@ public class Attendance implements Serializable {
     @Column(name = "out_time")
     private Calendar outTime;
 
+    @Column(name = "status")
+    private String status;
+
     @Column(name = "late_by")
     private Date lateBy;
 
@@ -222,6 +225,14 @@ public class Attendance implements Serializable {
 
     public void setAttendanceRemark(String attendanceRemark) {
         this.attendanceRemark = attendanceRemark;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     /*
     *

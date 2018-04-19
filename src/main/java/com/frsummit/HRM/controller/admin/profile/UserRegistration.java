@@ -1,7 +1,9 @@
 package com.frsummit.HRM.controller.admin.profile;
 
+import com.frsummit.HRM.model.Attendance;
 import com.frsummit.HRM.model.HRRecord;
 import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.AttendanceService;
 import com.frsummit.HRM.service.HRRecordService;
 import com.frsummit.HRM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class UserRegistration {
     @Autowired
     private HRRecordService hrRecordService;
 
+    @Autowired
+    private AttendanceService attendanceService;
+
     //@RequestMapping(value="/admin/registration", method = RequestMethod.GET)
     @RequestMapping(value="/admin/profile-user-registration", method = RequestMethod.GET)
     public ModelAndView registration(){
@@ -35,7 +40,9 @@ public class UserRegistration {
     }
 
     @RequestMapping(value = "/admin/registration", method = RequestMethod.POST)
-    public ModelAndView createNewUser(@Valid User user, @RequestParam(value = "rl") String rl, BindingResult bindingResult, Model model) {
+    public ModelAndView createNewUser(@Valid User user,
+                                      @RequestParam(value = "rl") String rl,
+                                      BindingResult bindingResult, Model model) {
 
         ModelAndView modelAndView = new ModelAndView();
         User userExists = userService.findUserByEmail(user.getEmail());
@@ -64,6 +71,11 @@ public class UserRegistration {
                     0,0,0,0, 0,0,
                     5,5,5, 5,5,5);
             hrRecordService.saveHRRecord(hrRecord);
+            Attendance attendance = new Attendance();
+            attendance.setStatus("IN");
+            attendance.setUserId(user.getId());
+            attendanceService.saveAttendance(attendance);
+
             System.out.println(user.getPassword());
             modelAndView.addObject("successMessage", "User has been registered successfully");
             modelAndView.addObject("user", new User());
