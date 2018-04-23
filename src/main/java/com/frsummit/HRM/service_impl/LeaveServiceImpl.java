@@ -75,6 +75,14 @@ public class LeaveServiceImpl implements LeaveService {
         return null;
     }
 
+    @Override
+    @Modifying
+    public void updateLeaveStatus(String leaveId, String selectStatus, String leaveActionBy, String modifyTo) {
+        Query query = entityManager.createQuery("UPDATE Leaves l SET l.leaveStatus = '" + selectStatus + "', l.leaveActionBy = '" + leaveActionBy + "', l.modifyToWhom = '" + modifyTo + "' WHERE l.id='" + leaveId +"'");
+        query.executeUpdate();
+        System.out.println(leaveId + " " + selectStatus + " " + leaveActionBy);
+    }
+
 ////////////////////////////////////
 ////    User Section    ////////////
 ////////////////////////////////////

@@ -15,6 +15,36 @@
                 <div class="container">
                     <div class="row">
                         <div>
+                            <div class="row well">
+                                <h2>Update Leave Application</h2>
+                                <form action="#" th:action="@{/admin/leave-status-update}" method="get">
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <input type="text" name="leaveId"  placeholder="Leave Id" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <select name="selectStatus" class="form-control">
+                                                <option>Checking</option>
+                                                <option>Granted</option>
+                                                <option>Rejected</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-4">
+                                            <input type="text" name="message"  placeholder="Message for Client" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-primary btn-block">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
                             <table class="table well">
                                 <h2>Recent Application</h2>
                                 <thead>

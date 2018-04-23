@@ -15,8 +15,10 @@ public interface LeaveService {
     public List<Leaves> findAllLeaves();
     public List<Leaves> findAllLeavesByRole(String userRole);
     public List<Leaves> findAllRecentLeavesByRole(String userRole);
+    public void updateLeaveStatus(String leaveId, String selectStatus, String leaveActionBy, String modifyTo);
 
-//////////////////////////////////////
+
+    //////////////////////////////////////
 /////    User Section    ////////////
 //////////////////////////////////////
     public List<Leaves> findMyAllLeaves(String userId);
