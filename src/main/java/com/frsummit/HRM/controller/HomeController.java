@@ -55,6 +55,6 @@ public class HomeController {
         LeaveConfiguration leaveConfiguration = new LeaveConfiguration();
         leaveConfiguration.mapForRole(role.getRole(), role.getRoleChain());
 
-        return "configuration";
+        return "home";
     }
 }

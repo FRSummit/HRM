@@ -53,7 +53,13 @@ public class Config implements Serializable {
     private String payroll_deduction_leave;
     private String payroll_deduction_securityDeposite;
 
+    private String[] conf;
+
     public Config() {
+    }
+
+    public Config(String[] conf) {
+        this.conf = conf;
     }
 
     public Config(String profile_dob, String profile_sex, String profile_blood, String profile_nid, String profile_passport, String profile_fatherName, String profile_motherName) {
@@ -102,6 +108,53 @@ public class Config implements Serializable {
         this.payroll_deduction_other = payroll_deduction_other;
         this.payroll_deduction_leave = payroll_deduction_leave;
         this.payroll_deduction_securityDeposite = payroll_deduction_securityDeposite;
+    }
+
+    public Config(String profile_dob, String profile_sex, String profile_blood, String profile_nid, String profile_passport, String profile_fatherName, String profile_motherName, String leave_employeeDetail, String leave_personal, String leave_sick, String leave_planned, String leave_vacation, String leave_Maternity, String leave_other, String leave_name, String leave_address, String leave_phone, String payroll_earning_educational, String payroll_earning_bonus, String payroll_earning_incentive, String payroll_earning_leaveEncasement, String payroll_earning_perquisite, String payroll_earning_reimbursement, String payroll_earning_special, String payroll_earning_overtime, String payroll_earning_arrears, String payroll_earning_childFund, String payroll_earning_stipen, String payroll_deduction_tds, String payroll_deduction_interest, String payroll_deduction_pf, String payroll_deduction_professionalTex, String payroll_deduction_advancedOrLoan, String payroll_deduction_other, String payroll_deduction_leave, String payroll_deduction_securityDeposite) {
+        this.profile_dob = profile_dob;
+        this.profile_sex = profile_sex;
+        this.profile_blood = profile_blood;
+        this.profile_nid = profile_nid;
+        this.profile_passport = profile_passport;
+        this.profile_fatherName = profile_fatherName;
+        this.profile_motherName = profile_motherName;
+        this.leave_employeeDetail = leave_employeeDetail;
+        this.leave_personal = leave_personal;
+        this.leave_sick = leave_sick;
+        this.leave_planned = leave_planned;
+        this.leave_vacation = leave_vacation;
+        this.leave_Maternity = leave_Maternity;
+        this.leave_other = leave_other;
+        this.leave_name = leave_name;
+        this.leave_address = leave_address;
+        this.leave_phone = leave_phone;
+        this.payroll_earning_educational = payroll_earning_educational;
+        this.payroll_earning_bonus = payroll_earning_bonus;
+        this.payroll_earning_incentive = payroll_earning_incentive;
+        this.payroll_earning_leaveEncasement = payroll_earning_leaveEncasement;
+        this.payroll_earning_perquisite = payroll_earning_perquisite;
+        this.payroll_earning_reimbursement = payroll_earning_reimbursement;
+        this.payroll_earning_special = payroll_earning_special;
+        this.payroll_earning_overtime = payroll_earning_overtime;
+        this.payroll_earning_arrears = payroll_earning_arrears;
+        this.payroll_earning_childFund = payroll_earning_childFund;
+        this.payroll_earning_stipen = payroll_earning_stipen;
+        this.payroll_deduction_tds = payroll_deduction_tds;
+        this.payroll_deduction_interest = payroll_deduction_interest;
+        this.payroll_deduction_pf = payroll_deduction_pf;
+        this.payroll_deduction_professionalTex = payroll_deduction_professionalTex;
+        this.payroll_deduction_advancedOrLoan = payroll_deduction_advancedOrLoan;
+        this.payroll_deduction_other = payroll_deduction_other;
+        this.payroll_deduction_leave = payroll_deduction_leave;
+        this.payroll_deduction_securityDeposite = payroll_deduction_securityDeposite;
+    }
+
+    public String[] getConf() {
+        return conf;
+    }
+
+    public void setConf(String[] conf) {
+        this.conf = conf;
     }
 
     public String getProfile_dob() {
