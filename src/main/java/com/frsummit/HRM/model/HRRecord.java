@@ -1,11 +1,12 @@
 package com.frsummit.HRM.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "hr_record")
-public class HRRecord {
+public class HRRecord implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

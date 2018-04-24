@@ -16,11 +16,13 @@ function showTab(n) {
     } else {
         document.getElementById("nextBtn").innerHTML = "Next";
     }
+//    My Submit Code
     if(n == (x.length - 1)){
         document.getElementById("submitBtn").style.display = "inline"
     } else {
         document.getElementById("submitBtn").style.display = "none";
     }
+
     //... and run a function that will display the correct step indicator:
     fixStepIndicator(n)
 }

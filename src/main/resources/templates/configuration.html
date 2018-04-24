@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <form id="regForm" action="/action_page.php">
+        <form id="regForm" action="#" th:action="@{/admin/configuration-test}" method="get">
             <h1>Configuration:</h1>
             <!-- One "tab" for each step in the form: -->
             <div class="tab">
@@ -27,50 +27,50 @@
                 <div class="form-horizontal">
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox1" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox1" value="Date of Birth" checked=""/>
                             <label for="checkbox1">Date of Birth</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox2" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox2" value="Gender" checked=""/>
                             <label for="checkbox2">Gender</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox3" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox3" value="Blood Group" checked=""/>
                             <label for="checkbox3">Blood Group</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox4" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox4" value="NID" checked=""/>
                             <label for="checkbox4">NID</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox5" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox5" value="Father Name" checked=""/>
                             <label for="checkbox5">Father Name</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox6" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox6" value="Passport No" checked=""/>
                             <label for="checkbox6">Passport No</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox7" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox7" value="Mother Name" checked=""/>
                             <label for="checkbox7">Mother Name</label>
                         </div>
                     </div>
                 </div>
                 <div class="funkyradio">
                     <div class="funkyradio-primary">
-                        <input name="check" type="checkbox" id="checkbox7-8" disabled="disabled" value="First" checked=""/>
+                        <input name="" type="checkbox" id="checkbox7-8" disabled="disabled" value="Profile Finish" checked=""/>
                         <label for="checkbox7-8">Password is set to it's form</label>
                     </div>
                 </div>
@@ -87,83 +87,83 @@
 
                 <div class="funkyradio col-sm-6">
                     <div class="funkyradio-primary">
-                        <input name="check" type="checkbox" id="checkbox8" value="First" checked=""/>
+                        <input name="check" type="checkbox" id="checkbox8" value="Employee Details" checked=""/>
                         <label for="checkbox8">Employee Details</label>
                     </div>
                 </div>
                 <div class="funkyradio">
                     <div class="funkyradio-primary">
-                        <input name="check" type="checkbox" id="checkbox9" value="First" onclick="myFunction()" checked=""/>
+                        <input name="" type="checkbox" id="checkbox9" value="HR Records" onclick="myFunction()" checked=""/>
                         <label for="checkbox9">HR Records</label>
                     </div>
                 </div>
                 <div id="hr-records">
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox9-1" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox9-1" value="Personal Leave Records" checked=""/>
                             <label for="checkbox9-1">Personal Leave Records</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox9-2" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox9-2" value="Sick Leave Records" checked=""/>
                             <label for="checkbox9-2">Sick Leave Records</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox9-3" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox9-3" value="Planned Leave Records" checked=""/>
                             <label for="checkbox9-3">Planned Leave Records</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox9-4" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox9-4" value="Vacation Leave Records" checked=""/>
                             <label for="checkbox9-4">Vacation Leave Records</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox9-5" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox9-5" value="Maternity Leave Records" checked=""/>
                             <label for="checkbox9-5">Maternity Leave Records</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox9-6" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox9-6" value="Other Records" checked=""/>
                             <label for="checkbox9-6">Other Records</label>
                         </div>
                     </div>
                 </div>
                 <div class="funkyradio">
                     <div class="funkyradio-primary">
-                        <input name="check" type="checkbox" id="checkbox10" value="First" onclick="myFunction2()" checked=""/>
+                        <input name="" type="checkbox" id="checkbox10" value="Emergency Contact" onclick="myFunction2()" checked=""/>
                         <label for="checkbox10">Emergency Contact</label>
                     </div>
                 </div>
                 <div id="emergency-contact">
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox10-1" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox10-1" value="Name" checked=""/>
                             <label for="checkbox10-1">Name</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox10-2" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox10-2" value="Address" checked=""/>
                             <label for="checkbox10-2">Address</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox10-3" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox10-3" value="Phone" checked=""/>
                             <label for="checkbox10-3">Phone</label>
                         </div>
                     </div>
                 </div>
                 <div class="funkyradio">
                     <div class="funkyradio-primary">
-                        <input name="check" type="checkbox" id="checkbox11" disabled="disabled" value="First" checked=""/>
+                        <input name="" type="checkbox" id="checkbox11" disabled="disabled" value="Leave Finish" checked=""/>
                         <label for="checkbox11">Next For Payroll Setup</label>
                     </div>
                 </div>
@@ -175,74 +175,74 @@
                 <h3>Payroll:</h3>
                 <div class="funkyradio">
                     <div class="funkyradio-primary">
-                        <input name="check" type="checkbox" id="checkbox12" value="First" onclick="myFunction3()" checked=""/>
+                        <input name="" type="checkbox" id="checkbox12" value="Total Earnings" onclick="myFunction3()" checked=""/>
                         <label for="checkbox12">Total Earnings</label>
                     </div>
                 </div>
                 <div id="total-earnings">
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-1" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-1" value="Educational" checked=""/>
                             <label for="checkbox12-1">Educational</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-2" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-2" value="Bonus" checked=""/>
                             <label for="checkbox12-2">Bonus</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-3" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-3" value="Incentive" checked=""/>
                             <label for="checkbox12-3">Incentive</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-4" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-4" value="Leave Encasement" checked=""/>
                             <label for="checkbox12-4">Leave Encasement</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-5" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-5" value="Perquisite" checked=""/>
                             <label for="checkbox12-5">Perquisite</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-6" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-6" value="Reimbursement" checked=""/>
                             <label for="checkbox12-6">Reimbursement</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-7" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-7" value="Special" checked=""/>
                             <label for="checkbox12-7">Special</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-8" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-8" value="Overtime" checked=""/>
                             <label for="checkbox12-8">Overtime</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-9" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-9" value="Arrears" checked=""/>
                             <label for="checkbox12-9">Arrears</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-10" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-10" value="Child Fund" checked=""/>
                             <label for="checkbox12-10">Child Fund</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox12-11" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox12-11" value="Stipen" checked=""/>
                             <label for="checkbox12-11">Stipen</label>
                         </div>
                     </div>
@@ -250,56 +250,56 @@
 
                 <div class="funkyradio">
                     <div class="funkyradio-primary">
-                        <input name="check" type="checkbox" id="checkbox13" value="First" onclick="myFunction4()" checked=""/>
-                        <label for="checkbox13">Total Deduction</label>
+                        <input name="" type="checkbox" id="checkbox13" value="Total Deduction" onclick="myFunction4()" checked=""/>
+                        <label for="checkbox13">Total Deductions</label>
                     </div>
                 </div>
                 <div id="total-deductions">
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox13-1" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox13-1" value="TDS" checked=""/>
                             <label for="checkbox13-1">TDS</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox13-2" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox13-2" value="Interest" checked=""/>
                             <label for="checkbox13-2">Interest</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox13-3" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox13-3" value="PF" checked=""/>
                             <label for="checkbox13-3">PF</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox13-4" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox13-4" value="Professional Tex" checked=""/>
                             <label for="checkbox13-4">Professional Tex</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox13-5" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox13-5" value="Advanced/Loan" checked=""/>
                             <label for="checkbox13-5">Advanced/Loan</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox13-6" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox13-6" value="Other" checked=""/>
                             <label for="checkbox13-6">Other</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox13-7" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox13-7" value="Leave" checked=""/>
                             <label for="checkbox13-7">Leave</label>
                         </div>
                     </div>
                     <div class="funkyradio col-sm-6">
                         <div class="funkyradio-primary">
-                            <input name="check" type="checkbox" id="checkbox13-8" value="First" checked=""/>
+                            <input name="check" type="checkbox" id="checkbox13-8" value="Security Deposit" checked=""/>
                             <label for="checkbox13-8">Security Deposit</label>
                         </div>
                     </div>
@@ -307,7 +307,7 @@
 
                 <div class="funkyradio">
                     <div class="funkyradio-primary">
-                        <input name="check" type="checkbox" id="checkbox14" disabled="disabled" value="First" checked=""/>
+                        <input name="check" type="checkbox" id="checkbox14" disabled="disabled" value="Payroll Finish" checked=""/>
                         <label for="checkbox14">Submit for Save</label>
                     </div>
                 </div>
@@ -327,15 +327,13 @@
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
             </div>
 
-            <div class="form-group" style="overflow:auto;">
-                <div class="col-sm-2" style="float:right;">
-                    <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Submit</button>
-                </div>
-            </div>
+            <!--<div class="form-group" style="overflow:auto;">-->
+                <!--<div class="col-sm-2" style="float:right;">-->
+                    <!--<button type="submit" id="submitBtn" class="btn btn-primary btn-block">Submit</button>-->
+                <!--</div>-->
+            <!--</div>-->
         </form>
 
         <script type="text/javascript"  src="../static/js/configuration.js"
