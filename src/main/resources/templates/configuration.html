@@ -1,128 +1,422 @@
 <!DOCTYPE html>
 <html  xmlns="http://www.w3.org/1999/xhtml"
-       xmlns:th="http://www.thymeleaf.org"
-       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-       layout:decorator="layout/common_layout">
+       xmlns:th="http://www.thymeleaf.org">
+       <!--xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">-->
+       <!--layout:decorator="layout/common_layout">-->
 
     <head>
         <title>Title</title>
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" media="all" href="../static/css/config.css" th:href="@{/css/config.css}" />
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/conf.css" th:href="@{/css/conf.css}" />
+
     </head>
 
     <body>
         <form id="regForm" action="/action_page.php">
             <h1>Configuration:</h1>
             <!-- One "tab" for each step in the form: -->
-            <div class="tab">Name:
-                <p><input placeholder="First name..." oninput="this.className = ''" name="fname"/></p>
-                <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"/></p>
+            <div class="tab">
+                <!--Profile:-->
+                <h3>Profile:</h3>
+                <P style="margin-top:10px">Common configuration are already set</P>
+
+                <div class="form-horizontal">
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox1" value="First" checked=""/>
+                            <label for="checkbox1">Date of Birth</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox2" value="First" checked=""/>
+                            <label for="checkbox2">Gender</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox3" value="First" checked=""/>
+                            <label for="checkbox3">Blood Group</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox4" value="First" checked=""/>
+                            <label for="checkbox4">NID</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox5" value="First" checked=""/>
+                            <label for="checkbox5">Father Name</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox6" value="First" checked=""/>
+                            <label for="checkbox6">Passport No</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox7" value="First" checked=""/>
+                            <label for="checkbox7">Mother Name</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="funkyradio">
+                    <div class="funkyradio-primary">
+                        <input name="check" type="checkbox" id="checkbox7-8" disabled="disabled" value="First" checked=""/>
+                        <label for="checkbox7-8">Password is set to it's form</label>
+                    </div>
+                </div>
+                <!--<p><input placeholder="Last name..." oninput="this.className = ''" name="lname"/></p>-->
             </div>
 
-            <div class="tab">Contact Info:
-                <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"/></p>
-                <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"/></p>
+
+
+            <div class="tab">
+                <!--Contact Info:-->
+
+                <h3>Leaves:</h3>
+                <P style="margin-top:10px">Common configuration are already set</P>
+
+                <div class="funkyradio col-sm-6">
+                    <div class="funkyradio-primary">
+                        <input name="check" type="checkbox" id="checkbox8" value="First" checked=""/>
+                        <label for="checkbox8">Employee Details</label>
+                    </div>
+                </div>
+                <div class="funkyradio">
+                    <div class="funkyradio-primary">
+                        <input name="check" type="checkbox" id="checkbox9" value="First" onclick="myFunction()" checked=""/>
+                        <label for="checkbox9">HR Records</label>
+                    </div>
+                </div>
+                <div id="hr-records">
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox9-1" value="First" checked=""/>
+                            <label for="checkbox9-1">Personal Leave Records</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox9-2" value="First" checked=""/>
+                            <label for="checkbox9-2">Sick Leave Records</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox9-3" value="First" checked=""/>
+                            <label for="checkbox9-3">Planned Leave Records</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox9-4" value="First" checked=""/>
+                            <label for="checkbox9-4">Vacation Leave Records</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox9-5" value="First" checked=""/>
+                            <label for="checkbox9-5">Maternity Leave Records</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox9-6" value="First" checked=""/>
+                            <label for="checkbox9-6">Other Records</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="funkyradio">
+                    <div class="funkyradio-primary">
+                        <input name="check" type="checkbox" id="checkbox10" value="First" onclick="myFunction2()" checked=""/>
+                        <label for="checkbox10">Emergency Contact</label>
+                    </div>
+                </div>
+                <div id="emergency-contact">
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox10-1" value="First" checked=""/>
+                            <label for="checkbox10-1">Name</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox10-2" value="First" checked=""/>
+                            <label for="checkbox10-2">Address</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox10-3" value="First" checked=""/>
+                            <label for="checkbox10-3">Phone</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="funkyradio">
+                    <div class="funkyradio-primary">
+                        <input name="check" type="checkbox" id="checkbox11" disabled="disabled" value="First" checked=""/>
+                        <label for="checkbox11">Next For Payroll Setup</label>
+                    </div>
+                </div>
             </div>
 
-            <div class="tab">Birthday:
-                <p><input placeholder="dd" oninput="this.className = ''" name="dd"/></p>
-                <p><input placeholder="mm" oninput="this.className = ''" name="nn"/></p>
-                <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"/></p>
+
+
+            <div class="tab">
+                <h3>Payroll:</h3>
+                <div class="funkyradio">
+                    <div class="funkyradio-primary">
+                        <input name="check" type="checkbox" id="checkbox12" value="First" onclick="myFunction3()" checked=""/>
+                        <label for="checkbox12">Total Earnings</label>
+                    </div>
+                </div>
+                <div id="total-earnings">
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-1" value="First" checked=""/>
+                            <label for="checkbox12-1">Educational</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-2" value="First" checked=""/>
+                            <label for="checkbox12-2">Bonus</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-3" value="First" checked=""/>
+                            <label for="checkbox12-3">Incentive</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-4" value="First" checked=""/>
+                            <label for="checkbox12-4">Leave Encasement</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-5" value="First" checked=""/>
+                            <label for="checkbox12-5">Perquisite</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-6" value="First" checked=""/>
+                            <label for="checkbox12-6">Reimbursement</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-7" value="First" checked=""/>
+                            <label for="checkbox12-7">Special</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-8" value="First" checked=""/>
+                            <label for="checkbox12-8">Overtime</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-9" value="First" checked=""/>
+                            <label for="checkbox12-9">Arrears</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-10" value="First" checked=""/>
+                            <label for="checkbox12-10">Child Fund</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox12-11" value="First" checked=""/>
+                            <label for="checkbox12-11">Stipen</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="funkyradio">
+                    <div class="funkyradio-primary">
+                        <input name="check" type="checkbox" id="checkbox13" value="First" onclick="myFunction4()" checked=""/>
+                        <label for="checkbox13">Total Deduction</label>
+                    </div>
+                </div>
+                <div id="total-deductions">
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox13-1" value="First" checked=""/>
+                            <label for="checkbox13-1">TDS</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox13-2" value="First" checked=""/>
+                            <label for="checkbox13-2">Interest</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox13-3" value="First" checked=""/>
+                            <label for="checkbox13-3">PF</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox13-4" value="First" checked=""/>
+                            <label for="checkbox13-4">Professional Tex</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox13-5" value="First" checked=""/>
+                            <label for="checkbox13-5">Advanced/Loan</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox13-6" value="First" checked=""/>
+                            <label for="checkbox13-6">Other</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox13-7" value="First" checked=""/>
+                            <label for="checkbox13-7">Leave</label>
+                        </div>
+                    </div>
+                    <div class="funkyradio col-sm-6">
+                        <div class="funkyradio-primary">
+                            <input name="check" type="checkbox" id="checkbox13-8" value="First" checked=""/>
+                            <label for="checkbox13-8">Security Deposit</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="funkyradio">
+                    <div class="funkyradio-primary">
+                        <input name="check" type="checkbox" id="checkbox14" disabled="disabled" value="First" checked=""/>
+                        <label for="checkbox14">Submit for Save</label>
+                    </div>
+                </div>
             </div>
 
-            <div class="tab">Login Info:
-                <p><input placeholder="Username..." oninput="this.className = ''" name="uname"/></p>
-                <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"/></p>
-            </div>
 
             <div style="overflow:auto;">
                 <div style="float:right;">
-                    <button type="button" id="prevBtn" onclick="nextPrev(-1)"/>Previous</button>
-                    <button type="button" id="nextBtn" onclick="nextPrev(1)"/>Next</button>
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                 </div>
             </div>
+
+
             <!-- Circles which indicates the steps of the form: -->
             <div style="text-align:center;margin-top:40px;">
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
+                <span class="step"></span>
+            </div>
+
+            <div class="form-group" style="overflow:auto;">
+                <div class="col-sm-2" style="float:right;">
+                    <button type="submit" id="submitBtn" class="btn btn-primary btn-block">Submit</button>
+                </div>
             </div>
         </form>
 
-        <script>
-            var currentTab = 0; // Current tab is set to be the first tab (0)
-            showTab(currentTab); // Display the crurrent tab
+        <script type="text/javascript"  src="../static/js/configuration.js"
+                th:src="@{/js/configuration.js}"></script>
 
-            function showTab(n) {
-              // This function will display the specified tab of the form...
-              var x = document.getElementsByClassName("tab");
-              x[n].style.display = "block";
-              //... and fix the Previous/Next buttons:
-              if (n == 0) {
-                document.getElementById("prevBtn").style.display = "none";
-              } else {
-                document.getElementById("prevBtn").style.display = "inline";
-              }
-              if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = "Submit";
-              } else {
-                document.getElementById("nextBtn").innerHTML = "Next";
-              }
-              //... and run a function that will display the correct step indicator:
-              fixStepIndicator(n)
-            }
+        <!--<script type="text/javascript" src="../../resources/libs/ie10-viewport-bug-workaround.js"-->
+                <!--th:src="@{/resources/libs/ie10-viewport-bug-workaround.js}"></script>-->
 
-            function nextPrev(n) {
-              // This function will figure out which tab to display
-              var x = document.getElementsByClassName("tab");
-              // Exit the function if any field in the current tab is invalid:
-              if (n == 1 && !validateForm()) return false;
-              // Hide the current tab:
-              x[currentTab].style.display = "none";
-              // Increase or decrease the current tab by 1:
-              currentTab = currentTab + n;
-              // if you have reached the end of the form...
-              if (currentTab >= x.length) {
-                // ... the form gets submitted:
-                document.getElementById("regForm").submit();
-                return false;
-              }
-              // Otherwise, display the correct tab:
-              showTab(currentTab);
-            }
+        <!--<script>-->
+            <!--var currentTab = 0; // Current tab is set to be the first tab (0)-->
+            <!--showTab(currentTab); // Display the crurrent tab-->
 
-            function validateForm() {
-              // This function deals with validation of the form fields
-              var x, y, i, valid = true;
-              x = document.getElementsByClassName("tab");
-              y = x[currentTab].getElementsByTagName("input");
-              // A loop that checks every input field in the current tab:
-              for (i = 0; i < y.length; i++) {
-                // If a field is empty...
-                if (y[i].value == "") {
-                  // add an "invalid" class to the field:
-                  y[i].className += " invalid";
-                  // and set the current valid status to false
-                  valid = false;
-                }
-              }
-              // If the valid status is true, mark the step as finished and valid:
-              if (valid) {
-                document.getElementsByClassName("step")[currentTab].className += " finish";
-              }
-              return valid; // return the valid status
-            }
+            <!--function showTab(n) {-->
+              <!--// This function will display the specified tab of the form...-->
+              <!--var x = document.getElementsByClassName("tab");-->
+              <!--x[n].style.display = "block";-->
+              <!--//... and fix the Previous/Next buttons:-->
+              <!--if (n == 0) {-->
+                <!--document.getElementById("prevBtn").style.display = "none";-->
+              <!--} else {-->
+                <!--document.getElementById("prevBtn").style.display = "inline";-->
+              <!--}-->
+              <!--if (n == (x.length - 1)) {-->
+                <!--document.getElementById("nextBtn").innerHTML = "Submit";-->
+              <!--} else {-->
+                <!--document.getElementById("nextBtn").innerHTML = "Next";-->
+              <!--}-->
+              <!--//... and run a function that will display the correct step indicator:-->
+              <!--fixStepIndicator(n)-->
+            <!--}-->
 
-            function fixStepIndicator(n) {
-              // This function removes the "active" class of all steps...
-              var i, x = document.getElementsByClassName("step");
-              for (i = 0; i < x.length; i++) {
-                x[i].className = x[i].className.replace(" active", "");
-              }
-              //... and adds the "active" class on the current step:
-              x[n].className += " active";
-            }
-        </script>
+            <!--function nextPrev(n) {-->
+              <!--// This function will figure out which tab to display-->
+              <!--var x = document.getElementsByClassName("tab");-->
+              <!--// Exit the function if any field in the current tab is invalid:-->
+              <!--if (n == 1 && !validateForm()) return false;-->
+              <!--// Hide the current tab:-->
+              <!--x[currentTab].style.display = "none";-->
+              <!--// Increase or decrease the current tab by 1:-->
+              <!--currentTab = currentTab + n;-->
+              <!--// if you have reached the end of the form...-->
+              <!--if (currentTab >= x.length) {-->
+                <!--// ... the form gets submitted:-->
+                <!--document.getElementById("regForm").submit();-->
+                <!--return false;-->
+              <!--}-->
+              <!--// Otherwise, display the correct tab:-->
+              <!--showTab(currentTab);-->
+            <!--}-->
+
+            <!--function validateForm() {-->
+              <!--// This function deals with validation of the form fields-->
+              <!--var x, y, i, valid = true;-->
+              <!--x = document.getElementsByClassName("tab");-->
+              <!--y = x[currentTab].getElementsByTagName("input");-->
+              <!--// A loop that checks every input field in the current tab:-->
+              <!--for (i = 0; i < y.length; i++) {-->
+                <!--// If a field is empty...-->
+                <!--if (y[i].value == "") {-->
+                  <!--// add an "invalid" class to the field:-->
+                  <!--y[i].className += " invalid";-->
+                  <!--// and set the current valid status to false-->
+                  <!--valid = false;-->
+                <!--}-->
+              <!--}-->
+              <!--// If the valid status is true, mark the step as finished and valid:-->
+              <!--if (valid) {-->
+                <!--document.getElementsByClassName("step")[currentTab].className += " finish";-->
+              <!--}-->
+              <!--return valid; // return the valid status-->
+            <!--}-->
+
+            <!--function fixStepIndicator(n) {-->
+              <!--// This function removes the "active" class of all steps...-->
+              <!--var i, x = document.getElementsByClassName("step");-->
+              <!--for (i = 0; i < x.length; i++) {-->
+                <!--x[i].className = x[i].className.replace(" active", "");-->
+              <!--}-->
+              <!--//... and adds the "active" class on the current step:-->
+              <!--x[n].className += " active";-->
+            <!--}-->
+        <!--</script>-->
     </body>
 </html>

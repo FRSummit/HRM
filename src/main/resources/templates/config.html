@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorator="layout/common_layout">
+
+    <head>
+        <title>Title</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/conf.css" th:href="@{/css/conf.css}" />
+
+    </head>
+    <body layout:fragment="content">
+        <form action="#" th:action="@{/admin/config-test}" method="get" class="col-md-6">
+            <h4>Checkbox Buttons</h4>
+
+            <div class="funkyradio">
+                <div class="funkyradio-default">
+                    <input name="check" type="checkbox" id="checkbox1" value="First" checked=""/>
+                    <label for="checkbox1">First Option default</label>
+                </div>
+                <div class="funkyradio-primary">
+                    <input name="check" type="checkbox" id="checkbox2" value="Second" checked=""/>
+                    <label for="checkbox2">Second Option primary</label>
+                </div>
+                <div class="funkyradio-success">
+                    <input name="check" type="checkbox" id="checkbox3" value="Third" checked=""/>
+                    <label for="checkbox3">Third Option success</label>
+                </div>
+                <div class="funkyradio-danger">
+                    <input name="check" type="checkbox" id="checkbox4" value="Fourth" checked=""/>
+                    <label for="checkbox4">Fourth Option danger</label>
+                </div>
+                <div class="funkyradio-warning">
+                    <input name="check" type="checkbox" id="checkbox5" value="Fifth" checked=""/>
+                    <label for="checkbox5">Fifth Option warning</label>
+                </div>
+                <div class="funkyradio-info">
+                    <input name="check" type="checkbox" id="checkbox6" value="Sixth" checked=""/>
+                    <label for="checkbox6">Sixth Option info</label>
+                </div>
+            </div>
+
+            <!--<h4>Radio Buttons</h4>-->
+            <!--<div class="funkyradio" name="radio">-->
+                <!--<div class="funkyradio-default">-->
+                    <!--<input type="radio" name="radio1" id="radio1" />-->
+                    <!--<label for="radio1">First Option default</label>-->
+                <!--</div>-->
+                <!--<div class="funkyradio-primary">-->
+                    <!--<input type="radio" name="radio2" id="radio2" checked=""/>-->
+                    <!--<label for="radio2">Second Option primary</label>-->
+                <!--</div>-->
+                <!--<div class="funkyradio-success">-->
+                    <!--<input type="radio" name="radio3" id="radio3" />-->
+                    <!--<label for="radio3">Third Option success</label>-->
+                <!--</div>-->
+                <!--<div class="funkyradio-danger">-->
+                    <!--<input type="radio" name="radio4" id="radio4" />-->
+                    <!--<label for="radio4">Fourth Option danger</label>-->
+                <!--</div>-->
+                <!--<div class="funkyradio-warning">-->
+                    <!--<input type="radio" name="radio5" id="radio5" />-->
+                    <!--<label for="radio5">Fifth Option warning</label>-->
+                <!--</div>-->
+                <!--<div class="funkyradio-info">-->
+                    <!--<input type="radio" name="radio6" id="radio6" />-->
+                    <!--<label for="radio6">Sixth Option info</label>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
