@@ -1,5 +1,6 @@
 package com.frsummit.HRM.controller.user.leave;
 
+import com.frsummit.HRM.config.ConfigAuth;
 import com.frsummit.HRM.configuration.LeaveConfiguration;
 import com.frsummit.HRM.configuration.MyAuthorization;
 import com.frsummit.HRM.model.*;
@@ -40,9 +41,23 @@ public class LeaveApply {
     @Autowired
     private MyAuthorization myAuthorization;
 
+    @Autowired
+    private ConfigAuth configAuth;
+
     @RequestMapping(value = "/user/leave-user-apply", method = RequestMethod.GET)
     public String leaveApplicationForm(Model model){
         model.addAttribute("myRole", myAuthorization.userFromEmailOrId().getMyRole());
+
+        model.addAttribute("myConfigLeaveEmpDetl", configAuth.configName().getLeave_employeeDetail());
+        model.addAttribute("myConfigLeavePersonal", configAuth.configName().getLeave_personal());
+        model.addAttribute("myConfigLeaveSick", configAuth.configName().getLeave_sick());
+        model.addAttribute("myConfigLeavePlanned", configAuth.configName().getLeave_planned());
+        model.addAttribute("myConfigLeaveVacation", configAuth.configName().getLeave_vacation());
+        model.addAttribute("myConfigLeaveMaternity", configAuth.configName().getLeave_Maternity());
+        model.addAttribute("myConfigLeaveOther", configAuth.configName().getLeave_other());
+        model.addAttribute("myConfigLeaveName", configAuth.configName().getLeave_name());
+        model.addAttribute("myConfigLeaveAddress", configAuth.configName().getLeave_address());
+        model.addAttribute("myConfigLeavePhone", configAuth.configName().getLeave_phone());
 
         /*Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user1 = userService.findUserByEmail(auth.getName());

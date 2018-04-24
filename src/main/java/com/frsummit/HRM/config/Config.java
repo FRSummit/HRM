@@ -110,13 +110,13 @@ public class Config implements Serializable {
         this.payroll_deduction_securityDeposite = payroll_deduction_securityDeposite;
     }
 
-    public Config(String profile_dob, String profile_sex, String profile_blood, String profile_nid, String profile_passport, String profile_fatherName, String profile_motherName, String leave_employeeDetail, String leave_personal, String leave_sick, String leave_planned, String leave_vacation, String leave_Maternity, String leave_other, String leave_name, String leave_address, String leave_phone, String payroll_earning_educational, String payroll_earning_bonus, String payroll_earning_incentive, String payroll_earning_leaveEncasement, String payroll_earning_perquisite, String payroll_earning_reimbursement, String payroll_earning_special, String payroll_earning_overtime, String payroll_earning_arrears, String payroll_earning_childFund, String payroll_earning_stipen, String payroll_deduction_tds, String payroll_deduction_interest, String payroll_deduction_pf, String payroll_deduction_professionalTex, String payroll_deduction_advancedOrLoan, String payroll_deduction_other, String payroll_deduction_leave, String payroll_deduction_securityDeposite) {
+    public Config(String profile_dob, String profile_sex, String profile_blood, String profile_nid, String profile_fatherName, String profile_passport, String profile_motherName, String leave_employeeDetail, String leave_personal, String leave_sick, String leave_planned, String leave_vacation, String leave_Maternity, String leave_other, String leave_name, String leave_address, String leave_phone, String payroll_earning_educational, String payroll_earning_bonus, String payroll_earning_incentive, String payroll_earning_leaveEncasement, String payroll_earning_perquisite, String payroll_earning_reimbursement, String payroll_earning_special, String payroll_earning_overtime, String payroll_earning_arrears, String payroll_earning_childFund, String payroll_earning_stipen, String payroll_deduction_tds, String payroll_deduction_interest, String payroll_deduction_pf, String payroll_deduction_professionalTex, String payroll_deduction_advancedOrLoan, String payroll_deduction_other, String payroll_deduction_leave, String payroll_deduction_securityDeposite) {
         this.profile_dob = profile_dob;
         this.profile_sex = profile_sex;
         this.profile_blood = profile_blood;
         this.profile_nid = profile_nid;
-        this.profile_passport = profile_passport;
         this.profile_fatherName = profile_fatherName;
+        this.profile_passport = profile_passport;
         this.profile_motherName = profile_motherName;
         this.leave_employeeDetail = leave_employeeDetail;
         this.leave_personal = leave_personal;

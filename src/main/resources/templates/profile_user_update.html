@@ -78,11 +78,11 @@
                                 </div>
                                 <!--Dob & Sex & Blood Group-->
                                 <div class="row">
-                                    <div class="col-sm-4 form-group">
+                                    <div class="col-sm-4 form-group" th:if="${myConfigDob} == 'DATE OF BIRTH'">
                                         <label>Date Of Birth</label>
                                         <input type="date" name="dob" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-4 form-group" style="margin-left:1%">
+                                    <div class="col-sm-4 form-group" th:if="${myConfigSex} == 'GENDER'" style="margin-left:1%">
                                         <label>Gender</label>
                                         <select name="sex" class="form-control">
                                             <option>Male</option>
@@ -90,7 +90,7 @@
                                             <option>Other</option>
                                         </select>
                                     </div>
-                                    <div class="col-sm-4 form-group" style="margin-left:1%">
+                                    <div class="col-sm-4 form-group" th:if="${myConfigBlood} == 'BLOOD GROUP'" style="margin-left:1%">
                                         <label>Blood Group</label>
                                         <select name="bloodGroup" class="form-control">
                                             <option>A+</option>
@@ -106,22 +106,22 @@
                                 </div>
                                 <!--Father Name & Mother Name-->
                                 <div class="row">
-                                    <div class="col-sm-5 form-group">
+                                    <div class="col-sm-5 form-group" th:if="${myConfigFather} == 'FATHER NAME'">
                                         <label>Father Name</label>
                                         <input type="text" name="fatherName" placeholder="Father Name" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-5 form-group" style="margin-left:1%">
+                                    <div class="col-sm-5 form-group" th:if="${myConfigMother} == 'MOTHER NAME'" style="margin-left:1%">
                                         <label>Mother Name</label>
                                         <input type="text" name="motherName" placeholder="Mother Name" class="form-control"/>
                                     </div>
                                 </div>
                                 <!--NID & Passport-->
                                 <div class="row">
-                                    <div class="col-sm-5 form-group">
+                                    <div class="col-sm-5 form-group" th:if="${myConfigNid} == 'NID'">
                                         <label>NID</label>
                                         <input type="text" name="nid" placeholder="National Identity" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-5 form-group" style="margin-left:1%">
+                                    <div class="col-sm-5 form-group" th:if="${myConfigPassport} == 'PASSPORT NO'" style="margin-left:1%">
                                         <label>Passport No</label>
                                         <input type="text" name="passportNo" placeholder="Passport Number" class="form-control"/>
                                     </div>

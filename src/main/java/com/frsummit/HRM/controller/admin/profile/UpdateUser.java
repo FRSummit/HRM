@@ -1,5 +1,7 @@
 package com.frsummit.HRM.controller.admin.profile;
 
+import com.frsummit.HRM.config.ConfigAuth;
+import com.frsummit.HRM.config.ConfigServe;
 import com.frsummit.HRM.model.User;
 import com.frsummit.HRM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +21,19 @@ public class UpdateUser {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ConfigAuth configAuth;
+
     @RequestMapping(value = "/admin/profile-user-update", method = RequestMethod.GET)
-    public String updateUser(){
+    public String updateUser(Model model){
+        model.addAttribute("myConfigDob", configAuth.configName().getProfile_dob());
+        model.addAttribute("myConfigSex", configAuth.configName().getProfile_sex());
+        model.addAttribute("myConfigBlood", configAuth.configName().getProfile_blood());
+        model.addAttribute("myConfigFather", configAuth.configName().getProfile_fatherName());
+        model.addAttribute("myConfigMother", configAuth.configName().getProfile_motherName());
+        model.addAttribute("myConfigNid", configAuth.configName().getProfile_nid());
+        model.addAttribute("myConfigPassport", configAuth.configName().getProfile_passport());
+        System.out.println(configAuth.configName().getProfile_passport());
         return "profile_user_update";
     }
 

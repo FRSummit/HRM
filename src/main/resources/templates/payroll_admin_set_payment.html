@@ -58,50 +58,50 @@
                                         <label>Other All</label>
                                         <input name="otherAll" th:field="*{otherAll}" type="text" placeholder="Other All" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnEdu} == 'EDUCATIONAL'" style="margin-left:1%">
                                         <label>Educational</label>
                                         <input name="educational" th:field="*{educationalAll}" type="text" placeholder="Educational" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnBonus} == 'BONUS'" style="margin-left:1%">
                                         <label>Bonus</label>
                                         <input name="bonus" th:field="*{bonus}" type="text" placeholder="Bonus" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnIncentive} == 'INCENTIVE'" style="margin-left:1%">
                                         <label>Incentive</label>
                                         <input name="incentive" th:field="*{incentiveOrCommission}" type="text" placeholder="Incentive" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnLeaveEncasement} == 'LEAVE ENCASEMENT'" style="margin-left:1%">
                                         <label>Leave Encasement</label>
                                         <input name="leaveEncasement" th:field="*{leaveEncashment}" type="text" placeholder="Leave Encasement" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnPerquisite} == 'PERQUISITE'" style="margin-left:1%">
                                         <label>Perquisite</label>
                                         <input name="perquisite" th:field="*{perquisite}" type="text" placeholder="Perquisite" class="form-control"/>
                                     </div>
                                 <!--</div>-->
                                 <!--&lt;!&ndash;Total Earning&ndash;&gt;-->
                                 <!--<div class="row" style="margin-left:1%">-->
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnReimbursement} == 'REIMBURSEMENT'" style="margin-left:1%">
                                         <label>Reimbursement</label>
                                         <input name="reimbursement" th:field="*{reimbursement}" type="text" placeholder="Reimbursement" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnSpecial} == 'SPECIAL'" style="margin-left:1%">
                                         <label>Special</label>
                                         <input name="special" th:field="*{special}" type="text" placeholder="Special" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnOverTime} == 'OVERTIME'" style="margin-left:1%">
                                         <label>Over Time</label>
                                         <input name="overtime" th:field="*{overtime}" type="text" placeholder="Over Time" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnArrears} == 'ARREARS'" style="margin-left:1%">
                                         <label>Arrears</label>
                                         <input name="arrears" th:field="*{arrears}" type="text" placeholder="Arrears" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnChildFund} == 'CHILD FUND'" style="margin-left:1%">
                                         <label>Child Fund</label>
                                         <input name="childFund" th:field="*{childFund}" type="text" placeholder="Child Fund" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigEarnStipen} == 'STIPEN'" style="margin-left:1%">
                                         <label>Stipen</label>
                                         <input name="stipen" th:field="*{stipen}" type="text" placeholder="Stipen" class="form-control"/>
                                     </div>
@@ -113,38 +113,38 @@
                             <div class="col-sm-12 well">
                                 <!--Total Deductions-->
                                 <div class="row">
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigDedTds} == 'TDS'" style="margin-left:1%">
                                         <label>TDS</label>
                                         <input name="tds" th:field="*{tds}" type="text" placeholder="TDS" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigDedInterest} == 'INTEREST'" style="margin-left:1%">
                                         <label>Interest</label>
                                         <input name="interestDED" th:field="*{interestDED}" type="text" placeholder="Interest" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigDedPF} == 'PF'" style="margin-left:1%">
                                         <label>PF</label>
                                         <input name="pfDED" th:field="*{pf}" type="text" placeholder="PF" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigDedProfessionalTex} == 'PROFESSIONAL TEX'" style="margin-left:1%">
                                         <label>Professional Tex</label>
                                         <input name="professionalTexDED" th:field="*{professionalTaxDED}" type="text" placeholder="Professional Tex" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigDedAdvancedOrLoan} == 'ADVANCED/LOAN'" style="margin-left:1%">
                                         <label>Advanced/Loan</label>
                                         <input name="advancedOrLoanDED" th:field="*{advanceOrLoanDED}" type="text" placeholder="Advanced/Loan" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigDedOther} == 'OTHERDED'" style="margin-left:1%">
                                         <label>Other</label>
                                         <input name="otherDED" th:field="*{otherDED}" type="text" placeholder="Other" class="form-control"/>
                                     </div>
                                 <!--</div>-->
                                 <!--&lt;!&ndash;Total Deductions&ndash;&gt;-->
                                 <!--<div class="row" style="margin-left:1%">-->
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigDedLeave} == 'LEAVE'" style="margin-left:1%">
                                         <label>Leave</label>
                                         <input name="leaveDED" th:field="*{leaveDED}" type="text" placeholder="Leave" class="form-control"/>
                                     </div>
-                                    <div class="col-sm-2 form-group" style="margin-left:1%">
+                                    <div class="col-sm-2 form-group" th:if="${myConfigDedSecurityDeposit} == 'SECURITY DEPOSIT'" style="margin-left:1%">
                                         <label>Security Deposit</label>
                                         <input name="securityDepositDED" th:field="*{securityDepositeDED}" type="text" placeholder="Security Deposit" class="form-control"/>
                                     </div>
