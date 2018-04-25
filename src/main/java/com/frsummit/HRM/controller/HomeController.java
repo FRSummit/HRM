@@ -1,5 +1,7 @@
 package com.frsummit.HRM.controller;
 
+import com.frsummit.HRM.config.Config;
+import com.frsummit.HRM.config.ConfigServe;
 import com.frsummit.HRM.configuration.LeaveConfiguration;
 import com.frsummit.HRM.configuration.MyAuthorization;
 import com.frsummit.HRM.model.Role;
@@ -28,6 +30,9 @@ public class HomeController {
     @Autowired
     private MyAuthorization myAuthorization;
 
+    @Autowired
+    private ConfigServe configServe;
+
     @RequestMapping(value="/home", method = RequestMethod.GET)
     public String home(Model model){
 
@@ -55,6 +60,11 @@ public class HomeController {
         LeaveConfiguration leaveConfiguration = new LeaveConfiguration();
         leaveConfiguration.mapForRole(role.getRole(), role.getRoleChain());
 
+//        Testing
+
+        List<Config> confList = configServe.findAllConfigName();
+        if(confList.size() == 0)
+            return "configuration";
         return "home";
     }
 }
