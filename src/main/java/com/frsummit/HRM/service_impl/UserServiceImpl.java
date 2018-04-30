@@ -176,7 +176,7 @@ public class UserServiceImpl implements UserService {
             user.setFirstName("Admin");
             user.setMiddleName("Admin");
             user.setLastName("Admin");
-            user.setEmail("admin@hrm");
+            user.setEmail("admin");
             user.setPassword("admin");
             saveUser(user, "ADMIN");
         }
