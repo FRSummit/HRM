@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Role implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
 
@@ -19,6 +19,12 @@ public class Role implements Serializable {
     private String roleChain;
 
     public Role() {
+    }
+
+    public Role(int id, String role, String roleChain) {
+        this.id = id;
+        this.role = role;
+        this.roleChain = roleChain;
     }
 
     public int getId() {

@@ -8,6 +8,7 @@ public interface UserService {
 
 //    first Administration id
     public void createAdmin();
+    public void updateAdmin();
 
 //    Find
 

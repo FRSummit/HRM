@@ -172,13 +172,22 @@ public class UserServiceImpl implements UserService {
         System.out.println(userList.size());
         if(userList.size() == 0){
             User user = new User();
-            user.setId("0000000000");
+            user.setId("0000");
             user.setFirstName("Admin");
             user.setMiddleName("Admin");
             user.setLastName("Admin");
-            user.setEmail("admin");
+            user.setEmail("admin@hrm");
             user.setPassword("admin");
             saveUser(user, "ADMIN");
+        }
+    }
+
+    @Override
+    @Modifying
+    public void updateAdmin() {
+        if(findAllUsers().size()==0){
+            Query query = entityManager.createQuery("UPDATE User u SET u.email = 'admin' WHERE u.id='0000'");
+            query.executeUpdate();
         }
     }
 
