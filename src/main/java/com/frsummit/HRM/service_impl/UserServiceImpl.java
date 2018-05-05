@@ -210,6 +210,15 @@ public class UserServiceImpl implements UserService {
         return entityManager.createQuery("SELECT u FROM User AS u WHERE u.id= '" + myId() + "'", User.class).getResultList();
     }
 
+    @Override
+    @Modifying
+    public void deleteUser(String userId) {
+        Query query = entityManager.createQuery("DELETE FROM User WHERE id='" + userId +"'");
+        //query.setParameter("email", email);
+        query.executeUpdate();
+        //userRepository.delete(userId);
+    }
+
     /*@Override
     public void update(User user) {
 

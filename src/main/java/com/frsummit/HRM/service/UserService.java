@@ -28,4 +28,5 @@ public interface UserService {
     public User getUserId(String email);
     public void myMail();
     public List<User> findAllUsersId();
+    public void deleteUser(String userId);
 }

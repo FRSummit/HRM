@@ -27,4 +27,14 @@ public class AttRemark {
         model.addAttribute("attendanceList", attendanceService.remarkAttendanceList());
         return "attendance_admin_remark";
     }
+
+    @RequestMapping(value = "/admin/attendance-remark-remove", method = RequestMethod.POST)
+    public String removeRemarkedUser(@RequestParam(value = "check") String checkBox, Model model){
+        String[] parts = checkBox.split(",");
+        for(int i=0; i<parts.length-1; i++){
+            attendanceService.removeFromRemarkList(parts[i]);
+        }
+        model.addAttribute("attendanceList", attendanceService.remarkAttendanceList());
+        return "attendance_admin_remark";
+    }
 }

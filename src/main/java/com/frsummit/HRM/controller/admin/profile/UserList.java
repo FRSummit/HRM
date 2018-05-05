@@ -34,6 +34,20 @@ public class UserList {
 
         return "profile_user_list";
     }
+
+    @RequestMapping(value = "/admin/registration", method = RequestMethod.GET)
+    public String deleteUserByCheckBoxSElection(@RequestParam(value = "check") String checkBox, Model model) {
+        System.out.println(checkBox);
+        String[] parts = checkBox.split(",");
+        System.out.println(parts.length);
+        for(int i=0; i< parts.length-1; i++){
+            userService.deleteUser(parts[i]);
+        }
+
+        model.addAttribute("userList",userService.findAllUsers());
+
+        return "profile_user_list";
+    }
 /*
     @RequestMapping(value = "/admin/user-edit-list", method = RequestMethod.GET)
     public String userListBtnFromTable(Model model, @RequestParam(value = "buttonId") String buttonId) {

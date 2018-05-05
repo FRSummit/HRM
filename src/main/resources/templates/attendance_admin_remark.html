@@ -13,7 +13,7 @@
             <div layout:fragment="content">
                 <h1 class="well">Remark Attendance List</h1>
                 <div class="container">
-                    <div class="row well">
+                    <form class="row well" th:action="@{/admin/attendance-remark-remove}" method="post">
                         <table class="table well">
                             <thead>
                             <tr>
@@ -21,9 +21,9 @@
                                 <th>Attend Id</th>
                                 <th>User Id</th>
                                 <th>Sign</th>
-                                <th>In</th>
-                                <th>Out</th>
-                                <th>Late</th>
+                                <th>Status</th>
+                                <!--<th>Out</th>-->
+                                <!--<th>Late</th>-->
                                 <!--<th>Worked</th>-->
                                 <!--<th>Shift</th>-->
                                 <!--<th>Performance</th>-->
@@ -35,26 +35,52 @@
                                 <td th:text="${attendance.attendId}">121</td>
                                 <td th:text="${attendance.userId}">12:32pm</td>
                                 <td th:text="${attendance.signTime}">12:32pm</td>
-                                <td th:text="${attendance.inTime}">12:40pm</td>
-                                <td th:text="${attendance.outTime}">1.28hr</td>
-                                <td th:text="${attendance.lateBy}">00:08hr</td>
+                                <td th:text="${attendance.status}">00:08hr</td>
+                                <!--<td th:text="${attendance.lateBy}">00:08hr</td>-->
                                 <!--<td th:text="${attendance.}">Day</td>-->
                                 <!--<td th:text="${attendance.}">1.7%</td>-->
+                                <td><input id="myCheck" name="check" type="checkbox" th:value="${attendance.attendId}"  th:onclick="'javascript:myFunction()'"/></td>
+
                             </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="row well col-sm-4">
-                        <form th:action="@{/admin/attendance-remove-from-remark-list}" method="get">
-                            <h4>Remove Id</h4>
-                            <input name="attendId" type="text" placeholder="Enter Id Here.." class="form-control"/>
-                            <div class="col-sm-5">
-                                <button type="submit" class="btn btn-primary btn-block" style="margin-top:10px">Remove</button>
+                        <input style="display:none" name="check" type="checkbox" value="null" checked=""/>
+                        <div class="form-group" th:unless="${myCheck} == true" style="margin-left:87%">
+                            <div class="col-sm-2">
+                                <!--<button id="checkBoxSelectBtn" type="submit" class="btn btn-primary btn-block" style="display:none">Submit</button>-->
+                                <button id="checkBoxSelectBtn" type="submit" class="btn btn-primary custom-button-width">Remark Remove</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
+
+
+
+
+                    <!--<div class="row well col-sm-4">-->
+                        <!--<form th:action="@{/admin/attendance-remove-from-remark-list}" method="get">-->
+                            <!--<h4>Remove Id</h4>-->
+                            <!--<input name="attendId" type="text" placeholder="Enter Id Here.." class="form-control"/>-->
+                            <!--<div class="col-sm-5">-->
+                                <!--<button type="submit" class="btn btn-primary btn-block" style="margin-top:10px">Remove</button>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
+
+
                 </div>
             </div>
         </div>
+
+        <script>
+            function myFunction() {
+                var checkBox = document.getElementById("myCheck");
+                var text = document.getElementById("checkBoxSelectBtn");
+                if (checkBox.checked == true){
+                    text.style.display = "block";
+                } else {
+                   text.style.display = "none";
+                }
+            }
+        </script>
     </body>
 </html>

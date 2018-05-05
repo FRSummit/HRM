@@ -30,4 +30,16 @@ public class AttOverviewAdmin {
         model.addAttribute("attendanceList", attendanceService.remarkAttendanceList());
         return "attendance_admin_remark";
     }
+
+    @RequestMapping(value = "/admin/attendance-remark", method = RequestMethod.POST)
+    public String addAttendanceRemark(
+            Model model,
+            @RequestParam(value = "check") String checkBox){
+        String[] parts = checkBox.split(",");
+        for(int i=0; i<parts.length-1; i++){
+            attendanceService.remarkAttendance(parts[i]);
+        }
+        model.addAttribute("attendanceList", attendanceService.remarkAttendanceList());
+        return "attendance_admin_remark";
+    }
 }

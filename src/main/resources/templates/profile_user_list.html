@@ -49,9 +49,17 @@
                                                 <!--<button type="submit">Submit</button>-->
                                             <!--</form>-->
                                         <!--</td>-->
+                                        <td><input id="myCheck" name="check" type="checkbox" th:value="${user.id}"  th:onclick="'javascript:myFunction()'"/></td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <input style="display:none" name="check" type="checkbox" value="null" checked=""/>
+                            <div class="form-group" th:unless="${myCheck} == true" style="margin-left:87%">
+                                <div class="col-sm-2">
+                                    <!--<button id="checkBoxSelectBtn" type="submit" class="btn btn-primary btn-block" style="display:none">Submit</button>-->
+                                    <button id="checkBoxSelectBtn" type="submit" class="btn btn-primary custom-button-width">Delete User</button>
+                                </div>
+                            </div>
                             <!--<a href="#" th:href="@{/check-box}" class="btn btn-primary btn-lg active" role="button" style="margin-bottom:10px">CheckBox</a>-->
                         </form>
                         <!--First Name:<input type="text" name="fname" id="fname"/><br/><br/>-->
@@ -68,6 +76,18 @@
             document.getElementById("fname").value = x[0].innerHTML;
             document.getElementById("lname").value = x[1].innerHTML;
             document.getElementById("age").value = x[2].innerHTML;
+            }
+        </script>
+
+        <script>
+            function myFunction() {
+                var checkBox = document.getElementById("myCheck");
+                var text = document.getElementById("checkBoxSelectBtn");
+                if (checkBox.checked == true){
+                    text.style.display = "block";
+                } else {
+                   text.style.display = "none";
+                }
             }
         </script>
 

@@ -13,7 +13,7 @@
             <div layout:fragment="content">
                 <h1 class="well">Attendance Admin Overview</h1>
                 <div class="container">
-                    <div class="row well">
+                    <form class="row well" th:action="@{/admin/attendance-remark}" method="post">
                         <h3 class="well">Users Attendance</h3>
                         <table class="table well" id="myTable">
                             <thead>
@@ -25,7 +25,7 @@
                                 <!--<th>In</th>-->
                                 <!--<th>Out</th>-->
                                 <th>Status</th>
-                                <th>Late</th>
+                                <!--<th>Late</th>-->
                                 <!--<th>Worked</th>-->
                                 <!--<th>Shift</th>-->
                                 <!--<th>Performance</th>-->
@@ -40,22 +40,34 @@
                                 <!--<td th:text="${attendance.inTime}">12:40pm</td>-->
                                 <!--<td th:text="${attendance.outTime}">1.28hr</td>-->
                                 <td th:text="${attendance.status}">00:08hr</td>
-                                <td th:text="${attendance.lateBy}">00:08hr</td>
+                                <!--<td th:text="${attendance.lateBy}">00:08hr</td>-->
                                 <!--<td th:text="${attendance.}">Day</td>-->
                                 <!--<td th:text="${attendance.}">1.7%</td>-->
+                                <td><input id="myCheck" name="check" type="checkbox" th:value="${attendance.attendId}"  th:onclick="'javascript:myFunction()'"/></td>
+
                             </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="row well col-sm-4">
-                        <form th:action="@{/admin/attendance-add-remark-list}" method="get">
-                            <h4>Remark Attend Id</h4>
-                            <input name="remark" type="text" placeholder="Enter Id Here.." class="form-control" id="idField"/>
-                            <div class="col-sm-5">
-                                <button type="submit" class="btn btn-primary btn-block" style="margin-top:10px">Add</button>
+                        <input style="display:none" name="check" type="checkbox" value="null" checked=""/>
+                        <div class="form-group" th:unless="${myCheck} == true" style="margin-left:87%">
+                            <div class="col-sm-2">
+                                <!--<button id="checkBoxSelectBtn" type="submit" class="btn btn-primary btn-block" style="display:none">Submit</button>-->
+                                <button id="checkBoxSelectBtn" type="submit" class="btn btn-primary custom-button-width">Remark User</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
+
+
+
+                    <!--<div class="row well col-sm-4">-->
+                        <!--<form th:action="@{/admin/attendance-add-remark-list}" method="get">-->
+                            <!--<h4>Remark Attend Id</h4>-->
+                            <!--<input name="remark" type="text" placeholder="Enter Id Here.." class="form-control" id="idField"/>-->
+                            <!--<div class="col-sm-5">-->
+                                <!--<button type="submit" class="btn btn-primary btn-block" style="margin-top:10px">Add</button>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
@@ -63,6 +75,18 @@
 
         <script type="text/javascript"  src="../static/js/attendance-admin-overview.js"
                 th:src="@{/js/attendance-admin-overview.js}"></script>
+
+        <script>
+            function myFunction() {
+                var checkBox = document.getElementById("myCheck");
+                var text = document.getElementById("checkBoxSelectBtn");
+                if (checkBox.checked == true){
+                    text.style.display = "block";
+                } else {
+                   text.style.display = "none";
+                }
+            }
+        </script>
 
     </body>
 </html>
