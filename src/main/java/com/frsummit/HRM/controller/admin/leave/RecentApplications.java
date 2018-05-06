@@ -2,13 +2,8 @@ package com.frsummit.HRM.controller.admin.leave;
 
 import com.frsummit.HRM.configuration.LeaveConfiguration;
 import com.frsummit.HRM.configuration.MyAuthorization;
-import com.frsummit.HRM.model.Message;
-import com.frsummit.HRM.model.Role;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.LeaveService;
-import com.frsummit.HRM.service.MessageService;
-import com.frsummit.HRM.service.RoleService;
-import com.frsummit.HRM.service.UserService;
+import com.frsummit.HRM.model.*;
+import com.frsummit.HRM.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -37,6 +32,9 @@ public class RecentApplications {
 
     @Autowired
     private MessageService messageService;
+
+    @Autowired
+    private HRRecordService hrRecordService;
 
     @RequestMapping(value = "/admin/leave-admin-recent", method = RequestMethod.GET)
     public String recentApplicationsLoad(Model model){
@@ -83,6 +81,42 @@ public class RecentApplications {
         }
         else{
             leaveService.updateLeaveStatus(leaveId, selectStatus, leaveActionBy, modifyTo);
+            List<Role> roleList2 = roleService.findAllRoles();
+            Role parentRole = roleList2.get(1);
+            int leaveIdInt = Integer.parseInt(leaveId);
+            List<Leaves> leavesList = leaveService.findLeavesByLeaveId(leaveIdInt);
+            Leaves leaves = leavesList.get(0);
+            System.out.println(leaves.getLeaveType());
+
+            List<HRRecord> hrRecordList = hrRecordService.getAllRecord(leaves.getUserId());
+            HRRecord hrRecord = hrRecordList.get(0);
+            if(myAuthorization.userFromEmailOrId().getMyRole().equalsIgnoreCase(parentRole.getRole())){
+                if(leaves.getLeaveType().equalsIgnoreCase("Personal")){
+                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                    hrRecordService.updateHRRecord(leaves.getUserId(), "Personal", taken, balance);
+                }else if(leaves.getLeaveType().equalsIgnoreCase("Sick")){
+                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                    hrRecordService.updateHRRecord(leaves.getUserId(), "Sick", taken, balance);
+                }else if(leaves.getLeaveType().equalsIgnoreCase("Planned")){
+                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                    hrRecordService.updateHRRecord(leaves.getUserId(), "Planned", taken, balance);
+                }else if(leaves.getLeaveType().equalsIgnoreCase("Vacation")){
+                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                    hrRecordService.updateHRRecord(leaves.getUserId(), "Vacation", taken, balance);
+                }else if(leaves.getLeaveType().equalsIgnoreCase("Maternity")){
+                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                    hrRecordService.updateHRRecord(leaves.getUserId(), "Maternity", taken, balance);
+                }else if(leaves.getLeaveType().equalsIgnoreCase("Other")){
+                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                    hrRecordService.updateHRRecord(leaves.getUserId(), "Other", taken, balance);
+                }
+            }
         }
 
         if(myAuthorization.userFromEmailOrId().getMyRole().equalsIgnoreCase("ADMIN"))

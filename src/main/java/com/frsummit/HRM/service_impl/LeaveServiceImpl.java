@@ -83,7 +83,12 @@ public class LeaveServiceImpl implements LeaveService {
         System.out.println(leaveId + " " + selectStatus + " " + leaveActionBy);
     }
 
-////////////////////////////////////
+    @Override
+    public List<Leaves> findLeavesByLeaveId(int id) {
+        return entityManager.createQuery("SELECT l FROM Leaves AS l WHERE l.id='" + id +"'", Leaves.class).getResultList();
+    }
+
+    ////////////////////////////////////
 ////    User Section    ////////////
 ////////////////////////////////////
     @Override

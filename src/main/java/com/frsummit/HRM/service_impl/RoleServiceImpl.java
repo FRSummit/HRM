@@ -32,6 +32,11 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    public List<Role> findAllRoles() {
+        return entityManager.createQuery("SELECT r FROM Role AS r", Role.class).getResultList();
+    }
+
+    @Override
     public void insertRoleAdmin(Role role) {
         if(roleList().size()==0){
             roleRepository.save(role);

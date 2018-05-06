@@ -15,7 +15,7 @@
                 <h1 class="well">Employee Leave Record</h1>
                 <div class="container">
                     <div class="row well col-sm-6 form-group">
-                        <form th:action="@{/admin/leave-record-consolidated}" method="post">
+                        <form th:action="@{/admin/leave-record-consolidated-selected-date}" method="post">
                             <div>
                                 <!--ID-->
                                 <div class="row col-sm-8">
@@ -53,7 +53,6 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Employee Id</th>
-                                    <th>Name</th>
                                     <th>Personal</th>
                                     <th>Sick</th>
                                     <th>Planned</th>
@@ -66,7 +65,6 @@
                                 <tr class="success" th:each="hrRecord, hrRecordStat : ${hrRecordList}">
                                     <td th:text="${hrRecordStat.count}">1</td>
                                     <td th:text="${hrRecord.userId}">2014200000071</td>
-                                    <td th:text="${hrRecord.name}">Fayazur Rahman Summit</td>
                                     <td th:text="${hrRecord.totalLeavePersonal}">5</td>
                                     <td th:text="${hrRecord.totalLeaveSick}">5</td>
                                     <td th:text="${hrRecord.totalLeavePlanned}">5</td>

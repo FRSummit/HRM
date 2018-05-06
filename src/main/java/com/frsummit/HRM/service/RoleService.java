@@ -7,5 +7,6 @@ import java.util.List;
 public interface RoleService {
 
     public List<Role> findAllRole(String role);
+    public List<Role> findAllRoles();
     public void insertRoleAdmin(Role role);
 }
