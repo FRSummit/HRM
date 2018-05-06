@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+
+    <head>
+        <title>HRM Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/leave-report-ind.css" th:href="@{/css/leave-report-ind.css}" />
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/background.css" th:href="@{/css/background.css}" />
+    </head>
+    <body>
+        <div class="container">
+            <div layout:fragment="content">
+                <div class="container" class="col-lg-18 well">
+                    <h1 class="well">Leave Record Card</h1>
+                    <!--Employee Details-->
+                    <div class="col-lg-18 well">
+                        <table class="table table-user-information">
+                            <tbody>
+                                <tr>
+                                    <td><h4>Name</h4></td>
+                                    <td><h4>ID</h4></td>
+                                    <td><h4>Department</h4></td>
+                                    <td><h4>Designation</h4></td>
+                                </tr>
+                                <tr>
+                                    <td><h4>Fayazur Rahman Summit</h4></td>
+                                    <td><h4>2014200000071</h4></td>
+                                    <td><h4>CSE</h4></td>
+                                    <td><h4>Student</h4></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="well">
+                        <h3 style="display:inline-block;">Year </h3>
+                        <h3 style="display:inline-block;" th:text="${year}">2018</h3>
+
+                        <div class="row">
+                            <div class="grid-container">
+                                <div class="grid-item"></div>
+                                <div class="grid-item">1</div>
+                                <div class="grid-item">2</div>
+                                <div class="grid-item">3</div>
+                                <div class="grid-item">4</div>
+                                <div class="grid-item">5</div>
+                                <div class="grid-item">6</div>
+                                <div class="grid-item">7</div>
+                                <div class="grid-item">8</div>
+                                <div class="grid-item">9</div>
+                                <div class="grid-item">10</div>
+                                <div class="grid-item">11</div>
+                                <div class="grid-item">12</div>
+                                <div class="grid-item">13</div>
+                                <div class="grid-item">14</div>
+                                <div class="grid-item">15</div>
+                                <div class="grid-item">16</div>
+                                <div class="grid-item">17</div>
+                                <div class="grid-item">18</div>
+                                <div class="grid-item">19</div>
+                                <div class="grid-item">20</div>
+                                <div class="grid-item">21</div>
+                                <div class="grid-item">22</div>
+                                <div class="grid-item">23</div>
+                                <div class="grid-item">24</div>
+                                <div class="grid-item">25</div>
+                                <div class="grid-item">26</div>
+                                <div class="grid-item">27</div>
+                                <div class="grid-item">28</div>
+                                <div class="grid-item">29</div>
+                                <div class="grid-item">30</div>
+                                <div class="grid-item">31</div>
+
+                                <div class="grid-item" >Jan</div>
+                                <div class="grid-item" th:text="${jan-one}">1</div>
+                                <div class="grid-item" th:text="${jan-two}">2</div>
+                                <div class="grid-item" th:text="${jan-three}">3</div>
+                                <div class="grid-item" th:text="${jan-four}">4</div>
+                                <div class="grid-item" th:text="${jan-five}">5</div>
+                                <div class="grid-item" th:text="${jan-six}">6</div>
+                                <div class="grid-item" th:text="${jan-seven}">7</div>
+                                <div class="grid-item" th:text="${jan-eight}">8</div>
+                                <div class="grid-item" th:text="${jan-nine}">9</div>
+                                <div class="grid-item" th:text="${jan-ten}">10</div>
+                                <div class="grid-item" th:text="${jan-eleven}">11</div>
+                                <div class="grid-item" th:text="${jan-twelve}">12</div>
+                                <div class="grid-item" th:text="${jan-thirteen}">13</div>
+                                <div class="grid-item" th:text="${jan-fourteen}">14</div>
+                                <div class="grid-item" th:text="${jan-fifteen}">15</div>
+                                <div class="grid-item" th:text="${jan-sixteen}">16</div>
+                                <div class="grid-item" th:text="${jan-seventeen}">17</div>
+                                <div class="grid-item" th:text="${jan-eighteen}">18</div>
+                                <div class="grid-item" th:text="${jan-nineteen}">19</div>
+                                <div class="grid-item" th:text="${jan-twenty}">20</div>
+                                <div class="grid-item" th:text="${jan-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${jan-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${jan-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${jan-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${jan-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${jan-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${jan-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${jan-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${jan-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${jan-thirty}">30</div>
+                                <div class="grid-item" th:text="${jan-thirty-one}">31</div>
+
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+                                <div class="grid-item" ></div>
+
+                                <div class="grid-item" >Feb</div>
+                                <div class="grid-item" th:text="${feb-one}">1</div>
+                                <div class="grid-item" th:text="${feb-two}">2</div>
+                                <div class="grid-item" th:text="${feb-three}">3</div>
+                                <div class="grid-item" th:text="${feb-four}">4</div>
+                                <div class="grid-item" th:text="${feb-five}">5</div>
+                                <div class="grid-item" th:text="${feb-six}">6</div>
+                                <div class="grid-item" th:text="${feb-seven}">7</div>
+                                <div class="grid-item" th:text="${feb-eight}">8</div>
+                                <div class="grid-item" th:text="${feb-nine}">9</div>
+                                <div class="grid-item" th:text="${feb-ten}">10</div>
+                                <div class="grid-item" th:text="${feb-eleven}">11</div>
+                                <div class="grid-item" th:text="${feb-twelve}">12</div>
+                                <div class="grid-item" th:text="${feb-thirteen}">13</div>
+                                <div class="grid-item" th:text="${feb-fourteen}">14</div>
+                                <div class="grid-item" th:text="${feb-fifteen}">15</div>
+                                <div class="grid-item" th:text="${feb-sixteen}">16</div>
+                                <div class="grid-item" th:text="${feb-seventeen}">17</div>
+                                <div class="grid-item" th:text="${feb-eighteen}">18</div>
+                                <div class="grid-item" th:text="${feb-nineteen}">19</div>
+                                <div class="grid-item" th:text="${feb-twenty}">20</div>
+                                <div class="grid-item" th:text="${feb-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${feb-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${feb-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${feb-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${feb-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${feb-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${feb-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${feb-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${feb-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${feb-thirty}">#</div>
+                                <div class="grid-item" th:text="${feb-thirty-one}">#</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+                                <div class="grid-item" >Mar</div>
+                                <div class="grid-item" th:text="${mar-one}">1</div>
+                                <div class="grid-item" th:text="${mar-two}">2</div>
+                                <div class="grid-item" th:text="${mar-three}">3</div>
+                                <div class="grid-item" th:text="${mar-four}">4</div>
+                                <div class="grid-item" th:text="${mar-five}">5</div>
+                                <div class="grid-item" th:text="${mar-six}">6</div>
+                                <div class="grid-item" th:text="${mar-seven}">7</div>
+                                <div class="grid-item" th:text="${mar-eight}">8</div>
+                                <div class="grid-item" th:text="${mar-nine}">9</div>
+                                <div class="grid-item" th:text="${mar-ten}">10</div>
+                                <div class="grid-item" th:text="${mar-eleven}">11</div>
+                                <div class="grid-item" th:text="${mar-twelve}">12</div>
+                                <div class="grid-item" th:text="${mar-thirteen}">13</div>
+                                <div class="grid-item" th:text="${mar-fourteen}">14</div>
+                                <div class="grid-item" th:text="${mar-fifteen}">15</div>
+                                <div class="grid-item" th:text="${mar-sixteen}">16</div>
+                                <div class="grid-item" th:text="${mar-seventeen}">17</div>
+                                <div class="grid-item" th:text="${mar-eighteen}">18</div>
+                                <div class="grid-item" th:text="${mar-nineteen}">19</div>
+                                <div class="grid-item" th:text="${mar-twenty}">20</div>
+                                <div class="grid-item" th:text="${mar-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${mar-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${mar-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${mar-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${mar-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${mar-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${mar-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${mar-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${mar-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${mar-thirty}">30</div>
+                                <div class="grid-item" th:text="${mar-thirty-one}">31</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+                                <div class="grid-item" >Apr</div>
+                                <div class="grid-item" th:text="${apr-one}">1</div>
+                                <div class="grid-item" th:text="${apr-two}">2</div>
+                                <div class="grid-item" th:text="${apr-three}">3</div>
+                                <div class="grid-item" th:text="${apr-four}">4</div>
+                                <div class="grid-item" th:text="${apr-five}">5</div>
+                                <div class="grid-item" th:text="${apr-six}">6</div>
+                                <div class="grid-item" th:text="${apr-seven}">7</div>
+                                <div class="grid-item" th:text="${apr-eight}">8</div>
+                                <div class="grid-item" th:text="${apr-nine}">9</div>
+                                <div class="grid-item" th:text="${apr-ten}">10</div>
+                                <div class="grid-item" th:text="${apr-eleven}">11</div>
+                                <div class="grid-item" th:text="${apr-twelve}">12</div>
+                                <div class="grid-item" th:text="${apr-thirteen}">13</div>
+                                <div class="grid-item" th:text="${apr-fourteen}">14</div>
+                                <div class="grid-item" th:text="${apr-fifteen}">15</div>
+                                <div class="grid-item" th:text="${apr-sixteen}">16</div>
+                                <div class="grid-item" th:text="${apr-seventeen}">17</div>
+                                <div class="grid-item" th:text="${apr-eighteen}">18</div>
+                                <div class="grid-item" th:text="${apr-nineteen}">19</div>
+                                <div class="grid-item" th:text="${apr-twenty}">20</div>
+                                <div class="grid-item" th:text="${apr-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${apr-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${apr-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${apr-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${apr-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${apr-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${apr-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${apr-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${apr-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${apr-thirty}">30</div>
+                                <div class="grid-item" th:text="${apr-thirty-one}">#</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+
+                                <div class="grid-item" >May</div>
+                                <div class="grid-item" th:text="${may-one}">1</div>
+                                <div class="grid-item" th:text="${may-two}">2</div>
+                                <div class="grid-item" th:text="${may-three}">3</div>
+                                <div class="grid-item" th:text="${may-four}">4</div>
+                                <div class="grid-item" th:text="${may-five}">5</div>
+                                <div class="grid-item" th:text="${may-six}">6</div>
+                                <div class="grid-item" th:text="${may-seven}">7</div>
+                                <div class="grid-item" th:text="${may-eight}">8</div>
+                                <div class="grid-item" th:text="${may-nine}">9</div>
+                                <div class="grid-item" th:text="${may-ten}">10</div>
+                                <div class="grid-item" th:text="${may-eleven}">11</div>
+                                <div class="grid-item" th:text="${may-twelve}">12</div>
+                                <div class="grid-item" th:text="${may-thirteen}">13</div>
+                                <div class="grid-item" th:text="${may-fourteen}">14</div>
+                                <div class="grid-item" th:text="${may-fifteen}">15</div>
+                                <div class="grid-item" th:text="${may-sixteen}">16</div>
+                                <div class="grid-item" th:text="${may-seventeen}">17</div>
+                                <div class="grid-item" th:text="${may-eighteen}">18</div>
+                                <div class="grid-item" th:text="${may-nineteen}">19</div>
+                                <div class="grid-item" th:text="${may-twenty}">20</div>
+                                <div class="grid-item" th:text="${may-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${may-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${may-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${may-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${may-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${may-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${may-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${may-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${may-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${may-thirty}">30</div>
+                                <div class="grid-item" th:text="${may-thirty-one}">31</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+                                <div class="grid-item" >Jun</div>
+                                <div class="grid-item" th:text="${jun-one}">1</div>
+                                <div class="grid-item" th:text="${jun-two}">2</div>
+                                <div class="grid-item" th:text="${jun-three}">3</div>
+                                <div class="grid-item" th:text="${jun-four}">4</div>
+                                <div class="grid-item" th:text="${jun-five}">5</div>
+                                <div class="grid-item" th:text="${jun-six}">6</div>
+                                <div class="grid-item" th:text="${jun-seven}">7</div>
+                                <div class="grid-item" th:text="${jun-eight}">8</div>
+                                <div class="grid-item" th:text="${jun-nine}">9</div>
+                                <div class="grid-item" th:text="${jun-ten}">10</div>
+                                <div class="grid-item" th:text="${jun-eleven}">11</div>
+                                <div class="grid-item" th:text="${jun-twelve}">12</div>
+                                <div class="grid-item" th:text="${jun-thirteen}">13</div>
+                                <div class="grid-item" th:text="${jun-fourteen}">14</div>
+                                <div class="grid-item" th:text="${jun-fifteen}">15</div>
+                                <div class="grid-item" th:text="${jun-sixteen}">16</div>
+                                <div class="grid-item" th:text="${jun-seventeen}">17</div>
+                                <div class="grid-item" th:text="${jun-eighteen}">18</div>
+                                <div class="grid-item" th:text="${jun-nineteen}">19</div>
+                                <div class="grid-item" th:text="${jun-twenty}">20</div>
+                                <div class="grid-item" th:text="${jun-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${jun-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${jun-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${jun-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${jun-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${jun-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${jun-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${jun-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${jun-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${jun-thirty}">30</div>
+                                <div class="grid-item" th:text="${jun-thirty-one}">#</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+
+                                <div class="grid-item" >Jul</div>
+                                <div class="grid-item" th:text="${jul-one}">1</div>
+                                <div class="grid-item" th:text="${jul-two}">2</div>
+                                <div class="grid-item" th:text="${jul-three}">3</div>
+                                <div class="grid-item" th:text="${jul-four}">4</div>
+                                <div class="grid-item" th:text="${jul-five}">5</div>
+                                <div class="grid-item" th:text="${jul-six}">6</div>
+                                <div class="grid-item" th:text="${jul-seven}">7</div>
+                                <div class="grid-item" th:text="${jul-eight}">8</div>
+                                <div class="grid-item" th:text="${jul-nine}">9</div>
+                                <div class="grid-item" th:text="${jul-ten}">10</div>
+                                <div class="grid-item" th:text="${jul-eleven}">11</div>
+                                <div class="grid-item" th:text="${jul-twelve}">12</div>
+                                <div class="grid-item" th:text="${jul-thirteen}">13</div>
+                                <div class="grid-item" th:text="${jul-fourteen}">14</div>
+                                <div class="grid-item" th:text="${jul-fifteen}">15</div>
+                                <div class="grid-item" th:text="${jul-sixteen}">16</div>
+                                <div class="grid-item" th:text="${jul-seventeen}">17</div>
+                                <div class="grid-item" th:text="${jul-eighteen}">18</div>
+                                <div class="grid-item" th:text="${jul-nineteen}">19</div>
+                                <div class="grid-item" th:text="${jul-twenty}">20</div>
+                                <div class="grid-item" th:text="${jul-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${jul-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${jul-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${jul-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${jul-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${jul-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${jul-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${jul-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${jul-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${jul-thirty}">30</div>
+                                <div class="grid-item" th:text="${jul-thirty-one}">31</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+                                <div class="grid-item" th:if="${myConfigLeaveSick} == 'SICK LEAVE RECORDS'">Aug</div>
+                                <div class="grid-item" th:text="${aug-one}">1</div>
+                                <div class="grid-item" th:text="${aug-two}">2</div>
+                                <div class="grid-item" th:text="${aug-three}">3</div>
+                                <div class="grid-item" th:text="${aug-four}">4</div>
+                                <div class="grid-item" th:text="${aug-five}">5</div>
+                                <div class="grid-item" th:text="${aug-six}">6</div>
+                                <div class="grid-item" th:text="${aug-seven}">7</div>
+                                <div class="grid-item" th:text="${aug-eight}">8</div>
+                                <div class="grid-item" th:text="${aug-nine}">9</div>
+                                <div class="grid-item" th:text="${aug-ten}">10</div>
+                                <div class="grid-item" th:text="${aug-eleven}">11</div>
+                                <div class="grid-item" th:text="${aug-twelve}">12</div>
+                                <div class="grid-item" th:text="${aug-thirteen}">13</div>
+                                <div class="grid-item" th:text="${aug-fourteen}">14</div>
+                                <div class="grid-item" th:text="${aug-fifteen}">15</div>
+                                <div class="grid-item" th:text="${aug-sixteen}">16</div>
+                                <div class="grid-item" th:text="${aug-seventeen}">17</div>
+                                <div class="grid-item" th:text="${aug-eighteen}">18</div>
+                                <div class="grid-item" th:text="${aug-nineteen}">19</div>
+                                <div class="grid-item" th:text="${aug-twenty}">20</div>
+                                <div class="grid-item" th:text="${aug-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${aug-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${aug-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${aug-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${aug-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${aug-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${aug-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${aug-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${aug-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${aug-thirty}">30</div>
+                                <div class="grid-item" th:text="${aug-thirty-one}">31</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+                                <div class="grid-item" >Sep</div>
+                                <div class="grid-item" th:text="${sep-one}">1</div>
+                                <div class="grid-item" th:text="${sep-two}">2</div>
+                                <div class="grid-item" th:text="${sep-three}">3</div>
+                                <div class="grid-item" th:text="${sep-four}">4</div>
+                                <div class="grid-item" th:text="${sep-five}">5</div>
+                                <div class="grid-item" th:text="${sep-six}">6</div>
+                                <div class="grid-item" th:text="${sep-seven}">7</div>
+                                <div class="grid-item" th:text="${sep-eight}">8</div>
+                                <div class="grid-item" th:text="${sep-nine}">9</div>
+                                <div class="grid-item" th:text="${sep-ten}">10</div>
+                                <div class="grid-item" th:text="${sep-eleven}">11</div>
+                                <div class="grid-item" th:text="${sep-twelve}">12</div>
+                                <div class="grid-item" th:text="${sep-thirteen}">13</div>
+                                <div class="grid-item" th:text="${sep-fourteen}">14</div>
+                                <div class="grid-item" th:text="${sep-fifteen}">15</div>
+                                <div class="grid-item" th:text="${sep-sixteen}">16</div>
+                                <div class="grid-item" th:text="${sep-seventeen}">17</div>
+                                <div class="grid-item" th:text="${sep-eighteen}">18</div>
+                                <div class="grid-item" th:text="${sep-nineteen}">19</div>
+                                <div class="grid-item" th:text="${sep-twenty}">20</div>
+                                <div class="grid-item" th:text="${sep-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${sep-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${sep-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${sep-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${sep-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${sep-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${sep-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${sep-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${sep-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${sep-thirty}">30</div>
+                                <div class="grid-item" th:text="${sep-thirty-one}">#</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+                                <div class="grid-item" >Oct</div>
+                                <div class="grid-item" th:text="${oct-one}">1</div>
+                                <div class="grid-item" th:text="${oct-two}">2</div>
+                                <div class="grid-item" th:text="${oct-three}">3</div>
+                                <div class="grid-item" th:text="${oct-four}">4</div>
+                                <div class="grid-item" th:text="${oct-five}">5</div>
+                                <div class="grid-item" th:text="${oct-six}">6</div>
+                                <div class="grid-item" th:text="${oct-seven}">7</div>
+                                <div class="grid-item" th:text="${oct-eight}">8</div>
+                                <div class="grid-item" th:text="${oct-nine}">9</div>
+                                <div class="grid-item" th:text="${oct-ten}">10</div>
+                                <div class="grid-item" th:text="${oct-eleven}">11</div>
+                                <div class="grid-item" th:text="${oct-twelve}">12</div>
+                                <div class="grid-item" th:text="${oct-thirteen}">13</div>
+                                <div class="grid-item" th:text="${oct-fourteen}">14</div>
+                                <div class="grid-item" th:text="${oct-fifteen}">15</div>
+                                <div class="grid-item" th:text="${oct-sixteen}">16</div>
+                                <div class="grid-item" th:text="${oct-seventeen}">17</div>
+                                <div class="grid-item" th:text="${oct-eighteen}">18</div>
+                                <div class="grid-item" th:text="${oct-nineteen}">19</div>
+                                <div class="grid-item" th:text="${oct-twenty}">20</div>
+                                <div class="grid-item" th:text="${oct-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${oct-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${oct-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${oct-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${oct-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${oct-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${oct-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${oct-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${oct-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${oct-thirty}">30</div>
+                                <div class="grid-item" th:text="${oct-thirty-one}">31</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+                                <div class="grid-item" >Nov</div>
+                                <div class="grid-item" th:text="${nov-one}">1</div>
+                                <div class="grid-item" th:text="${nov-two}">2</div>
+                                <div class="grid-item" th:text="${nov-three}">3</div>
+                                <div class="grid-item" th:text="${nov-four}">4</div>
+                                <div class="grid-item" th:text="${nov-five}">5</div>
+                                <div class="grid-item" th:text="${nov-six}">6</div>
+                                <div class="grid-item" th:text="${nov-seven}">7</div>
+                                <div class="grid-item" th:text="${nov-eight}">8</div>
+                                <div class="grid-item" th:text="${nov-nine}">9</div>
+                                <div class="grid-item" th:text="${nov-ten}">10</div>
+                                <div class="grid-item" th:text="${nov-eleven}">11</div>
+                                <div class="grid-item" th:text="${nov-twelve}">12</div>
+                                <div class="grid-item" th:text="${nov-thirteen}">13</div>
+                                <div class="grid-item" th:text="${nov-fourteen}">14</div>
+                                <div class="grid-item" th:text="${nov-fifteen}">15</div>
+                                <div class="grid-item" th:text="${nov-sixteen}">16</div>
+                                <div class="grid-item" th:text="${nov-seventeen}">17</div>
+                                <div class="grid-item" th:text="${nov-eighteen}">18</div>
+                                <div class="grid-item" th:text="${nov-nineteen}">19</div>
+                                <div class="grid-item" th:text="${nov-twenty}">20</div>
+                                <div class="grid-item" th:text="${nov-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${nov-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${nov-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${nov-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${nov-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${nov-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${nov-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${nov-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${nov-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${nov-thirty}">30</div>
+                                <div class="grid-item" th:text="${nov-thirty-one}">#</div>
+
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+                                        <div class="grid-item" ></div>
+
+                                <div class="grid-item" >Dec</div>
+                                <div class="grid-item" th:text="${dec-one}">1</div>
+                                <div class="grid-item" th:text="${dec-two}">2</div>
+                                <div class="grid-item" th:text="${dec-three}">3</div>
+                                <div class="grid-item" th:text="${dec-four}">4</div>
+                                <div class="grid-item" th:text="${dec-five}">5</div>
+                                <div class="grid-item" th:text="${dec-six}">6</div>
+                                <div class="grid-item" th:text="${dec-seven}">7</div>
+                                <div class="grid-item" th:text="${dec-eight}">8</div>
+                                <div class="grid-item" th:text="${dec-nine}">9</div>
+                                <div class="grid-item" th:text="${dec-ten}">10</div>
+                                <div class="grid-item" th:text="${dec-eleven}">11</div>
+                                <div class="grid-item" th:text="${dec-twelve}">12</div>
+                                <div class="grid-item" th:text="${dec-thirteen}">13</div>
+                                <div class="grid-item" th:text="${dec-fourteen}">14</div>
+                                <div class="grid-item" th:text="${dec-fifteen}">15</div>
+                                <div class="grid-item" th:text="${dec-sixteen}">16</div>
+                                <div class="grid-item" th:text="${dec-seventeen}">17</div>
+                                <div class="grid-item" th:text="${dec-eighteen}">18</div>
+                                <div class="grid-item" th:text="${dec-nineteen}">19</div>
+                                <div class="grid-item" th:text="${dec-twenty}">20</div>
+                                <div class="grid-item" th:text="${dec-twenty-one}">21</div>
+                                <div class="grid-item" th:text="${dec-twenty-two}">22</div>
+                                <div class="grid-item" th:text="${dec-twenty-three}">23</div>
+                                <div class="grid-item" th:text="${dec-twenty-four}">24</div>
+                                <div class="grid-item" th:text="${dec-twenty-five}">25</div>
+                                <div class="grid-item" th:text="${dec-twenty-six}">26</div>
+                                <div class="grid-item" th:text="${dec-twenty-seven}">27</div>
+                                <div class="grid-item" th:text="${dec-twenty-eight}">28</div>
+                                <div class="grid-item" th:text="${dec-twenty-nine}">29</div>
+                                <div class="grid-item" th:text="${dec-thirty}">30</div>
+                                <div class="grid-item" th:text="${dec-thirty-one}">31</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <!--HR-Records-->
+                    <div class="col-lg-12 well">
+                        <div class="row">
+                            <h3 style="margin-left:1%">HR-Records</h3>
+                            <div style="margin:0% 2% 0% 2%">
+                                <div class="form-group">
+                                    <div>
+                                        <h3 style="display:inline-block;">Total Leave :</h3>
+                                        <h3 style="display:inline-block;" th:text="${totalLeaves}">36</h3>
+                                    </div>
+                                    <div>
+                                        <h3 style="display:inline-block;">Balance : </h3>
+                                        <h3 style="display:inline-block;" th:text="${balance}">6</h3>
+                                    </div>
+                                    <div>
+                                        <h3 style="display:inline-block;">Taken : </h3>
+                                        <h3 style="display:inline-block;" th:text="${taken}">30</h3>
+                                    </div>
+                                </div>
+                                <div class="grid-containerhr">
+                                    <div class="grid-itemhr">Reason</div>
+                                    <div class="grid-itemhr">Total</div>
+                                    <div class="grid-itemhr">Taken</div>
+                                    <div class="grid-itemhr">Remaining</div>
+
+                                    <div class="grid-itemhr" th:if="${myConfigLeavePersonal} == 'PERSONAL LEAVE RECORDS'">Personal</div>
+                                    <div class="grid-itemhr" th:text="${personal_total}" th:if="${myConfigLeavePersonal} == 'PERSONAL LEAVE RECORDS'">6</div>
+                                    <div class="grid-itemhr" th:text="${personal_taken}" th:if="${myConfigLeavePersonal} == 'PERSONAL LEAVE RECORDS'">1</div>
+                                    <div class="grid-itemhr" th:text="${personal_balance}" th:if="${myConfigLeavePersonal} == 'PERSONAL LEAVE RECORDS'">1</div>
+
+                                    <div class="grid-itemhr" th:if="${myConfigLeaveSick} == 'SICK LEAVE RECORDS'">Sick</div>
+                                    <div class="grid-itemhr" th:text="${sick_total}" th:if="${myConfigLeaveSick} == 'SICK LEAVE RECORDS'">7</div>
+                                    <div class="grid-itemhr" th:text="${sick_taken}" th:if="${myConfigLeaveSick} == 'SICK LEAVE RECORDS'">8</div>
+                                    <div class="grid-itemhr" th:text="${sick_balance}" th:if="${myConfigLeaveSick} == 'SICK LEAVE RECORDS'">9</div>
+
+                                    <div class="grid-itemhr" th:if="${myConfigLeavePlanned} == 'PLANNED LEAVE RECORDS'">Planned</div>
+                                    <div class="grid-itemhr" th:text="${planned_total}" th:if="${myConfigLeavePlanned} == 'PLANNED LEAVE RECORDS'">7</div>
+                                    <div class="grid-itemhr" th:text="${planned_taken}" th:if="${myConfigLeavePlanned} == 'PLANNED LEAVE RECORDS'">8</div>
+                                    <div class="grid-itemhr" th:text="${planned_balance}" th:if="${myConfigLeavePlanned} == 'PLANNED LEAVE RECORDS'">9</div>
+
+                                    <div class="grid-itemhr" th:if="${myConfigLeaveVacation} == 'VACATION LEAVE RECORDS'">Vacation</div>
+                                    <div class="grid-itemhr" th:text="${vacation_total}" th:if="${myConfigLeaveVacation} == 'VACATION LEAVE RECORDS'">7</div>
+                                    <div class="grid-itemhr" th:text="${vacation_taken}" th:if="${myConfigLeaveVacation} == 'VACATION LEAVE RECORDS'">8</div>
+                                    <div class="grid-itemhr" th:text="${vacation_balance}" th:if="${myConfigLeaveVacation} == 'VACATION LEAVE RECORDS'">9</div>
+
+                                    <div class="grid-itemhr" th:if="${myConfigLeaveMaternity} == 'MATERNITY LEAVE RECORDS'">Maternity</div>
+                                    <div class="grid-itemhr" th:text="${maternity_total}" th:if="${myConfigLeaveMaternity} == 'MATERNITY LEAVE RECORDS'">7</div>
+                                    <div class="grid-itemhr" th:text="${maternity_taken}" th:if="${myConfigLeaveMaternity} == 'MATERNITY LEAVE RECORDS'">8</div>
+                                    <div class="grid-itemhr" th:text="${maternity_balance}" th:if="${myConfigLeaveMaternity} == 'MATERNITY LEAVE RECORDS'">9</div>
+
+                                    <div class="grid-itemhr" th:if="${myConfigLeaveOther} == 'OTHER RECORDS'">Other</div>
+                                    <div class="grid-itemhr" th:text="${other_total}" th:if="${myConfigLeaveOther} == 'OTHER RECORDS'">7</div>
+                                    <div class="grid-itemhr" th:text="${other_taken}" th:if="${myConfigLeaveOther} == 'OTHER RECORDS'">8</div>
+                                    <div class="grid-itemhr" th:text="${other_balance}" th:if="${myConfigLeaveOther} == 'OTHER RECORDS'">9</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

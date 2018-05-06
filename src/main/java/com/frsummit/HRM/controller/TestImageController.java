@@ -54,7 +54,7 @@ public class TestImageController {
         response.setContentType("image/jpeg");
         response.setContentLength(thumb.length);
 
-        response.setHeader("Content-Disposition", "inline; filename=\"" + name + "\"");
+//        response.setHeader("Content-Disposition", "inline; filename=\"" + name + "\"");
 
         BufferedInputStream input = null;
         BufferedOutputStream output = null;
@@ -67,6 +67,7 @@ public class TestImageController {
             int length;
             while ((length = input.read(buffer)) > 0) {
                 output.write(buffer, 0, length);
+                output.flush();
             }
         } catch (IOException e) {
             System.out.println("There are errors in reading/writing image stream "
@@ -110,7 +111,8 @@ public class TestImageController {
 //        System.out.println("2");
 //        return modelAndView;
 
-        model.addAttribute("myimage", ti.getData());
+//        model.addAttribute("myimage", ti.getData());
+        model.addAttribute("myimage", output);
         return "zz_test_image";
     }
 
