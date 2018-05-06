@@ -10,10 +10,90 @@
         <link rel="stylesheet" type="text/css" media="all" href="../static/css/background.css" th:href="@{/css/background.css}" />
     </head>
     <body>
-    <div class="container">
-        <div layout:fragment="content">
+        <div class="container">
+            <div layout:fragment="content">
+                <h1 class="well">Employee Leave Record</h1>
+                <div class="container">
+                    <div class="row well col-sm-6 form-group">
+                        <form th:action="@{/admin/leave-record-consolidated}" method="post">
+                            <div>
+                                <!--ID-->
+                                <div class="row col-sm-8">
+                                    <label>Department</label>
+                                    <select name="department" class="form-control">
+                                        <option>CSE</option>
+                                        <option>EEE</option>
+                                        <option>TEXTILE</option>
+                                    </select>
+                                </div>
+                                <!--DEPARTMENT & ROLE-->
+                                <div class="row">
+                                    <div class="col-sm-5 form-group">
+                                        <label>From</label>
+                                        <input type="date" name="dateFrom" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-5 form-group">
+                                        <label>To</label>
+                                        <input type="date" name="dateTo" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary custom-button-width">Load Record</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
+
+                    <div class="row">
+                        <table class="table well" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Employee Id</th>
+                                    <th>Name</th>
+                                    <th>Personal</th>
+                                    <th>Sick</th>
+                                    <th>Planned</th>
+                                    <th>Vacation</th>
+                                    <th>Maternity</th>
+                                    <th>Other</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="success" th:each="hrRecord, hrRecordStat : ${hrRecordList}">
+                                    <td th:text="${hrRecordStat.count}">1</td>
+                                    <td th:text="${hrRecord.userId}">2014200000071</td>
+                                    <td th:text="${hrRecord.name}">Fayazur Rahman Summit</td>
+                                    <td th:text="${hrRecord.totalLeavePersonal}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveSick}">5</td>
+                                    <td th:text="${hrRecord.totalLeavePlanned}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveVacation}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveMaternity}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveOther}">5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="row well col-sm-6 form-group">
+                        <form th:action="@{/admin/leave-record-individual}" method="post">
+                            <div class="form-group" style="margin-right:20%">
+                                <label>User Id</label>
+                                <input type="text" name="userId" placeholder="Enter User Id" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary custom-button-width">Load Leave Card</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
     </body>
 </html>
