@@ -152,11 +152,39 @@ public class LeaveReportIndividual {
 
                     }
 
-//                    Between two years (december & january)
+//                    Between two years (december & january) curent year and next year
                     if(partsLeaveFrom[0].equalsIgnoreCase(String.valueOf(currentYear)) && partsLeaveTo[0].equalsIgnoreCase(String.valueOf(currentYear+1))){
                         for(int m=1; m<=12; m++){
                             if(Integer.parseInt(partsLeaveFrom[1]) == m && Integer.parseInt(partsLeaveTo[1]) == m-11){
                                 System.out.println(months[m-1] + " " + months[m-12]);
+                                for(int mon=m; mon<=m; mon++){
+                                    String[] partsLeaveFromday = partsLeaveFrom[2].split(" ");
+                                    String[] partsLeaveToday = partsLeaveTo[2].split(" ");
+                                    int from = Integer.parseInt(partsLeaveFromday[0]);
+                                    int to = Integer.parseInt(partsLeaveToday[0]);
+                                    for(int day=from-1; day<days.length; day++){
+                                        model.addAttribute(months[mon-1]+days[day], "Y");
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+//                    Between two years (december & january) previous year and current year
+                    if(partsLeaveFrom[0].equalsIgnoreCase(String.valueOf(currentYear-1)) && partsLeaveTo[0].equalsIgnoreCase(String.valueOf(currentYear))){
+                        for(int m=1; m<=12; m++){
+                            if(Integer.parseInt(partsLeaveFrom[1]) == m && Integer.parseInt(partsLeaveTo[1]) == m-11){
+                                System.out.println(months[m-1] + " " + months[m-12]);
+                                for(int mon=m; mon<=m; mon++){
+                                    String[] partsLeaveFromday = partsLeaveFrom[2].split(" ");
+                                    String[] partsLeaveToday = partsLeaveTo[2].split(" ");
+                                    int from = Integer.parseInt(partsLeaveFromday[0]);
+                                    int to = Integer.parseInt(partsLeaveToday[0]);
+                                    for(int day=0; day<to; day++){
+                                        model.addAttribute(months[mon-12]+days[day], "Y");
+                                    }
+                                }
                             }
                         }
 
