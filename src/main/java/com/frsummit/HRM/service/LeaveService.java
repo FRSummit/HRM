@@ -18,6 +18,7 @@ public interface LeaveService {
     public void updateLeaveStatus(String leaveId, String selectStatus, String leaveActionBy, String modifyTo);
 
     public List<Leaves> findLeavesByLeaveId(int id);
+    public List<Leaves> findLeavesByUserId(String userId);
 
 
     //////////////////////////////////////

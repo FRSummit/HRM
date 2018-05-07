@@ -2,6 +2,7 @@ package com.frsummit.HRM.controller.admin.leave;
 
 import com.frsummit.HRM.configuration.MyAuthorization;
 import com.frsummit.HRM.model.HRRecord;
+import com.frsummit.HRM.model.User;
 import com.frsummit.HRM.service.HRRecordService;
 import com.frsummit.HRM.service.LeaveService;
 import com.frsummit.HRM.service.UserService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -42,8 +44,25 @@ public class LeaveReportConsolidated {
             @RequestParam(value = "dateTo") String dateTo,
             Model model){
 
-        List<HRRecord> hrRecordList = hrRecordService.findAllHRRecords();
+        List<User> userList = userService.findUserByDepartment(department);
+        List<String> userIdList = new ArrayList<>();
+        System.out.println("this :" + userList);
+        User user;
+        System.out.println(userList.size());
+        for(int i=0; i<userList.size()-1; i++){
+            user = userList.get(i);
+            userIdList.add(user.getId());
+        }
+        System.out.println("This");
+        System.out.println(userIdList);
+        System.out.println(userIdList.size());
+        List<HRRecord> hrRecordList = new ArrayList<>();
+//        for(int i=0; i<userIdList.size()-1; i++){
+////            model.addAttribute("hrRecordList", hrRecordService.getAllRecord(userIdList.get(i)));
+//            hrRecordList = hrRecordService.getAllRecord(userIdList.get(i));
+//        }
 
+//        model.addAttribute("hrRecordList", hrRecordService.getAllRecordByDept(department));
         return "leaves-report-consolidated";
     }
 }

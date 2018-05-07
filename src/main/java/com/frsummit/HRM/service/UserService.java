@@ -16,6 +16,7 @@ public interface UserService {
     public User findUserByEmail(String email);
     public User findUserById(String id);
     public List<User> findAllUsers();
+    public List<User> findUserByDepartment(String dept);
 
 //    Save and Update
 

@@ -69,6 +69,12 @@ public class UserServiceImpl implements UserService {
 //        //j = i.getId();
         return userRepository.findById(id);
     }
+
+    @Override
+    public List<User> findUserByDepartment(String dept) {
+        return entityManager.createQuery("select u from User as u where u.department= '" + dept + "'", User.class).getResultList();
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public void myMail() {

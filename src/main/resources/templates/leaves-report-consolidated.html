@@ -53,24 +53,36 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Employee Id</th>
-                                    <th>Personal</th>
-                                    <th>Sick</th>
-                                    <th>Planned</th>
-                                    <th>Vacation</th>
-                                    <th>Maternity</th>
-                                    <th>Other</th>
+                                    <th>Personal Taken</th>
+                                    <th>Personal Remaining</th>
+                                    <th>Sick Taken</th>
+                                    <th>Sick Remaining</th>
+                                    <th>Planned Taken</th>
+                                    <th>Planned Remaining</th>
+                                    <th>Vacation Taken</th>
+                                    <th>Vacation Remaining</th>
+                                    <th>Maternity Taken</th>
+                                    <th>Maternity Remaining</th>
+                                    <th>Other Taken</th>
+                                    <th>Other Remaining</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr class="success" th:each="hrRecord, hrRecordStat : ${hrRecordList}">
                                     <td th:text="${hrRecordStat.count}">1</td>
                                     <td th:text="${hrRecord.userId}">2014200000071</td>
-                                    <td th:text="${hrRecord.totalLeavePersonal}">5</td>
-                                    <td th:text="${hrRecord.totalLeaveSick}">5</td>
-                                    <td th:text="${hrRecord.totalLeavePlanned}">5</td>
-                                    <td th:text="${hrRecord.totalLeaveVacation}">5</td>
-                                    <td th:text="${hrRecord.totalLeaveMaternity}">5</td>
-                                    <td th:text="${hrRecord.totalLeaveOther}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenPersonal}">5</td>
+                                    <td th:text="${hrRecord.leaveBalancePersonal}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenSick}">5</td>
+                                    <td th:text="${hrRecord.leaveBalanceSick}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenPlanned}">5</td>
+                                    <td th:text="${hrRecord.leaveBalancePlanned}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenVacation}">5</td>
+                                    <td th:text="${hrRecord.leaveBalanceVacation}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenMaternity}">5</td>
+                                    <td th:text="${hrRecord.leaveBalanceMaternity}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenOther}">5</td>
+                                    <td th:text="${hrRecord.leaveBalanceOther}">5</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -78,7 +90,7 @@
 
 
                     <div class="row well col-sm-6 form-group">
-                        <form th:action="@{/admin/leave-record-individual}" method="post">
+                        <form th:action="@{/admin/leave-record-individual}" method="get">
                             <div class="form-group" style="margin-right:20%">
                                 <label>User Id</label>
                                 <input type="text" name="userId" placeholder="Enter User Id" class="form-control"/>
