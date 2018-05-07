@@ -236,6 +236,12 @@ public class LeaveReportIndividual {
         return "leaves-report-individual";
     }
 
+    public int leapYear(int year){
+        if(year%4==0 && year%100!=0 || year%400==0)
+            return year;
+        return 0;
+    }
+
     public void myFn(){
         String[] months =  {"jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"};
         String[] days = {"one", "two", "three", "four", "five",
