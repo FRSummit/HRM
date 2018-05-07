@@ -92,23 +92,52 @@ public class LeaveReportIndividual {
                                 }
                             }
 //                            Between two months
-                            else if(Integer.parseInt(partsLeaveFrom[1]) == m && Integer.parseInt(partsLeaveTo[1]) == m+1){
+                            if(Integer.parseInt(partsLeaveFrom[1]) == m && Integer.parseInt(partsLeaveTo[1]) == m+1){
                                 System.out.println(months[m-1] + " " + months[m]);
-                                System.out.println(months[m-1]);
+//                                First month
                                 for(int mon=m; mon<=m; mon++){
                                     String[] partsLeaveFromday = partsLeaveFrom[2].split(" ");
                                     String[] partsLeaveToday = partsLeaveTo[2].split(" ");
                                     int from = Integer.parseInt(partsLeaveFromday[0]);
                                     int to = Integer.parseInt(partsLeaveToday[0]);
-                                    for(int day=from-1; day<=to-1; day++){
-                                        model.addAttribute(months[mon-1]+days[day], "Y");
+                                    System.out.println(from + " " + to + "    " + days.length);
+//                                    for(int day=from-1; day<=to-1; day++){
+//                                        model.addAttribute(months[mon-1]+days[day], "Y");
+//                                    }
+
+                                    for (int day = from - 1; day < days.length; day++) {
+                                        model.addAttribute(months[mon - 1] + days[day], "Y");
+                                    }
+                                    if(months[mon-1] == "apr" || months[mon-1] == "jun" || months[mon-1] == "sep" ||months[mon-1] == "nov")
+                                        model.addAttribute(months[mon-1]+"thirtyone", "#");
+                                    if(months[mon-1] == "feb"){
+                                        model.addAttribute(months[mon-1]+"thirty", "#");
+                                        model.addAttribute(months[mon-1]+"thirtyone", "#");
+                                    }
+                                }
+//                                Second month
+                                for(int mon=m+1; mon<=m+1; mon++){
+                                    String[] partsLeaveFromday = partsLeaveFrom[2].split(" ");
+                                    String[] partsLeaveToday = partsLeaveTo[2].split(" ");
+                                    int from = Integer.parseInt(partsLeaveFromday[0]);
+                                    int to = Integer.parseInt(partsLeaveToday[0]);
+                                    System.out.println(from + " " + to + "    " + days.length);
+
+                                    for (int day = 0; day < to; day++) {
+                                        model.addAttribute(months[mon - 1] + days[day], "Y");
+                                    }
+
+                                    if(months[mon-1] == "apr" || months[mon-1] == "jun" || months[mon-1] == "sep" ||months[mon-1] == "nov")
+                                        model.addAttribute(months[mon-1]+"thirtyone", "#");
+                                    if(months[mon-1] == "feb"){
+                                        model.addAttribute(months[mon-1]+"thirty", "#");
+                                        model.addAttribute(months[mon-1]+"thirtyone", "#");
                                     }
                                 }
                             }
 //                            i don't know wtf is this, i forget
-                            else if(Integer.parseInt(partsLeaveFrom[1]) == m && Integer.parseInt(partsLeaveTo[1]) == m-11){
+                            if(Integer.parseInt(partsLeaveFrom[1]) == m && Integer.parseInt(partsLeaveTo[1]) == m-11){
                                 System.out.println(months[m-1] + " " + months[m-11]);
-                                System.out.println(months[m-1]);
                                 for(int mon=m; mon<=m; mon++){
                                     String[] partsLeaveFromday = partsLeaveFrom[2].split(" ");
                                     String[] partsLeaveToday = partsLeaveTo[2].split(" ");
