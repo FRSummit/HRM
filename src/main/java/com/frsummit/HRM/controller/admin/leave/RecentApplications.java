@@ -89,34 +89,37 @@ public class RecentApplications {
             System.out.println(leaves.getLeaveType());
 
             List<HRRecord> hrRecordList = hrRecordService.getAllRecord(leaves.getUserId());
-            HRRecord hrRecord = hrRecordList.get(0);
-            if(myAuthorization.userFromEmailOrId().getMyRole().equalsIgnoreCase(parentRole.getRole())){
-                if(leaves.getLeaveType().equalsIgnoreCase("Personal")){
-                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
-                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
-                    hrRecordService.updateHRRecord(leaves.getUserId(), "Personal", taken, balance);
-                }else if(leaves.getLeaveType().equalsIgnoreCase("Sick")){
-                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
-                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
-                    hrRecordService.updateHRRecord(leaves.getUserId(), "Sick", taken, balance);
-                }else if(leaves.getLeaveType().equalsIgnoreCase("Planned")){
-                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
-                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
-                    hrRecordService.updateHRRecord(leaves.getUserId(), "Planned", taken, balance);
-                }else if(leaves.getLeaveType().equalsIgnoreCase("Vacation")){
-                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
-                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
-                    hrRecordService.updateHRRecord(leaves.getUserId(), "Vacation", taken, balance);
-                }else if(leaves.getLeaveType().equalsIgnoreCase("Maternity")){
-                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
-                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
-                    hrRecordService.updateHRRecord(leaves.getUserId(), "Maternity", taken, balance);
-                }else if(leaves.getLeaveType().equalsIgnoreCase("Other")){
-                    int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
-                    int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
-                    hrRecordService.updateHRRecord(leaves.getUserId(), "Other", taken, balance);
+            if(hrRecordList.size() != 0){
+                HRRecord hrRecord = hrRecordList.get(0);
+                if(myAuthorization.userFromEmailOrId().getMyRole().equalsIgnoreCase(parentRole.getRole())){
+                    if(leaves.getLeaveType().equalsIgnoreCase("Personal")){
+                        int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                        int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                        hrRecordService.updateHRRecord(leaves.getUserId(), "Personal", taken, balance);
+                    }else if(leaves.getLeaveType().equalsIgnoreCase("Sick")){
+                        int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                        int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                        hrRecordService.updateHRRecord(leaves.getUserId(), "Sick", taken, balance);
+                    }else if(leaves.getLeaveType().equalsIgnoreCase("Planned")){
+                        int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                        int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                        hrRecordService.updateHRRecord(leaves.getUserId(), "Planned", taken, balance);
+                    }else if(leaves.getLeaveType().equalsIgnoreCase("Vacation")){
+                        int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                        int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                        hrRecordService.updateHRRecord(leaves.getUserId(), "Vacation", taken, balance);
+                    }else if(leaves.getLeaveType().equalsIgnoreCase("Maternity")){
+                        int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                        int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                        hrRecordService.updateHRRecord(leaves.getUserId(), "Maternity", taken, balance);
+                    }else if(leaves.getLeaveType().equalsIgnoreCase("Other")){
+                        int taken = leaves.getTotalDayOfLeave()+ hrRecord.getTotalLeaveTakenPersonal();
+                        int balance = hrRecord.getLeaveBalancePersonal() - leaves.getTotalDayOfLeave();
+                        hrRecordService.updateHRRecord(leaves.getUserId(), "Other", taken, balance);
+                    }
                 }
             }
+
         }
 
         if(myAuthorization.userFromEmailOrId().getMyRole().equalsIgnoreCase("ADMIN"))
