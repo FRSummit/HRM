@@ -49,19 +49,25 @@ public class AttSign {
 
         List<Attendance> attList = attendanceService.attendanceStatus(myAuthorization.userFromEmailOrId().getId());
         System.out.println("1");
-        Attendance attendance2 =  attList.get(attList.size()-1);
-        System.out.println(attendance2);
-        System.out.println(attendance2.getStatus());
-        if(attendance2.getStatus() != null){
-            if(attendance2.getStatus().equalsIgnoreCase("IN")){
-                attendance.setStatus("OUT");
-                attendanceService.saveAttendance(attendance);
+        if(attList.size() > 0){
+            Attendance attendance2 =  attList.get(attList.size()-1);
+            System.out.println(attendance2);
+            System.out.println(attendance2.getStatus());
+            if(attendance2.getStatus() != null){
+                if(attendance2.getStatus().equalsIgnoreCase("IN")){
+                    attendance.setStatus("OUT");
+                    attendanceService.saveAttendance(attendance);
+                }
+                if(attendance2.getStatus().equalsIgnoreCase("OUT")){
+                    attendance.setStatus("IN");
+                    attendanceService.saveAttendance(attendance);
+                }
             }
-            if(attendance2.getStatus().equalsIgnoreCase("OUT")){
-                attendance.setStatus("IN");
-                attendanceService.saveAttendance(attendance);
-            }
+        }else{
+            attendance.setStatus("IN");
+            attendanceService.saveAttendance(attendance);
         }
+
 
 //        List<Attendance> attendanceList = attendanceService.myAllSignList();
 //        Attendance attendance1 = attendanceList.get(attendanceList.size() - 1);
