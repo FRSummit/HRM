@@ -17,9 +17,10 @@ public class AttExternalLink {
     private LinkService linkService;
 
     @RequestMapping(value = "/admin/attendance-admin-external-link", method = RequestMethod.GET)
-    public String getExtLink(HttpServletRequest request, BindingResult result, ModelMap model){
-//        String redirectUrl = request.getScheme() + "://www.yahoo.com";
-        String redirectUrl = request.getScheme() + linkService.findAllLinks().get(0).getUrl();
+    public String getExtLink(HttpServletRequest request){
+        String url = request.getScheme() + linkService.findAllLinks().get(0).getUrl().toString();
+        String redirectUrl = request.getScheme() + "://" + url;
+
         return "redirect:" + redirectUrl;
     }
 }

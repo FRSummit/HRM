@@ -41,3 +41,13 @@ public class LoginController {
         return "redirect:" + redirectUrl;
     }*/
 }
+
+
+/*
+    @RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
+    public String login(HttpServletRequest request){
+
+        String redirectUrl = request.getScheme() + "://www.yahoo.com";
+        return "redirect:" + redirectUrl;
+    }
+ */
