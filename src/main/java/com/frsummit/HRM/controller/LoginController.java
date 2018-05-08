@@ -30,4 +30,14 @@ public class LoginController {
         modelAndView.setViewName("login");
         return modelAndView;
     }
+
+
+//    URL Call
+    /*@RequestMapping(method = RequestMethod.POST)
+    public String processForm(HttpServletRequest request, LoginForm loginForm,
+                              BindingResult result, ModelMap model)
+    {
+        String redirectUrl = request.getScheme() + "://www.yahoo.com";
+        return "redirect:" + redirectUrl;
+    }*/
 }

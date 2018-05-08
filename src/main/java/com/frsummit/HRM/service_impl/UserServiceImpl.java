@@ -191,7 +191,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Modifying
     public void updateAdmin() {
-        if(findAllUsers().size()==0){
+        if(findAllUsers().size()==1){
             Query query = entityManager.createQuery("UPDATE User u SET u.email = 'admin' WHERE u.id='0000'");
             query.executeUpdate();
         }

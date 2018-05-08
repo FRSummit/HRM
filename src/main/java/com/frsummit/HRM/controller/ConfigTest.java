@@ -2,6 +2,8 @@ package com.frsummit.HRM.controller;
 
 import com.frsummit.HRM.config.Config;
 import com.frsummit.HRM.config.ConfigServe;
+import com.frsummit.HRM.model.Links;
+import com.frsummit.HRM.service.LinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,9 @@ public class ConfigTest {
 
     @Autowired
     private ConfigServe configServe;
+
+    @Autowired
+    private LinkService linkService;
 
     @RequestMapping(value = "/admin/config-test", method = RequestMethod.GET)
     public String configTest(
@@ -39,10 +44,13 @@ public class ConfigTest {
 
     @RequestMapping(value = "/admin/configuration-test", method = RequestMethod.GET)
     public String configurationTest(
-            @RequestParam(value = "check") String check6) {
+            @RequestParam(value = "check") String check6,
+            @RequestParam(value = "linkName") String linkName,
+            @RequestParam(value = "linkUrl") String linkUrl) {
 
         //System.out.println(check1 + " " + check2 + " " + check3 + " " + check4 + " " + check5 + " " + check6);
         conf(check6);
+        conf2(linkName, linkUrl);
         return "home";
     }
 
@@ -116,5 +124,10 @@ public class ConfigTest {
 //        }
 
 
+    }
+
+    public void conf2(String linkName, String linkUrl){
+        Links links = new Links(linkName, linkUrl);
+        linkService.saveLink(links);
     }
 }

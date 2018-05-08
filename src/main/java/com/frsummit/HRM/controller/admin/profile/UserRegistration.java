@@ -70,6 +70,7 @@ public class UserRegistration {
                     5,5,5,5,5, 5,
                     0,0,0,0, 0,0,
                     5,5,5, 5,5,5);
+
             hrRecordService.saveHRRecord(hrRecord);
             Attendance attendance = new Attendance();
             attendance.setStatus("IN");

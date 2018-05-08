@@ -118,6 +118,9 @@
                                 <li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_remark' ? 'active' : ''}">
                                     <a href="#" th:href="@{/admin/attendance-admin-remark}">Remark List</a>
                                 </li>
+                                <!--<li th:unless="${myRole} == 'USER'" th:classappend="${page == 'attendance_admin_remark' ? 'active' : ''}">-->
+                                    <!--<a href="#" th:href="@{/admin/attendance-admin-external-link}">External Link</a>-->
+                                <!--</li>-->
                             </ul>
                         </li>
                     </ul>
