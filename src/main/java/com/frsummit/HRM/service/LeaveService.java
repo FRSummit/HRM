@@ -19,6 +19,7 @@ public interface LeaveService {
 
     public List<Leaves> findLeavesByLeaveId(int id);
     public List<Leaves> findLeavesByUserId(String userId);
+    public List<Leaves> findAllLeavesByUserId(String userId);
 
 
     //////////////////////////////////////

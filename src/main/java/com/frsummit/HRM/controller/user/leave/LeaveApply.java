@@ -151,10 +151,15 @@ public class LeaveApply {
                 leaveReason, leaveType, "Pending", applyToWhom,
                 "New Apply", "New Apply", null);
 
-        EmergencyContact emergencyContact = new EmergencyContact(leaves.getId(),
-                emergencyContactName, emergencyContactAddress, emergencyContactPhone);
 
         leaveService.saveLeave(leaves);
+
+        List<Leaves> leavesList = leaveService.findAllLeaves();
+        Leaves leaves1 = leavesList.get(leavesList.size()-1);
+
+        EmergencyContact emergencyContact = new EmergencyContact(leaves1.getId(),
+                emergencyContactName, emergencyContactAddress, emergencyContactPhone);
+
         emergencyContactService.saveEmergencyContact(emergencyContact);
 
         modelAndView.setViewName("leaves_user_history");

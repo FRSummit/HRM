@@ -1,7 +1,11 @@
-package com.frsummit.HRM.controller.zz_test;
+package com.frsummit.HRM.controller.user.leave;
 
 import com.frsummit.HRM.configuration.MyAuthorization;
-import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.model.EmergencyContact;
+import com.frsummit.HRM.model.HRRecord;
+import com.frsummit.HRM.model.Leaves;
+import com.frsummit.HRM.service.EmergencyContactService;
+import com.frsummit.HRM.service.HRRecordService;
 import com.frsummit.HRM.service.LeaveService;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -9,13 +13,12 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.VerticalPositionMark;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.List;
 
 import java.io.FileOutputStream;
 
-@Controller
-public class PdfCreate {
+public class LeavePdfDocCreate {
 
     private static String FILE = "C:/Users/F R Summit/Desktop/doc.pdf";
 
@@ -25,14 +28,22 @@ public class PdfCreate {
     @Autowired
     private LeaveService leaveService;
 
-    @RequestMapping(value = "/pdf")
-    public String MyFun(){
+    @Autowired
+    private HRRecordService hrRecordService;
+
+    @Autowired
+    private EmergencyContactService emergencyContactService;
+
+    private int leaveId;
+
+    @RequestMapping(value = "/print-leave-application")
+    public String printLeaveApplication(){
         try {
             Document document = new Document();
             PdfWriter.getInstance(document, new FileOutputStream(FILE));
             document.open();
 
-            Font headerFont=new Font(Font.FontFamily.TIMES_ROMAN,20.0f,Font.BOLD,BaseColor.BLACK);
+            Font headerFont=new Font(Font.FontFamily.TIMES_ROMAN,20.0f,Font.BOLD, BaseColor.BLACK);
             Paragraph header = new Paragraph("Application For Leave", headerFont);
             header.setAlignment(Element.ALIGN_CENTER);
             document.add(header);
@@ -71,30 +82,6 @@ public class PdfCreate {
             Paragraph leaveReq = new Paragraph("\nLeave Request", generalHeaderFont);
             document.add(leaveReq);
 
-            /*Paragraph applyDate = new Paragraph("Apply Date   : ", generalFont);
-            document.add(applyDate);
-
-            Paragraph applyFrom = new Paragraph("Apply From   : ", generalFont);
-            document.add(applyFrom);
-
-            Paragraph applyTo = new Paragraph("Apply To     : ", generalFont);
-            document.add(applyTo);
-
-            Paragraph leaveType = new Paragraph("Leave Type     : ", generalFont);
-            document.add(leaveType);
-
-            Paragraph leaveReason = new Paragraph("Leave Reason   : ", generalFont);
-            document.add(leaveReason);
-
-            Paragraph totalL = new Paragraph("Total Leaves   : ", generalFont);
-            document.add(totalL);
-
-            Paragraph desc = new Paragraph("Leaves Description  : ", generalFont);
-            document.add(desc);*/
-
-
-
-
             PdfPTable table = new PdfPTable(2);
             table.setWidthPercentage(100.0f);
 //            table.setWidths(new float[] {3.0f, 2.0f, 2.0f, 2.0f, 1.0f});
@@ -113,41 +100,41 @@ public class PdfCreate {
             // write table header
             cell.setPhrase(new Phrase("Apply Date", font));
             table.addCell(cell);
-            cell.setPhrase(new Phrase("Author", font));
+            cell.setPhrase(new Phrase(getSelectedLeave().getLeaveApplyDate().toString(), font));
             table.addCell(cell);
 
 
             cell.setPhrase(new Phrase("Apply From", font));
             table.addCell(cell);
-            cell.setPhrase(new Phrase("Author", font));
+            cell.setPhrase(new Phrase(getSelectedLeave().getLeaveApplyFrom().toString(), font));
             table.addCell(cell);
 
             cell.setPhrase(new Phrase("Apply To", font));
             table.addCell(cell);
-            cell.setPhrase(new Phrase("Author", font));
+            cell.setPhrase(new Phrase(getSelectedLeave().getLeaveApplyTo().toString(), font));
             table.addCell(cell);
 
 
             cell.setPhrase(new Phrase("Leave Type", font));
             table.addCell(cell);
-            cell.setPhrase(new Phrase("Author", font));
+            cell.setPhrase(new Phrase(getSelectedLeave().getLeaveType(), font));
             table.addCell(cell);
 
 
             cell.setPhrase(new Phrase("Leave Reason", font));
             table.addCell(cell);
-            cell.setPhrase(new Phrase("Author", font));
+            cell.setPhrase(new Phrase(getSelectedLeave().getLeaveReason(), font));
             table.addCell(cell);
 
 
             cell.setPhrase(new Phrase("Total leave days", font));
             table.addCell(cell);
-            cell.setPhrase(new Phrase("Author", font));
+            cell.setPhrase(new Phrase(String.valueOf(getSelectedLeave().getTotalDayOfLeave()), font));
             table.addCell(cell);
 
             cell.setPhrase(new Phrase("Leave Description", font));
             table.addCell(cell);
-            cell.setPhrase(new Phrase("Author", font));
+            cell.setPhrase(new Phrase(getSelectedLeave().getLeaveDescription(), font));
             table.addCell(cell);
 
             document.add(table);
@@ -159,13 +146,13 @@ public class PdfCreate {
             Paragraph hr = new Paragraph("\nHR Records", generalHeaderFont);
             document.add(hr);
 
-            Paragraph hrTotalLeave = new Paragraph("Total Leave : ", generalFont);
+            Paragraph hrTotalLeave = new Paragraph("Total Leave : " + getSelectedHrRecord().getTotalLeave(), generalFont);
             document.add(hrTotalLeave);
 
-            Paragraph hrTaken = new Paragraph("Taken   : ", generalFont);
+            Paragraph hrTaken = new Paragraph("Taken   : " + getSelectedHrRecord().getTotalLeaveTaken(), generalFont);
             document.add(hrTaken);
 
-            Paragraph hrBalance = new Paragraph("Balance : ", generalFont);
+            Paragraph hrBalance = new Paragraph("Balance : " + getSelectedHrRecord().getLeaveBalance(), generalFont);
             document.add(hrBalance);
 
             PdfPTable hrTable = new PdfPTable(4);
@@ -198,11 +185,11 @@ public class PdfCreate {
             // write table value
             hrCell.setPhrase(new Phrase("Personal", hrFont));
             hrTable.addCell(hrCell);
-            hrCell.setPhrase(new Phrase("Personal Total", hrFont));
+            hrCell.setPhrase(new Phrase(String.valueOf(getSelectedHrRecord().getTotalLeavePersonal()), hrFont));
             hrTable.addCell(hrCell);
-            hrCell.setPhrase(new Phrase("Personal Taken", hrFont));
+            hrCell.setPhrase(new Phrase(String.valueOf(getSelectedHrRecord().getTotalLeaveTakenPersonal()), hrFont));
             hrTable.addCell(hrCell);
-            hrCell.setPhrase(new Phrase("Personal Remaining", hrFont));
+            hrCell.setPhrase(new Phrase(String.valueOf(getSelectedHrRecord().getLeaveBalancePersonal()), hrFont));
             hrTable.addCell(hrCell);
 
             // write table value
@@ -278,23 +265,6 @@ public class PdfCreate {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//            Paragraph ownerSign = new Paragraph("\n.............................", generalFont);
-//            ownerSign.setAlignment(Element.ALIGN_LEFT);
-//            document.add(ownerSign);
-//
-//            ownerSign.add(new Paragraph("Something"));
-//            ownerSign.setAlignment(Element.ALIGN_RIGHT);
-//            document.add(ownerSign);
-
-//
-//            Paragraph chairmanSign = new Paragraph(".............................", generalFont);
-//            chairmanSign.setAlignment(Element.ALIGN_CENTER);
-//            document.add(chairmanSign);
-//
-//            Paragraph supervisorSign = new Paragraph(".............................", generalFont);
-//            supervisorSign.setAlignment(Element.ALIGN_RIGHT);
-//            document.add(supervisorSign);
-
             Paragraph newLine = new Paragraph("\n", generalFont);
             document.add(newLine);
 
@@ -306,116 +276,29 @@ public class PdfCreate {
             p.add(".........................");
             document.add(p);
 
-//            Chunk glue2 = new Chunk(new VerticalPositionMark());
-//            Paragraph p2 = new Paragraph(myAuthorization.userFullName());
-//            p2.add(new Chunk(glue2));
-//            p2.add("Supervisor");
-//            p2.add(new Chunk(glue2));
-//            p2.add("Chairman");
-//            document.add(p2);
-
-
             document.close();
         }catch (Exception e){
             e.printStackTrace();
         }
         return "home";
     }
+
+    public Leaves getSelectedLeave(){
+        List<Leaves> leavesList = leaveService.findLeavesByUserId(myAuthorization.userFromEmailOrId().getId());
+        Leaves leaves = new Leaves();
+        if(leavesList.size() != 0  && leavesList.isEmpty()){
+            leaves = leavesList.get(leavesList.size()-1);
+            leaveId = leaves.getId();
+        }
+        return leaves;
+    }
+
+    public HRRecord getSelectedHrRecord(){
+        List<HRRecord> hrRecordList = hrRecordService.getAllRecord(myAuthorization.userFromEmailOrId().getId());
+        HRRecord hrRecord = new HRRecord();
+        if(hrRecordList.size() != 0  && hrRecordList.isEmpty()){
+            hrRecord = hrRecordList.get(0);
+        }
+        return hrRecord;
+    }
 }
-
-/*
-*
-* // get data model which is passed by the Spring container
-        List<Book> listBooks = (List<Book>) model.get("listBooks");
-
-        doc.add(new Paragraph("Recommended books for Spring framework"));
-
-        PdfPTable table = new PdfPTable(5);
-        table.setWidthPercentage(100.0f);
-        table.setWidths(new float[] {3.0f, 2.0f, 2.0f, 2.0f, 1.0f});
-        table.setSpacingBefore(10);
-
-        // define font for table header row
-        Font font = FontFactory.getFont(FontFactory.HELVETICA);
-        font.setColor(BaseColor.WHITE);
-
-        // define table header cell
-        PdfPCell cell = new PdfPCell();
-        cell.setBackgroundColor(BaseColor.BLUE);
-        cell.setPadding(5);
-
-        // write table header
-        cell.setPhrase(new Phrase("Book Title", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("Author", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("ISBN", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("Published Date", font));
-        table.addCell(cell);
-
-        cell.setPhrase(new Phrase("Price", font));
-        table.addCell(cell);
-
-        // write table row data
-        for (Book aBook : listBooks) {
-            table.addCell(aBook.getTitle());
-            table.addCell(aBook.getAuthor());
-            table.addCell(aBook.getIsbn());
-            table.addCell(aBook.getPublishedDate());
-            table.addCell(String.valueOf(aBook.getPrice()));
-        }
-
-        doc.add(table);
-* */
-
-
-
-
-
-
-
-
-
-/*
-
-List<Course> courses = (List<Course>) model.get("courses");
-
-        PdfPTable table = new PdfPTable(3);
-
-        table.addCell("ID");
-        table.addCell("Name");
-        table.addCell("Date");
-
-        for (Course course : courses){
-            table.addCell(String.valueOf(course.getId()));
-            table.addCell(course.getName());
-            table.addCell(DATE_FORMAT.format(course.getDate()));
-        }
-
-        document.add(table);
-
-
- */
-
-
-/*
-*
-* List<Course> courses = (List<Course>) model.get("courses");
-
-        PdfPTable table = new PdfPTable(3);
-        table.setWidths(new int[]{10, 60, 30});
-
-        table.addCell("ID");
-        table.addCell("Name");
-        table.addCell("Date");
-
-        for (Course course : courses){
-            table.addCell(String.valueOf(course.getId()));
-            table.addCell(course.getName());
-            table.addCell(DATE_FORMAT.format(course.getDate()));
-        }
-* */

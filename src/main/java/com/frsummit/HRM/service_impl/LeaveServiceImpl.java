@@ -93,6 +93,11 @@ public class LeaveServiceImpl implements LeaveService {
         return entityManager.createQuery("SELECT l FROM Leaves AS l WHERE l.userId='" + userId +"' and l.leaveStatus='" + "GRANTED" + "'", Leaves.class).getResultList();
     }
 
+    @Override
+    public List<Leaves> findAllLeavesByUserId(String userId) {
+        return entityManager.createQuery("SELECT l FROM Leaves AS l WHERE l.userId='" + userId + "'", Leaves.class).getResultList();
+    }
+
     ////////////////////////////////////
 ////    User Section    ////////////
 ////////////////////////////////////
