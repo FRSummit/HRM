@@ -81,6 +81,7 @@ public class LeaveApply {
         model.addAttribute("titleFullName", firstName + " " + middleName + " " + lastName);
         //model.addAttribute("titleDepartment", user.getDepartment());
         model.addAttribute("titleDepartment", myAuthorization.userFromEmailOrId().getDepartment());
+        model.addAttribute("titleDesignation", myAuthorization.userFromEmailOrId().getDesignation());
 
         //List<HRRecord> hrList = hrRecordService.getAllRecord(user.getId());
         List<HRRecord> hrList = hrRecordService.getAllRecord(myAuthorization.userFromEmailOrId().getId());
