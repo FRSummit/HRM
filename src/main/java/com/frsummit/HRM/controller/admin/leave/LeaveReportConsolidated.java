@@ -73,8 +73,12 @@ public class LeaveReportConsolidated {
                 User user1 = userList.get(i);
                 userList1.add(user1);
 
-                HRRecord hrRecord = hrRecordList.get(i);
-                hrRecordList1.add(hrRecord);
+                List<HRRecord> hrByUserId = hrRecordService.getAllRecord(user1.getId());
+                HRRecord hrRecordById = hrByUserId.get(0);
+                hrRecordList1.add(hrRecordById);
+
+//                HRRecord hrRecord = hrRecordList.get(i);
+//                hrRecordList1.add(hrRecord);
             }
 
             List<Leaves> leavesList1 = new ArrayList<>();
@@ -91,6 +95,8 @@ public class LeaveReportConsolidated {
                 hrUserId.add(hrRecordList1.get(i).getUserId());
             }
 
+            System.out.println(userId.get(0) + " " + hrUserId.get(0));
+
             List<String> leaveUserId = new ArrayList<>();
             for(int i=0; i<leavesList1.size(); i++){
                 leaveUserId.add(leavesList1.get(i).getUserId());
@@ -98,7 +104,7 @@ public class LeaveReportConsolidated {
 
 //        Select specific hr record from same userId
             List<HRRecord> hrRecordList2 = new ArrayList<>();
-            for(int i=0; i<userId.size()-1; i++){
+            for(int i=0; i<userId.size(); i++){
                 for(int j=0; j<=hrUserId.size()-1; j++){
                     if(userId.get(i).equalsIgnoreCase(hrUserId.get(j))){
 //                        System.out.println(userId.get(i) + " " + hrUserId.get(j));
@@ -108,8 +114,8 @@ public class LeaveReportConsolidated {
                 }
             }
 
-            String dateFrm = dateFrom;
-            String dateT = dateTo;
+            String dateFrm = dateFrom.toString();
+            String dateT = dateTo.toString();
             String frmParts1 = dateFrom + " 00:00:00.0";
             String toParts1 = dateTo + " 00:00:00.0";
             String[] frmParts2 = dateFrm.split("-");
@@ -117,24 +123,27 @@ public class LeaveReportConsolidated {
 
             List<Leaves> finalLeaveList = new ArrayList<>();
 
-            for(int i=0; i<leavesList1.size(); i++){
-                Leaves leaves = leavesList1.get(i);
+            //if(dateFrm.length() > 0 && dateT.length() > 0){
+                for(int i=0; i<leavesList1.size(); i++){
+                    Leaves leaves = leavesList1.get(i);
 
-                String levDatFrm = leaves.getLeaveApplyFrom().toString();
-                String levDatTo = leaves.getLeaveApplyTo().toString();
-                String[] levfrmParts1 = levDatFrm.split(" ");
-                String[] levtoParts1 = levDatTo.split(" ");
-                String[] levfrmParts2 = levfrmParts1[0].toString().split("-");
-                String[] levtoParts2 = levtoParts1[0].toString().split("-");
+                    String levDatFrm = leaves.getLeaveApplyFrom().toString();
+                    String levDatTo = leaves.getLeaveApplyTo().toString();
+                    String[] levfrmParts1 = levDatFrm.split(" ");
+                    String[] levtoParts1 = levDatTo.split(" ");
+                    String[] levfrmParts2 = levfrmParts1[0].toString().split("-");
+                    String[] levtoParts2 = levtoParts1[0].toString().split("-");
 
-                if(Integer.parseInt(levfrmParts2[0]) >= Integer.parseInt(frmParts2[0]) && Integer.parseInt(levtoParts2[0]) <= Integer.parseInt(toParts2[0])){
-                    if(Integer.parseInt(levfrmParts2[1]) >= Integer.parseInt(frmParts2[1]) && Integer.parseInt(levtoParts2[1]) <= Integer.parseInt(toParts2[1])){
-                        if(Integer.parseInt(levfrmParts2[2]) >= Integer.parseInt(frmParts2[2]) && Integer.parseInt(levtoParts2[2]) <= Integer.parseInt(toParts2[2])){
-                            finalLeaveList.add(leaves);
+                    if(Integer.parseInt(levfrmParts2[0]) >= Integer.parseInt(frmParts2[0]) && Integer.parseInt(levtoParts2[0]) <= Integer.parseInt(toParts2[0])){
+                        if(Integer.parseInt(levfrmParts2[1]) >= Integer.parseInt(frmParts2[1]) && Integer.parseInt(levtoParts2[1]) <= Integer.parseInt(toParts2[1])){
+                            if(Integer.parseInt(levfrmParts2[2]) >= Integer.parseInt(frmParts2[2]) && Integer.parseInt(levtoParts2[2]) <= Integer.parseInt(toParts2[2])){
+                                finalLeaveList.add(leaves);
+                            }
                         }
                     }
                 }
-            }
+            //}
+
             List<String> ids = new ArrayList<>();
             for(int i=0; i<finalLeaveList.size(); i++){
                 ids.add(finalLeaveList.get(i).getUserId());
@@ -151,6 +160,10 @@ public class LeaveReportConsolidated {
                     }
                 }
             }
+
+
+//            For date trying
+
 
             model.addAttribute("hrRecordList", hrRecordList3);
         }
