@@ -61,7 +61,7 @@ public class PrintLeave {
 //            Employee Details
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            Font generalHeaderFont=new Font(Font.FontFamily.TIMES_ROMAN,20.0f, Font.BOLD,BaseColor.BLACK);
+            Font generalHeaderFont=new Font(Font.FontFamily.TIMES_ROMAN,20.0f, Font.NORMAL,BaseColor.BLACK);
             Paragraph empDetailsHeader = new Paragraph("Employer Details", generalHeaderFont);
             document.add(empDetailsHeader);
 
